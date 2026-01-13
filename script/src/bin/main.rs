@@ -72,7 +72,6 @@ fn main() {
     assert_eq!(committed_message, message);
     let total_cycles = report.total_instruction_count();
 
-    println!("Program executed successfully with {} cycles.", report.total_instruction_count());
     println!("Assertion Verified: Proof binds Address to Transaction X");
     
     // 8. 性能总结
