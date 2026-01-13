@@ -45,8 +45,7 @@ fn main() {
     // 推荐使用 'compressed' 或 'groth16' 模式以便链上验证
     // 这里演示生成 Groth16 证明，因为它适合以太坊验证
     println!("Starting proof generation...");
-    let proof = client.prove(&pk, &stdin).groth16().run().expect("Proof generation failed");
-    
+    let mut proof = client.prove(&pk, &stdin).groth16().run().expect("Proof generation failed");
     println!("Proof generated successfully!");
 
     // 6. 验证证明 (本地完整性检查)
