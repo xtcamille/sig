@@ -2,6 +2,7 @@ use sp1_sdk::{include_elf, ProverClient, SP1Stdin};
 use ed25519_dalek::{Signer, SigningKey, VerifyingKey};
 use rand::rngs::OsRng; // 随机数生成器
 use shared_lib::Ed25519VerificationData;
+use std::time::Instant;
 
 fn main() {
     // 1. 设置环境 (日志等)
@@ -38,6 +39,12 @@ fn main() {
     // include_elf! 宏会加载编译好的 Guest 二进制文件
     let elf = include_elf!("ed25519-program");
     
+    // 获取执行统计信息 (Cycles / Constraints)
+    println!("Executing program to collect statistics...");
+    let (_, report) = client.execute(elf, stdin.clone()).run().expect("Execution failed");
+    let total_cycles = report.total_instruction_count();
+    println!("Program executed successfully with {} cycles.", total_cycles);
+
     // 设置证明密钥 (Proving Key) 和 验证密钥 (Verifying Key)
     let (pk, vk) = client.setup(elf);
 
@@ -45,11 +52,17 @@ fn main() {
     // 推荐使用 'compressed' 或 'groth16' 模式以便链上验证
     // 这里演示生成 Groth16 证明，因为它适合以太坊验证
     println!("Starting proof generation...");
+    let prover_start = Instant::now();
     let mut proof = client.prove(&pk, &stdin).groth16().run().expect("Proof generation failed");
-    println!("Proof generated successfully!");
+    let prover_duration = prover_start.elapsed();
+    println!("Proof generated successfully in {:?}", prover_duration);
 
     // 6. 验证证明 (本地完整性检查)
+    println!("Starting proof verification...");
+    let verifier_start = Instant::now();
     client.verify(&proof, &vk).expect("Verification failed");
+    let verifier_duration = verifier_start.elapsed();
+    println!("Proof verified successfully in {:?}", verifier_duration);
 
     // 7. 读取公共输出以确认
     let committed_pub_key = proof.public_values.read::<[u8; 32]>();
@@ -60,6 +73,13 @@ fn main() {
     
     println!("Assertion Verified: Proof binds Address to Transaction X");
     
-    // 8. (可选) 导出 Solidity Verifier 和 Proof 以便部署
+    // 8. 性能总结
+    println!("\n--- Performance Metrics ---");
+    println!("Cycle Count (Constraints): {}", total_cycles);
+    println!("Prover Time: {:?}", prover_duration);
+    println!("Verifier Time: {:?}", verifier_duration);
+    println!("Peak RAM: See SP1 logger output for system-level memory usage.");
+    println!("---------------------------\n");
+
     // client.export_solidity_verifier(&vk);
 }
