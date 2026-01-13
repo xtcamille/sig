@@ -2,7 +2,7 @@
 sp1_zkvm::entrypoint!(main);
 
 use ed25519_dalek::{Verifier, VerifyingKey, Signature};
-use lib::Ed25519VerificationData;
+use shared_lib::Ed25519VerificationData;
 
 pub fn main() {
     // 1. 读取输入

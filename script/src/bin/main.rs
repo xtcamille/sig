@@ -1,7 +1,7 @@
 use sp1_sdk::{ProverClient, SP1Stdin};
 use ed25519_dalek::{Signer, SigningKey, VerifyingKey};
 use rand::rngs::OsRng; // 随机数生成器
-use lib::Ed25519VerificationData;
+use shared_lib::Ed25519VerificationData;
 
 fn main() {
     // 1. 设置环境 (日志等)
