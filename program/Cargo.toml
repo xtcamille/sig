@@ -1,9 +1,17 @@
 [package]
+name = "ed25519-program"
 version = "0.1.0"
-name = "fibonacci-program"
 edition = "2021"
 
 [dependencies]
-alloy-sol-types = { workspace = true }
-sp1-zkvm = "5.0.8"
-fibonacci-lib = { path = "../lib" }
+sp1-zkvm = "3.0.0"
+serde = { version = "1.0", features = ["derive"] }
+# 使用 standard feature 也可以，但 verify 是必须的
+ed25519-dalek = { version = "2.1", features = ["verify", "serde"] }
+
+[patch.crates-io]
+# 关键：将标准库替换为 SP1 优化版
+ed25519-dalek = { git = "https://github.com/sp1-patches/ed25519-dalek", branch = "patch-v2.1.0" }
+curve25519-dalek = { git = "https://github.com/sp1-patches/curve25519-dalek", branch = "patch-v4.1.0" }
+# SHA2 也需要补丁，因为 Ed25519 依赖 SHA-512
+sha2 = { git = "https://github.com/sp1-patches/RustCrypto-hashes", branch = "patch-sha2-v0.10.8" }
