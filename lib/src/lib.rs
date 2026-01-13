@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-#
+#[derive(Serialize, Deserialize)]
 pub struct Ed25519VerificationData {
     pub pub_key: [u8; 32],      // Ed25519 公钥 (32字节)
     pub signature: [u8; 64],    // Ed25519 签名 (64字节)
