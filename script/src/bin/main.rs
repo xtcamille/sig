@@ -36,7 +36,7 @@ fn main() {
     // 4. 初始化 Prover 并加载 ELF
     let client = ProverClient::new();
     // include_elf! 宏会加载编译好的 Guest 二进制文件
-    let elf = include_bytes!("../../program/elf/riscv32im-succinct-zkvm-elf");
+    let elf = include_bytes!("../../target/elf-compilation/riscv32im-succinct-zkvm-elf");
     
     // 设置证明密钥 (Proving Key) 和 验证密钥 (Verifying Key)
     let (pk, vk) = client.setup(elf);

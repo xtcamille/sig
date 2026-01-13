@@ -17,6 +17,8 @@ name = "vkey"
 path = "src/bin/vkey.rs"
 
 [dependencies]
+rand = "0.8"
+ed25519-dalek = { version = "2.2.0", features = ["std", "serde"] }
 sp1-sdk = "5.0.8"
 serde_json = { version = "1.0", default-features = false, features = ["alloc"] }
 serde = { version = "1.0.200", default-features = false, features = ["derive"] }
@@ -26,6 +28,7 @@ hex = "0.4.3"
 alloy-sol-types = { workspace = true }
 shared-lib = { path = "../lib" }
 dotenv = "0.15.0"
+
 
 [build-dependencies]
 sp1-build = "5.0.8"
