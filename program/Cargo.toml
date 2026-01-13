@@ -8,7 +8,7 @@ sp1-zkvm = "3.0.0"
 serde = { version = "1.0", features = ["derive"] }
 # 使用 standard feature 也可以，但 verify 是必须的
 ed25519-dalek = { version = "2.1", features = ["verify", "serde"] }
-lib = { path = "../lib" }
+shared-lib = { path = "../lib" }
 
 [patch.crates-io]
 # 关键：将标准库替换为 SP1 优化版
