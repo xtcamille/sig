@@ -1,4 +1,4 @@
-use sp1_sdk::{ProverClient, SP1Stdin};
+use sp1_sdk::{include_elf, ProverClient, SP1Stdin};
 use ed25519_dalek::{Signer, SigningKey, VerifyingKey};
 use rand::rngs::OsRng; // 随机数生成器
 use shared_lib::Ed25519VerificationData;
@@ -36,7 +36,7 @@ fn main() {
     // 4. 初始化 Prover 并加载 ELF
     let client = ProverClient::from_env();
     // include_elf! 宏会加载编译好的 Guest 二进制文件
-    let elf = include_bytes!("../../../target/elf-compilation/riscv32im-succinct-zkvm-elf");
+    let elf = include_elf!("ed25519-program");
     
     // 设置证明密钥 (Proving Key) 和 验证密钥 (Verifying Key)
     let (pk, vk) = client.setup(elf);
