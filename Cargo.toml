@@ -7,7 +7,7 @@ members = [
 resolver = "2"
 
 [workspace.dependencies]
-alloy-sol-types = "1.0"
+alloy-sol-types = { version = "1.0", default-features = false }
 
 [patch.crates-io]
 # 关键：将标准库替换为 SP1 优化版
