@@ -1,11 +1,11 @@
 [package]
 version = "0.1.0"
-name = "fibonacci-script"
+name = "ed25519-script"
 edition = "2021"
-default-run = "fibonacci"
+default-run = "ed25519"
 
 [[bin]]
-name = "fibonacci"
+name = "ed25519"
 path = "src/bin/main.rs"
 
 [[bin]]
