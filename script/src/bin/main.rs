@@ -41,7 +41,7 @@ fn main() {
     
     // 获取执行统计信息 (Cycles / Constraints)
     println!("Executing program to collect statistics...");
-    let (_, report) = client.execute(elf, stdin.clone()).run().expect("Execution failed");
+    let (_, report) = client.execute(elf, &stdin).run().expect("Execution failed");
     let total_cycles = report.total_instruction_count();
     println!("Program executed successfully with {} cycles.", total_cycles);
 
