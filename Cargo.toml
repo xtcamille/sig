@@ -11,7 +11,6 @@ alloy-sol-types = { version = "1.0", default-features = false }
 
 [patch.crates-io]
 # 关键：将标准库替换为 SP1 优化版
-ed25519-dalek = { git = "https://github.com/sp1-patches/ed25519-dalek", branch = "patch-v2.1.0" }
-curve25519-dalek = { git = "https://github.com/sp1-patches/curve25519-dalek", branch = "patch-v4.1.0" }
-# SHA2 也需要补丁，因为 Ed25519 依赖 SHA-512
+ed25519-dalek = { git = "https://github.com/sp1-patches/ed25519-dalek", branch = "patch-ed25519-v1.0.1" }
+curve25519-dalek = { git = "https://github.com/sp1-patches/curve25519-dalek", branch = "patch-curve25519-v4.1.0" }
 sha2 = { git = "https://github.com/sp1-patches/RustCrypto-hashes", branch = "patch-sha2-v0.10.8" }
