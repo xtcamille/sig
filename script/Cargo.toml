@@ -18,7 +18,7 @@ path = "src/bin/vkey.rs"
 
 [dependencies]
 rand = "0.8"
-ed25519-dalek = { version = "2.2.0", features = ["std", "serde"] }
+ed25519-dalek = { version = "2.2.0", features = ["std", "serde", "rand_core"] }
 sp1-sdk = "5.0.8"
 serde_json = { version = "1.0", default-features = false, features = ["alloc"] }
 serde = { version = "1.0.200", default-features = false, features = ["derive"] }

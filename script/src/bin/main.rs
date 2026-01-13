@@ -34,9 +34,9 @@ fn main() {
     stdin.write(&input_data);
 
     // 4. 初始化 Prover 并加载 ELF
-    let client = ProverClient::new();
+    let client = ProverClient::from_env();
     // include_elf! 宏会加载编译好的 Guest 二进制文件
-    let elf = include_bytes!("../../target/elf-compilation/riscv32im-succinct-zkvm-elf");
+    let elf = include_bytes!("../../../target/elf-compilation/riscv32im-succinct-zkvm-elf");
     
     // 设置证明密钥 (Proving Key) 和 验证密钥 (Verifying Key)
     let (pk, vk) = client.setup(elf);
@@ -45,7 +45,7 @@ fn main() {
     // 推荐使用 'compressed' 或 'groth16' 模式以便链上验证
     // 这里演示生成 Groth16 证明，因为它适合以太坊验证
     println!("Starting proof generation...");
-    let proof = client.prove(&pk, stdin).groth16().run().expect("Proof generation failed");
+    let proof = client.prove(&pk, &stdin).groth16().run().expect("Proof generation failed");
     
     println!("Proof generated successfully!");
 
