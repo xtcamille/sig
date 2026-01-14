@@ -10,7 +10,7 @@ pub fn main() {
     let input: Sm2VerificationData = sp1_zkvm::io::read();
 
     // 2. 重建公钥对象
-    let verifying_key = VerifyingKey::from_sec1_bytes(&input.pub_key)
+    let verifying_key = VerifyingKey::from_sec1_bytes("1234567812345678", &input.pub_key)
        .expect("Invalid SM2 Public Key");
 
     // 3. 重建签名对象

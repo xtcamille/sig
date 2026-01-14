@@ -1,5 +1,5 @@
 use sp1_sdk::{include_elf, ProverClient, SP1Stdin};
-use sm2::dsa::{SigningKey, VerifyingKey, Signature, signature::Signer};
+use sm2::{SecretKey, dsa::{SigningKey, VerifyingKey, Signature, signature::Signer}};
 use rand::rngs::OsRng; // 随机数生成器
 use shared_lib::Sm2VerificationData;
 use std::time::Instant;
@@ -9,12 +9,14 @@ fn main() {
     sp1_sdk::utils::setup_logger();
 
     // 2. 模拟用户行为：生成密钥并签名
+    // 在实际应用中，这里可能是从钱包 (Wallet) 接收签名，或者是读取本地私钥文件
     let mut csprng = OsRng;
-    let signing_key: SigningKey = SigningKey::random(&mut csprng);
+    let secret_key = SecretKey::random(&mut csprng);
+    let signing_key = SigningKey::new("1234567812345678", &secret_key).expect("Failed to create signing key");
     let verifying_key: VerifyingKey = VerifyingKey::from(&signing_key);
     
     // 交易内容 X
-    let message = b"Uni-RWA Cross-Chain Asset Transfer: 100 SM2 tokens to Ethereum".to_vec();
+    let message = b"Uni-RWA Cross-Chain Asset Transfer: 100 USDC to Ethereum".to_vec();
     
     // 签名 (纯本地操作，不涉及 zkVM)
     let signature: Signature = signing_key.sign(&message);
