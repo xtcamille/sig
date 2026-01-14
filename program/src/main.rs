@@ -34,3 +34,4 @@ pub fn main() {
     
     // 可选：打印日志（仅在调试模式下可见）
     println!("Successfully verified signature for message len: {}", input.message.len());
+}
