@@ -25,7 +25,7 @@ fn main() {
 
     // 3. 准备 zkVM 输入
     let input_data = Secp256k1VerificationData {
-        pub_key: verifying_key.to_sec1_bytes().as_slice().try_into().expect("Invalid public key length"),
+        pub_key: verifying_key.to_sec1_bytes().as_ref().try_into().expect("Invalid public key length"),
         signature: signature.to_bytes().as_slice().try_into().expect("Invalid signature length"),
         message: message.clone(),
     };
@@ -68,7 +68,7 @@ fn main() {
     let committed_pub_key = proof.public_values.read::<Vec<u8>>();
     let committed_message = proof.public_values.read::<Vec<u8>>();
 
-    assert_eq!(committed_pub_key.as_slice(), verifying_key.to_sec1_bytes().as_slice());
+    assert_eq!(committed_pub_key.as_slice(), verifying_key.to_sec1_bytes().as_ref());
     assert_eq!(committed_message, message);
 
     println!("Assertion Verified: Proof binds Address to Transaction X");
