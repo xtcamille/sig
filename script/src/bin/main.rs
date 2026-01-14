@@ -1,5 +1,4 @@
 use sp1_sdk::{include_elf, ProverClient, SP1Stdin};
-use rand::rngs::OsRng;
 use sm2::{SecretKey, dsa::{SigningKey, Signature, signature::Signer}, elliptic_curve::sec1::ToEncodedPoint};
 use shared_lib::Sm2VerificationData;
 use std::time::Instant;
@@ -10,8 +9,7 @@ fn main() {
 
     // 2. 模拟用户行为：生成密钥并签名
     // 在实际应用中，这里可能是从钱包 (Wallet) 接收签名，或者是读取本地私钥文件
-    let mut csprng = OsRng;
-    let secret_key = SecretKey::random(&mut csprng);
+    let secret_key = SecretKey::generate();
     let signing_key = SigningKey::new("1234567812345678", &secret_key).expect("Failed to create signing key");
     let verifying_key = signing_key.verifying_key().clone();
     
