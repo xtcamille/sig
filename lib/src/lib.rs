@@ -4,6 +4,7 @@ use serde_big_array::BigArray;
 
 #[derive(Serialize, Deserialize)]
 pub struct Secp256k1VerificationData {
+    #[serde(with = "BigArray")]
     pub pub_key: [u8; 33],      // Secp256k1 公钥 (33字节 压缩格式)
     #[serde(with = "BigArray")]
     pub signature: [u8; 64],    // Secp256k1 签名 (64字节, r|s)
