@@ -1,5 +1,5 @@
 use sp1_sdk::{include_elf, ProverClient, SP1Stdin};
-use k256::ecdsa::{SigningKey, VerifyingKey, signature::Signer};
+use k256::ecdsa::{SigningKey, VerifyingKey, Signature, signature::Signer};
 use rand::rngs::OsRng; // 随机数生成器
 use shared_lib::Secp256k1VerificationData;
 use std::time::Instant;
@@ -9,6 +9,7 @@ fn main() {
     sp1_sdk::utils::setup_logger();
 
     // 2. 模拟用户行为：生成密钥并签名
+    // 在实际应用中，这里可能是从钱包 (Wallet) 接收签名，或者是读取本地私钥文件
     let mut csprng = OsRng;
     let signing_key: SigningKey = SigningKey::random(&mut csprng);
     let verifying_key: VerifyingKey = VerifyingKey::from(&signing_key);
@@ -17,15 +18,15 @@ fn main() {
     let message = b"Uni-RWA Cross-Chain Asset Transfer: 100 USDC to Ethereum".to_vec();
     
     // 签名 (纯本地操作，不涉及 zkVM)
-    let signature = signing_key.sign(&message);
+    let signature: Signature = signing_key.sign(&message);
     
     println!("Public Key: {:?}", hex::encode(verifying_key.to_sec1_bytes()));
     println!("Signature: {:?}", hex::encode(signature.to_bytes()));
 
     // 3. 准备 zkVM 输入
     let input_data = Secp256k1VerificationData {
-        pub_key: verifying_key.to_sec1_bytes().into_array(),
-        signature: signature.to_bytes().into_array(),
+        pub_key: verifying_key.to_sec1_bytes().as_slice().try_into().expect("Invalid public key length"),
+        signature: signature.to_bytes().as_slice().try_into().expect("Invalid signature length"),
         message: message.clone(),
     };
 
@@ -48,6 +49,8 @@ fn main() {
     let (pk, vk) = client.setup(elf);
 
     // 5. 生成证明
+    // 推荐使用 'compressed' 或 'groth16' 模式以便链上验证
+    // 这里演示生成 Groth16 证明，因为它适合以太坊验证
     println!("Starting proof generation...");
     let prover_start = Instant::now();
     let mut proof = client.prove(&pk, &stdin).groth16().run().expect("Proof generation failed");
@@ -62,10 +65,10 @@ fn main() {
     println!("Proof verified successfully in {:?}", verifier_duration);
 
     // 7. 读取公共输出以确认
-    let committed_pub_key = proof.public_values.read::<[u8; 33]>();
+    let committed_pub_key = proof.public_values.read::<Vec<u8>>();
     let committed_message = proof.public_values.read::<Vec<u8>>();
 
-    assert_eq!(committed_pub_key, verifying_key.to_sec1_bytes().as_slice());
+    assert_eq!(committed_pub_key.as_slice(), verifying_key.to_sec1_bytes().as_slice());
     assert_eq!(committed_message, message);
 
     println!("Assertion Verified: Proof binds Address to Transaction X");
