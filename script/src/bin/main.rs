@@ -1,5 +1,5 @@
 use sp1_sdk::{include_elf, ProverClient, SP1Stdin};
-use sm2::{SecretKey, dsa::{SigningKey, Signature, signature::Signer}, elliptic_curve::sec1::ToEncodedPoint};
+use sm2::{SecretKey, dsa::{SigningKey, Signature, signature::Signer}, elliptic_curve::{sec1::ToEncodedPoint, Generate}};
 use shared_lib::Sm2VerificationData;
 use std::time::Instant;
 
