@@ -1,11 +1,11 @@
 [package]
 version = "0.1.0"
-name = "secp256k1-script"
+name = "sm2-script"
 edition = "2021"
-default-run = "secp256k1"
+default-run = "sm2"
 
 [[bin]]
-name = "secp256k1"
+name = "sm2"
 path = "src/bin/main.rs"
 
 [[bin]]
@@ -18,7 +18,7 @@ path = "src/bin/vkey.rs"
 
 [dependencies]
 rand = "0.8"
-k256 = { version = "0.13.3", features = ["ecdsa", "serde"] }
+sm2 = { version = "0.14.0-rc.4", features = ["dsa", "arithmetic", "serde"] }
 sp1-sdk = "5.0.8"
 serde_json = { version = "1.0", default-features = false, features = ["alloc"] }
 serde = { version = "1.0.200", default-features = false, features = ["derive"] }

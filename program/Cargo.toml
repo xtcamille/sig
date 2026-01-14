@@ -1,10 +1,10 @@
 [package]
-name = "secp256k1-program"
+name = "sm2-program"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
 sp1-zkvm = "5.0.8"
 serde = { version = "1.0", default-features = false, features = ["derive"] }
-k256 = { version = "0.13.3", features = ["ecdsa", "serde"] }
+sm2 = { version = "0.14.0-rc.4", default-features = false, features = ["dsa", "arithmetic", "serde"] }
 shared-lib = { path = "../lib" }

@@ -880,33 +880,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "curve25519-dalek"
-version = "4.1.3"
-source = "git+https://github.com/sp1-patches/curve25519-dalek?branch=patch-curve25519-v4.1.3#a9d46282f5660dfb7e3850ef957fe884089daeda"
-dependencies = [
- "anyhow",
- "cfg-if",
- "cpufeatures",
- "curve25519-dalek-derive",
- "digest",
- "fiat-crypto",
- "rustc_version",
- "sp1-lib 3.4.0",
- "subtle",
- "zeroize",
-]
-
-[[package]]
-name = "curve25519-dalek-derive"
-version = "0.1.1"
-source = "git+https://github.com/sp1-patches/curve25519-dalek?branch=patch-curve25519-v4.1.3#a9d46282f5660dfb7e3850ef957fe884089daeda"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn 2.0.100",
-]
-
-[[package]]
 name = "dashu"
 version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1135,67 +1108,19 @@ checksum = "92773504d58c093f6de2459af4af33faa518c13451eb8f2b5698ed3d36e7c813"
 [[package]]
 name = "ecdsa"
 version = "0.16.9"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ee27f32b5c5292967d2d4a9d7f1e0b0aed2c15daded5a60300e4abb9d8020bca"
+source = "git+https://github.com/sp1-patches/signatures?branch=patch-ecdsa-v0.16.9#475daa8834035cc170a567e7656329ab8de8cc44"
 dependencies = [
+ "anyhow",
+ "cfg-if",
  "der",
  "digest",
  "elliptic-curve",
+ "hex-literal",
  "rfc6979",
  "serdect",
  "signature",
+ "sp1-lib 3.4.0",
  "spki",
-]
-
-[[package]]
-name = "ed25519"
-version = "2.2.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "115531babc129696a58c64a4fef0a8bf9e9698629fb97e9e40767d235cfbcd53"
-dependencies = [
- "pkcs8",
- "serde",
- "signature",
-]
-
-[[package]]
-name = "ed25519-dalek"
-version = "2.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "70e796c081cee67dc755e1a36a0a172b897fab85fc3f6bc48307991f64e4eca9"
-dependencies = [
- "curve25519-dalek",
- "ed25519",
- "serde",
- "sha2",
- "subtle",
- "zeroize",
-]
-
-[[package]]
-name = "ed25519-program"
-version = "0.1.0"
-dependencies = [
- "ed25519-dalek",
- "serde",
- "shared-lib",
- "sp1-zkvm",
-]
-
-[[package]]
-name = "ed25519-script"
-version = "0.1.0"
-dependencies = [
- "alloy-sol-types",
- "clap",
- "dotenv",
- "hex",
- "serde",
- "serde_json",
- "shared-lib",
- "sp1-build",
- "sp1-sdk",
- "tracing",
 ]
 
 [[package]]
@@ -1339,12 +1264,6 @@ dependencies = [
  "quote",
  "syn 1.0.109",
 ]
-
-[[package]]
-name = "fiat-crypto"
-version = "0.2.9"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "28dea519a9695b9977216879a3ebfddf92f1c08c05d984f8996aecd6ecdc811d"
 
 [[package]]
 name = "fnv"
@@ -1654,6 +1573,12 @@ checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
 dependencies = [
  "serde",
 ]
+
+[[package]]
+name = "hex-literal"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6fe2267d4ed49bc07b63801559be28c718ea06c4738b7a03c94df7386d2cde46"
 
 [[package]]
 name = "hmac"
@@ -3336,8 +3261,7 @@ dependencies = [
 [[package]]
 name = "rfc6979"
 version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f8dd2a808d456c4a54e300a23e9f5a67e122c3024119acbfd73e3bf664491cb2"
+source = "git+https://github.com/sp1-patches/signatures?branch=patch-ecdsa-v0.16.9#475daa8834035cc170a567e7656329ab8de8cc44"
 dependencies = [
  "hmac",
  "subtle",
@@ -3564,6 +3488,34 @@ dependencies = [
  "serdect",
  "subtle",
  "zeroize",
+]
+
+[[package]]
+name = "secp256k1-program"
+version = "0.1.0"
+dependencies = [
+ "k256",
+ "serde",
+ "shared-lib",
+ "sp1-zkvm",
+]
+
+[[package]]
+name = "secp256k1-script"
+version = "0.1.0"
+dependencies = [
+ "alloy-sol-types",
+ "clap",
+ "dotenv",
+ "hex",
+ "k256",
+ "rand 0.8.5",
+ "serde",
+ "serde_json",
+ "shared-lib",
+ "sp1-build",
+ "sp1-sdk",
+ "tracing",
 ]
 
 [[package]]
@@ -5626,6 +5578,6 @@ dependencies = [
 ]
 
 [[patch.unused]]
-name = "ed25519-dalek"
-version = "1.0.1"
-source = "git+https://github.com/sp1-patches/ed25519-dalek?branch=patch-ed25519-v1.0.1#fea2820343ab415c691eb2dd32a033fbbac822b1"
+name = "k256"
+version = "0.14.0-pre.2"
+source = "git+https://github.com/sp1-patches/elliptic-curves?branch=master#0e59a7a1ff2c0662cde99b2c8278bc4f2390a0b5"
