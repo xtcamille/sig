@@ -3,10 +3,10 @@ use serde_big_array::BigArray;
 
 
 #[derive(Serialize, Deserialize)]
-pub struct Ed25519VerificationData {
-    pub pub_key: [u8; 32],      // Ed25519 公钥 (32字节)
+pub struct Secp256k1VerificationData {
+    pub pub_key: [u8; 33],      // Secp256k1 公钥 (33字节 压缩格式)
     #[serde(with = "BigArray")]
-    pub signature: [u8; 64],    // Ed25519 签名 (64字节)
+    pub signature: [u8; 64],    // Secp256k1 签名 (64字节, r|s)
 
     pub message: Vec<u8>,       // 交易内容 X
 }
