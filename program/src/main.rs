@@ -29,7 +29,7 @@ pub fn main() {
     // 这一步至关重要。我们需要告诉链上验证者：
     // “这个证明是关于 地址 A (input.pub_key) 和 交易 X (input.message) 的”
     // 如果不提交这些值，拥有者可以为任意公钥生成证明，链上将无法区分。
-    sp1_zkvm::io::commit(&input.pub_key);
+    sp1_zkvm::io::commit(&input.pub_key.as_slice());
     sp1_zkvm::io::commit(&input.message);
     
     // 可选：打印日志（仅在调试模式下可见）
