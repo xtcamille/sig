@@ -53,9 +53,13 @@ fn main() {
     // 这里演示生成 Groth16 证明，因为它适合以太坊验证
     println!("Starting proof generation...");
     let prover_start = Instant::now();
-    let mut proof = client.prove(&pk, &stdin).groth16().run().expect("Proof generation failed");
+    let proof = client.prove(&pk, &stdin).compressed().run().expect("Proof generation failed");
     let prover_duration = prover_start.elapsed();
     println!("Proof generated successfully in {:?}", prover_duration);
+
+    // Get proof size
+    let proof_bytes = bincode::serialize(&proof).expect("Failed to serialize proof");
+    let proof_size = proof_bytes.len();
 
     // 6. 验证证明 (本地完整性检查)
     println!("Starting proof verification...");
@@ -65,8 +69,9 @@ fn main() {
     println!("Proof verified successfully in {:?}", verifier_duration);
 
     // 7. 读取公共输出以确认
-    let committed_pub_key = proof.public_values.read::<Vec<u8>>();
-    let committed_message = proof.public_values.read::<Vec<u8>>();
+    let mut public_values = proof.public_values.clone();
+    let committed_pub_key = public_values.read::<Vec<u8>>();
+    let committed_message = public_values.read::<Vec<u8>>();
 
     assert_eq!(committed_pub_key.as_slice(), verifying_key.to_sec1_bytes().as_ref());
     assert_eq!(committed_message, message);
@@ -76,6 +81,7 @@ fn main() {
     // 8. 性能总结
     println!("\n--- Performance Metrics ---");
     println!("Cycle Count (Constraints): {}", total_cycles);
+    println!("Proof Size: {} bytes", proof_size);
     println!("Prover Time: {:?}", prover_duration);
     println!("Verifier Time: {:?}", verifier_duration);
     println!("Peak RAM: See SP1 logger output for system-level memory usage.");
