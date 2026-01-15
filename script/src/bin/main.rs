@@ -53,7 +53,8 @@ fn main() {
     // 这里演示生成 Groth16 证明，因为它适合以太坊验证
     println!("Starting proof generation...");
     let prover_start = Instant::now();
-    let mut proof = client.prove(&pk, &stdin).groth16().run().expect("Proof generation failed");
+    let mut proof = client.prove(&pk, &stdin).compressed().run().expect("Proof generation failed");
+    let proof_size = proof.bytes().len();
     let prover_duration = prover_start.elapsed();
     println!("Proof generated successfully in {:?}", prover_duration);
 
@@ -79,6 +80,7 @@ fn main() {
     println!("Cycle Count (Constraints): {}", total_cycles);
     println!("Prover Time: {:?}", prover_duration);
     println!("Verifier Time: {:?}", verifier_duration);
+    println!("Proof Size: {} bytes", proof_size);
     println!("Peak RAM: See SP1 logger output for system-level memory usage.");
     println!("---------------------------\n");
 
