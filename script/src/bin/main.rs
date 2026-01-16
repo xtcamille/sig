@@ -49,9 +49,8 @@ fn main() {
     let (pk, vk) = client.setup(elf);
 
     // 5. 生成证明
-    // 推荐使用 'compressed' 或 'groth16' 模式以便链上验证
-    // 这里演示生成 Groth16 证明，因为它适合以太坊验证
-    println!("Starting proof generation...");
+    // 注意：.compressed() 证明在本地验证很快，但不支持直接链上验证 (链上验证需要 .groth16() 或 .plonk())
+    println!("Starting proof generation (compressed mode)...");
     let prover_start = Instant::now();
     let mut proof = client.prove(&pk, &stdin).compressed().run().expect("Proof generation failed");
     let proof_size = proof.bytes().len();
