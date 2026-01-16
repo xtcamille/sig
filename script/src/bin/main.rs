@@ -73,7 +73,7 @@ fn main() {
     // 5. 生成证明
     println!("Starting proof generation ({:?} mode)...", args.system);
     let prover_start = Instant::now();
-    let proof = match args.system {
+    let mut proof = match args.system {
         ProofSystem::Core => client.prove(&pk, &stdin).run(),
         ProofSystem::Compressed => client.prove(&pk, &stdin).compressed().run(),
         ProofSystem::Plonk => client.prove(&pk, &stdin).plonk().run(),
