@@ -18,7 +18,7 @@ pub fn main() {
     let signature = Signature::from_bytes(&input.signature);
 
     // 4. 执行核心验证
-    // 这里调用的是 ed25519_dalek::verify。
+    // 这里调用的是 ed25519_dalek::verify。！
     // 由于应用了补丁，这个调用会被编译为 SP1 的特殊系统调用，
     // 直接在 Ed25519 预编译电路中执行，而不是在 RISC-V CPU 中模拟。
     // 如果验证失败，程序会 panic，导致证明生成失败。

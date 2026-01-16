@@ -3,10 +3,32 @@ use ed25519_dalek::{Signer, SigningKey, VerifyingKey};
 use rand::rngs::OsRng; // 随机数生成器
 use shared_lib::Ed25519VerificationData;
 use std::time::Instant;
+use clap::{Parser, ValueEnum};
+
+
+/// The arguments for the ed25519 script.
+#[derive(Parser, Debug)]
+#[command(author, version, about, long_about = None)]
+struct Args {
+    #[arg(long, value_enum, default_value = "compressed")]
+    system: ProofSystem,
+}
+
+/// Enum representing the available proof systems
+#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, ValueEnum, Debug)]
+enum ProofSystem {
+    Core,
+    Compressed,
+    Plonk,
+    Groth16,
+}
 
 fn main() {
     // 1. 设置环境 (日志等)
     sp1_sdk::utils::setup_logger();
+
+    // 解析命令行参数
+    let args = Args::parse();
 
     // 2. 模拟用户行为：生成密钥并签名
     // 在实际应用中，这里可能是从钱包 (Wallet) 接收签名，或者是读取本地私钥文件
@@ -49,10 +71,15 @@ fn main() {
     let (pk, vk) = client.setup(elf);
 
     // 5. 生成证明
-    // 注意：.compressed() 证明在本地验证很快，但不支持直接链上验证 (链上验证需要 .groth16() 或 .plonk())
-    println!("Starting proof generation (compressed mode)...");
+    println!("Starting proof generation ({:?} mode)...", args.system);
     let prover_start = Instant::now();
-    let mut proof = client.prove(&pk, &stdin).compressed().run().expect("Proof generation failed");
+    let proof = match args.system {
+        ProofSystem::Core => client.prove(&pk, &stdin).run(),
+        ProofSystem::Compressed => client.prove(&pk, &stdin).compressed().run(),
+        ProofSystem::Plonk => client.prove(&pk, &stdin).plonk().run(),
+        ProofSystem::Groth16 => client.prove(&pk, &stdin).groth16().run(),
+    }
+    .expect("Proof generation failed");
     let proof_size = proof.bytes().len();
     let prover_duration = prover_start.elapsed();
     println!("Proof generated successfully in {:?}", prover_duration);
