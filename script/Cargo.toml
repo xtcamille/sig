@@ -31,4 +31,4 @@ dotenv = "0.15.0"
 
 
 [build-dependencies]
-sp1-build = "5.0.0"
+sp1-build = "5.0.8"
