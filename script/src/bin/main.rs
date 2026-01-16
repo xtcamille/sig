@@ -55,6 +55,7 @@ fn main() {
     let prover_start = Instant::now();
     let mut proof = client.prove(&pk, &stdin).groth16().run().expect("Proof generation failed");
     let prover_duration = prover_start.elapsed();
+    let proof_size = proof.bytes().len();
     println!("Proof generated successfully in {:?}", prover_duration);
 
     // 6. 验证证明 (本地完整性检查)
@@ -79,6 +80,7 @@ fn main() {
     println!("Cycle Count (Constraints): {}", total_cycles);
     println!("Prover Time: {:?}", prover_duration);
     println!("Verifier Time: {:?}", verifier_duration);
+    println!("Proof Size: {} bytes", proof_size);
     println!("Peak RAM: See SP1 logger output for system-level memory usage.");
     println!("---------------------------\n");
 
