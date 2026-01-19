@@ -80,10 +80,10 @@ fn main() {
     
     // 8. 性能总结
     println!("\n--- Performance Metrics ---");
-    println!("Cycle Count (Constraints): {}", total_cycles);
-    println!("Proof Size: {} bytes", proof_size);
+    println!("Cycle Count (Constraints): {}", total_cycles);    
     println!("Prover Time: {:?}", prover_duration);
     println!("Verifier Time: {:?}", verifier_duration);
+    println!("Proof Size: {} bytes", proof_size);
     println!("Peak RAM: See SP1 logger output for system-level memory usage.");
     println!("---------------------------\n");
 
