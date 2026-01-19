@@ -1,5 +1,5 @@
 use sp1_sdk::{include_elf, ProverClient, SP1Stdin};
-use ed25519_dalek::{Signer, SigningKey, VerifyingKey};
+use ed25519_dalek::{Signer, SigningKey, VerifyingKey, Verifier};
 use rand::rngs::OsRng; // 随机数生成器
 use shared_lib::Ed25519VerificationData;
 use std::time::Instant;
@@ -18,15 +18,27 @@ fn main() {
     let message = b"Uni-RWA Cross-Chain Asset Transfer: 100 USDC to Ethereum".to_vec();
     
     // 签名 (纯本地操作，不涉及 zkVM)
+    let signer_start = Instant::now();
     let signature = signing_key.sign(&message);
+    let signer_duration = signer_start.elapsed();
+    let signature_bytes = signature.to_bytes();
+    let signature_size = signature_bytes.len();
     
+    // 直接验证签名 (本地验证)
+    let direct_verify_start = Instant::now();
+    verifying_key.verify(&message, &signature).expect("Direct verification failed");
+    let direct_verify_duration = direct_verify_start.elapsed();
+
     println!("Public Key: {:?}", hex::encode(verifying_key.to_bytes()));
-    println!("Signature: {:?}", hex::encode(signature.to_bytes()));
+    println!("Signature: {:?}", hex::encode(signature_bytes));
+    println!("Direct Signing Time: {:?}", signer_duration);
+    println!("Direct Verification Time: {:?}", direct_verify_duration);
+    println!("Signature Size: {} bytes", signature_size);
 
     // 3. 准备 zkVM 输入
     let input_data = Ed25519VerificationData {
         pub_key: verifying_key.to_bytes(),
-        signature: signature.to_bytes(),
+        signature: signature_bytes,
         message: message.clone(),
     };
 
@@ -77,6 +89,9 @@ fn main() {
     
     // 8. 性能总结
     println!("\n--- Performance Metrics ---");
+    println!("Direct Signing Time: {:?}", signer_duration);
+    println!("Direct Verification Time: {:?}", direct_verify_duration);
+    println!("Signature Size: {} bytes", signature_size);
     println!("Cycle Count (Constraints): {}", total_cycles);
     println!("Prover Time: {:?}", prover_duration);
     println!("Verifier Time: {:?}", verifier_duration);
@@ -86,3 +101,4 @@ fn main() {
 
     // client.export_solidity_verifier(&vk);
 }
+
