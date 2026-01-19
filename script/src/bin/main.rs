@@ -82,11 +82,11 @@ fn main() {
     println!("Proof verified successfully in {:?}", verifier_duration);
 
     // 7. 读取公共输出以确认
-    let public_values = PublicValues::abi_decode(proof.public_values.as_slice(), true)
+    let public_values = PublicValues::abi_decode(proof.public_values.as_slice())
         .expect("Failed to decode public values");
 
-    assert_eq!(public_values.pub_key.as_slice(), verifying_key.to_sec1_bytes().as_ref());
-    assert_eq!(public_values.message.as_slice(), message.as_slice());
+    assert_eq!(public_values.pub_key.as_ref(), verifying_key.to_sec1_bytes().as_ref());
+    assert_eq!(public_values.message.as_ref(), message.as_slice());
 
     println!("Assertion Verified: Proof binds Address to Transaction X");
     
@@ -105,7 +105,7 @@ fn main() {
     // 9. 导出 Solidity 验证器
     let contract_path = Path::new("../contracts/src");
     std::fs::create_dir_all(contract_path).expect("failed to create contract path");
-    client.export_solidity_verifier(&vk, contract_path.join("SP1Verifier.sol"))
+    sp1_sdk::artifacts::export_solidity_verifier(&vk, contract_path.join("SP1Verifier.sol"))
         .expect("failed to export solidity verifier");
     println!("Solidity verifier exported to {:?}", contract_path.join("SP1Verifier.sol"));
 }
