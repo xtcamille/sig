@@ -28,6 +28,7 @@ hex = "0.4.3"
 alloy-sol-types = { workspace = true }
 shared-lib = { path = "../lib" }
 dotenv = "0.15.0"
+bincode = "1.3"  # 添加这一行
 
 
 [build-dependencies]
