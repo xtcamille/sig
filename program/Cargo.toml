@@ -8,3 +8,4 @@ sp1-zkvm = "5.0.8"
 serde = { version = "1.0", default-features = false, features = ["derive"] }
 k256 = { version = "0.13.3", features = ["ecdsa", "serde"] }
 shared-lib = { path = "../lib" }
+alloy-sol-types = { workspace = true }
