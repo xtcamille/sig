@@ -1,5 +1,5 @@
 use sp1_sdk::{include_elf, ProverClient, SP1Stdin};
-use sm2::{SecretKey, dsa::{SigningKey, Signature, signature::Signer}, elliptic_curve::{sec1::ToEncodedPoint, Generate}};
+use sm2::{SecretKey, dsa::{SigningKey, Signature, VerifyingKey, signature::{Signer, Verifier}}, elliptic_curve::{sec1::ToEncodedPoint, Generate}};
 use shared_lib::Sm2VerificationData;
 use std::time::Instant;
 
@@ -17,10 +17,20 @@ fn main() {
     let message = b"Uni-RWA Cross-Chain Asset Transfer: 100 USDC to Ethereum".to_vec();
     
     // 签名 (纯本地操作，不涉及 zkVM)
+    let signing_start = Instant::now();
     let signature: Signature = signing_key.sign(&message);
+    let signing_duration = signing_start.elapsed();
+
     
+    let signature_size = signature.to_bytes().len();
     println!("Public Key: {:?}", hex::encode(verifying_key.to_encoded_point(false).as_bytes()));
-    println!("Signature: {:?}", hex::encode(signature.to_bytes()));
+    println!("Signature: {:?} ({} bytes)", hex::encode(signature.to_bytes()), signature_size);
+
+    // 直接验证签名 (Sanity Check)
+    let direct_verify_start = Instant::now();
+    verifying_key.verify(&message, &signature).expect("Direct verification failed");
+    let direct_verify_duration = direct_verify_start.elapsed();
+    println!("Direct Verification: Signature is valid. Time: {:?}", direct_verify_duration);
 
     // 3. 准备 zkVM 输入
     let input_data = Sm2VerificationData {
@@ -77,10 +87,13 @@ fn main() {
     
     // 8. 性能总结
     println!("\n--- Performance Metrics ---");
+    println!("Signature Size: {} bytes", signature_size);
+    println!("Signing Time: {:?}", signing_duration);
+    println!("Direct Verification Time: {:?}", direct_verify_duration);
     println!("Cycle Count (Constraints): {}", total_cycles);
     println!("Prover Time: {:?}", prover_duration);
     println!("Verifier Time: {:?}", verifier_duration);
-    println!("Proof size: {} bytes", proof_size);
+    println!("SP1 Proof size: {} bytes", proof_size);
     println!("Peak RAM: See SP1 logger output for system-level memory usage.");
     println!("---------------------------\n");
 
