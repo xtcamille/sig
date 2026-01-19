@@ -1,6 +1,14 @@
+use alloy_sol_types::sol;
 use serde::{Deserialize, Serialize};
 use serde_big_array::BigArray;
 
+sol! {
+    /// The public values encoded as a struct that can be easily decoded in Solidity.
+    struct PublicValues {
+        bytes pub_key;
+        bytes message;
+    }
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct Secp256k1VerificationData {

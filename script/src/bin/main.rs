@@ -1,8 +1,10 @@
 use sp1_sdk::{include_elf, ProverClient, SP1Stdin};
 use k256::ecdsa::{SigningKey, VerifyingKey, Signature, signature::{Signer, Verifier}};
 use rand::rngs::OsRng; // 随机数生成器
-use shared_lib::Secp256k1VerificationData;
+use shared_lib::{Secp256k1VerificationData, PublicValues};
+use alloy_sol_types::SolType;
 use std::time::Instant;
+use std::path::Path;
 
 fn main() {
     // 1. 设置环境 (日志等)
@@ -66,7 +68,7 @@ fn main() {
     // 这里演示生成 Groth16 证明，因为它适合以太坊验证
     println!("Starting proof generation...");
     let prover_start = Instant::now();
-    let mut proof = client.prove(&pk, &stdin).groth16().run().expect("Proof generation failed");
+    let proof = client.prove(&pk, &stdin).groth16().run().expect("Proof generation failed");
     let prover_duration = prover_start.elapsed();
     println!("Proof generated successfully in {:?}", prover_duration);
 
@@ -79,14 +81,12 @@ fn main() {
     let verifier_duration = verifier_start.elapsed();
     println!("Proof verified successfully in {:?}", verifier_duration);
 
-
-
     // 7. 读取公共输出以确认
-    let committed_pub_key = proof.public_values.read::<Vec<u8>>();
-    let committed_message = proof.public_values.read::<Vec<u8>>();
+    let public_values = PublicValues::abi_decode(proof.public_values.as_slice(), true)
+        .expect("Failed to decode public values");
 
-    assert_eq!(committed_pub_key.as_slice(), verifying_key.to_sec1_bytes().as_ref());
-    assert_eq!(committed_message, message);
+    assert_eq!(public_values.pub_key.as_slice(), verifying_key.to_sec1_bytes().as_ref());
+    assert_eq!(public_values.message.as_slice(), message.as_slice());
 
     println!("Assertion Verified: Proof binds Address to Transaction X");
     
@@ -102,5 +102,10 @@ fn main() {
     println!("Peak RAM: See SP1 logger output for system-level memory usage.");
     println!("---------------------------\n");
 
-    // client.export_solidity_verifier(&vk);
+    // 9. 导出 Solidity 验证器
+    let contract_path = Path::new("../contracts/src");
+    std::fs::create_dir_all(contract_path).expect("failed to create contract path");
+    client.export_solidity_verifier(&vk, contract_path.join("SP1Verifier.sol"))
+        .expect("failed to export solidity verifier");
+    println!("Solidity verifier exported to {:?}", contract_path.join("SP1Verifier.sol"));
 }
