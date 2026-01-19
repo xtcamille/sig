@@ -1,5 +1,5 @@
 use sp1_sdk::{include_elf, ProverClient, SP1Stdin};
-use k256::ecdsa::{SigningKey, VerifyingKey, Signature, signature::Signer};
+use k256::ecdsa::{SigningKey, VerifyingKey, Signature, signature::{Signer, Verifier}};
 use rand::rngs::OsRng; // 随机数生成器
 use shared_lib::Secp256k1VerificationData;
 use std::time::Instant;
@@ -18,10 +18,23 @@ fn main() {
     let message = b"Uni-RWA Cross-Chain Asset Transfer: 100 USDC to Ethereum".to_vec();
     
     // 签名 (纯本地操作，不涉及 zkVM)
+    let sign_start = Instant::now();
     let signature: Signature = signing_key.sign(&message);
+    let sign_duration = sign_start.elapsed();
     
+    let signature_bytes = signature.to_bytes();
+    let signature_size = signature_bytes.len();
+
+    // 直接验证签名 (本地操作)
+    println!("Directly verifying signature...");
+    let direct_verify_start = Instant::now();
+    verifying_key.verify(&message, &signature).expect("Direct verification failed");
+    let direct_verify_duration = direct_verify_start.elapsed();
+
     println!("Public Key: {:?}", hex::encode(verifying_key.to_sec1_bytes()));
-    println!("Signature: {:?}", hex::encode(signature.to_bytes()));
+    println!("Signature: {:?}", hex::encode(signature_bytes));
+    println!("Signature Size: {} bytes", signature_size);
+    println!("Direct Verification successful in {:?}", direct_verify_duration);
 
     // 3. 准备 zkVM 输入
     let input_data = Secp256k1VerificationData {
@@ -79,6 +92,9 @@ fn main() {
     
     // 8. 性能总结
     println!("\n--- Performance Metrics ---");
+    println!("Signing Time: {:?}", sign_duration);
+    println!("Direct Verification Time: {:?}", direct_verify_duration);
+    println!("Signature Size: {} bytes", signature_size);
     println!("Cycle Count (Constraints): {}", total_cycles);
     println!("Prover Time: {:?}", prover_duration);
     println!("Verifier Time: {:?}", verifier_duration);
