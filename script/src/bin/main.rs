@@ -19,8 +19,8 @@ struct Args {
 enum ProofSystem {
     Core,
     Compressed,
-    Plonk,
-    Groth16,
+    // Plonk,
+    // Groth16,
 }
 
 fn main() {
@@ -76,11 +76,17 @@ fn main() {
     let mut proof = match args.system {
         ProofSystem::Core => client.prove(&pk, &stdin).run(),
         ProofSystem::Compressed => client.prove(&pk, &stdin).compressed().run(),
-        ProofSystem::Plonk => client.prove(&pk, &stdin).plonk().run(),
-        ProofSystem::Groth16 => client.prove(&pk, &stdin).groth16().run(),
+        // ProofSystem::Plonk => client.prove(&pk, &stdin).plonk().run(),
+        // ProofSystem::Groth16 => client.prove(&pk, &stdin).groth16().run(),
     }
     .expect("Proof generation failed");
-    let proof_size = proof.bytes().len();
+     
+// 2. ✅ 安全地计算 Proof 大小
+    // 使用 bincode 序列化整个 proof 对象 (包含 public values)
+    let serialized_proof = bincode::serialize(&proof).expect("failed to serialize proof"
+);
+    let proof_size = serialized_proof.len();
+    
     let prover_duration = prover_start.elapsed();
     println!("Proof generated successfully in {:?}", prover_duration);
 
