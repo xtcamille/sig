@@ -57,12 +57,16 @@ fn main() {
     let prover_duration = prover_start.elapsed();
     println!("Proof generated successfully in {:?}", prover_duration);
 
+    let proof_size = proof.bytes().len();
+
     // 6. 验证证明 (本地完整性检查)
     println!("Starting proof verification...");
     let verifier_start = Instant::now();
     client.verify(&proof, &vk).expect("Verification failed");
     let verifier_duration = verifier_start.elapsed();
     println!("Proof verified successfully in {:?}", verifier_duration);
+
+
 
     // 7. 读取公共输出以确认
     let committed_pub_key = proof.public_values.read::<Vec<u8>>();
@@ -78,6 +82,7 @@ fn main() {
     println!("Cycle Count (Constraints): {}", total_cycles);
     println!("Prover Time: {:?}", prover_duration);
     println!("Verifier Time: {:?}", verifier_duration);
+    println!("Proof Size: {} bytes", proof_size);
     println!("Peak RAM: See SP1 logger output for system-level memory usage.");
     println!("---------------------------\n");
 
