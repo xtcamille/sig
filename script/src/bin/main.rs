@@ -49,12 +49,17 @@ fn main() {
 
     // 5. 生成证明
     // 推荐使用 'compressed' 或 'groth16' 模式以便链上验证
-    // 这里演示生成 Groth16 证明，因为它适合以太坊验证
+    // 这里演示生成 Compressed 证明
     println!("Starting proof generation...");
     let prover_start = Instant::now();
-    let mut proof = client.prove(&pk, &stdin).groth16().run().expect("Proof generation failed");
+    let mut proof = client.prove(&pk, &stdin).compressed().run().expect("Proof generation failed");
     let prover_duration = prover_start.elapsed();
     println!("Proof generated successfully in {:?}", prover_duration);
+
+    // Get proof size
+    let proof_bytes = bincode::serialize(&proof).expect("Failed to serialize proof");
+    let proof_size = proof_bytes.len();
+   
 
     // 6. 验证证明 (本地完整性检查)
     println!("Starting proof verification...");
@@ -77,6 +82,7 @@ fn main() {
     println!("Cycle Count (Constraints): {}", total_cycles);
     println!("Prover Time: {:?}", prover_duration);
     println!("Verifier Time: {:?}", verifier_duration);
+    println!("Proof size: {} bytes", proof_size);
     println!("Peak RAM: See SP1 logger output for system-level memory usage.");
     println!("---------------------------\n");
 
