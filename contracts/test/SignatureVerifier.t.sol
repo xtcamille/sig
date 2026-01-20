@@ -3,7 +3,9 @@ pragma solidity ^0.8.20;
 
 import {Test, console} from "forge-std/Test.sol";
 import {SignatureVerifier} from "../src/SignatureVerifier.sol";
-import {ISP1Verifier} from "@sp1-contracts/ISP1Verifier.sol";
+import {
+    ISP1Verifier
+} from "https://github.com/succinctlabs/sp1-contracts/blob/main/contracts/src/v5.0.0/SP1VerifierGroth16.sol";
 
 contract SignatureVerifierTest is Test {
     SignatureVerifier public verifierContract;
@@ -34,7 +36,7 @@ contract SignatureVerifierTest is Test {
         string memory root = vm.projectRoot();
         string memory path = string.concat(root, "/src/groth16-fixture.json");
         string memory json = vm.readFile(path);
-        
+
         bytes memory pubKey = vm.parseJsonBytes(json, ".pubKey");
         bytes memory message = vm.parseJsonBytes(json, ".message");
         bytes memory publicValues = vm.parseJsonBytes(json, ".publicValues");
@@ -49,7 +51,7 @@ contract SignatureVerifierTest is Test {
 
         // Call verify
         verifierContract.verifySignature(pubKey, message, publicValues, proof);
-        
+
         console.log("Proof verified successfully!");
     }
 }

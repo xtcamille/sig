@@ -19,7 +19,7 @@ use sp1_sdk::{
 };
 use std::path::PathBuf;
 use std::time::Instant;
-use k256::ecdsa::{SigningKey, Signature, signature::Signer};
+use k256::ecdsa::{SigningKey, Signature, signature::{Signer, Verifier}};
 use rand::rngs::OsRng;
 
 /// The ELF (executable and linkable format) file for the Succinct RISC-V zkVM.
@@ -70,6 +70,10 @@ fn main() {
     let message = b"Hello, SP1 Secp256k1!";
     let signature: Signature = signing_key.sign(message);
 
+    // Verify the signature locally.
+    verifying_key.verify(message, &signature).expect("failed to verify signature locally");
+    println!("Successfully verified signature locally.");
+
     let input = Secp256k1VerificationData {
         pub_key: verifying_key.to_encoded_point(true).as_bytes().try_into().expect("invalid pubkey length"),
         signature: signature.to_bytes().as_slice().try_into().expect("invalid signature length"),
@@ -89,6 +93,11 @@ fn main() {
         ProofSystem::Groth16 => client.prove(&pk, &stdin).groth16().run(),
     }
     .expect("failed to generate proof");
+
+    // Verify the proof locally.
+    client.verify(&proof, &vk).expect("failed to verify proof locally");
+    println!("Successfully verified SP1 proof locally.");
+
     let duration = start.elapsed();
     println!("Proof generation took: {:?}", duration);
 

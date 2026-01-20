@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import {ISP1Verifier} from "@sp1-contracts/ISP1Verifier.sol";
+import {
+    ISP1Verifier
+} from "https://github.com/succinctlabs/sp1-contracts/blob/main/contracts/src/v5.0.0/SP1VerifierGroth16.sol";
 
 /// @title SignatureVerifier
 /// @notice A contract that verifies Secp256k1 signatures using SP1 zkVM.
@@ -37,8 +39,14 @@ contract SignatureVerifier {
         // 1. Verify that the publicValues correspond to the provided pubKey and message.
         // This ensures the proof is actually for the inputs we care about.
         // The SP1 program committed to PublicValues { bytes pub_key; bytes message; }
-        bytes memory expectedPublicValues = abi.encode(pubKey, message);
-        require(keccak256(publicValues) == keccak256(expectedPublicValues), "Public values mismatch");
+        // Note: We encode the whole struct to match the encoding from the SP1 program's commit.
+        bytes memory expectedPublicValues = abi.encode(
+            PublicValues(pubKey, message)
+        );
+        require(
+            keccak256(publicValues) == keccak256(expectedPublicValues),
+            "Public values mismatch"
+        );
 
         // 2. Verify the proof.
         ISP1Verifier(verifier).verifyProof(vkey, publicValues, proofBytes);
@@ -46,7 +54,9 @@ contract SignatureVerifier {
 
     /// @notice Decodes the public values.
     /// @param publicValues The ABI-encoded public values.
-    function decodePublicValues(bytes calldata publicValues) public pure returns (PublicValues memory) {
+    function decodePublicValues(
+        bytes calldata publicValues
+    ) public pure returns (PublicValues memory) {
         return abi.decode(publicValues, (PublicValues));
     }
 }
