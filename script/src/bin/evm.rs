@@ -18,7 +18,7 @@ use sp1_sdk::{
     include_elf, HashableKey, ProverClient, SP1ProofWithPublicValues, SP1Stdin, SP1VerifyingKey,
 };
 use std::path::PathBuf;
-use k256::ecdsa::{SigningKey, signature::Signer};
+use k256::ecdsa::{SigningKey, Signature, signature::Signer};
 use rand::rngs::OsRng;
 
 /// The ELF (executable and linkable format) file for the Succinct RISC-V zkVM.
@@ -67,7 +67,7 @@ fn main() {
     let signing_key = SigningKey::random(&mut OsRng);
     let verifying_key = signing_key.verifying_key();
     let message = b"Hello, SP1 Secp256k1!";
-    let signature = signing_key.sign(message);
+    let signature: Signature = signing_key.sign(message);
 
     let input = Secp256k1VerificationData {
         pub_key: verifying_key.to_encoded_point(true).as_bytes().try_into().expect("invalid pubkey length"),
@@ -99,7 +99,7 @@ fn create_proof_fixture(
 ) {
     // Deserialize the public values.
     let bytes = proof.public_values.as_slice();
-    let PublicValues { pub_key, message } = PublicValues::abi_decode(bytes, false).unwrap();
+    let PublicValues { pub_key, message } = PublicValues::abi_decode(bytes).unwrap();
 
     // Create the testing fixture so we can test things end-to-end.
     let fixture = SP1Secp256k1ProofFixture {
