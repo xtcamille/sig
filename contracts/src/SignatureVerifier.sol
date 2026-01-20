@@ -24,21 +24,29 @@ contract SignatureVerifier {
     }
 
     /// @notice Verifies a Secp256k1 signature proof.
-    /// @param publicValues The public values (pub_key and message).
+    /// @param pubKey The expected public key.
+    /// @param message The expected message.
+    /// @param publicValues The encoded public values.
     /// @param proofBytes The proof bytes.
     function verifySignature(
+        bytes calldata pubKey,
+        bytes calldata message,
         bytes calldata publicValues,
         bytes calldata proofBytes
-    ) public view returns (bool) {
-        // Verify the proof.
+    ) public view {
+        // 1. Verify that the publicValues correspond to the provided pubKey and message.
+        // This ensures the proof is actually for the inputs we care about.
+        // The SP1 program committed to PublicValues { bytes pub_key; bytes message; }
+        bytes memory expectedPublicValues = abi.encode(pubKey, message);
+        require(keccak256(publicValues) == keccak256(expectedPublicValues), "Public values mismatch");
+
+        // 2. Verify the proof.
         ISP1Verifier(verifier).verifyProof(vkey, publicValues, proofBytes);
-        return true;
     }
 
     /// @notice Decodes the public values.
     /// @param publicValues The ABI-encoded public values.
     function decodePublicValues(bytes calldata publicValues) public pure returns (PublicValues memory) {
-        (bytes memory pub_key, bytes memory message) = abi.decode(publicValues, (bytes, bytes));
-        return PublicValues(pub_key, message);
+        return abi.decode(publicValues, (PublicValues));
     }
 }
