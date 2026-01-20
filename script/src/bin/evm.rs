@@ -18,6 +18,7 @@ use sp1_sdk::{
     include_elf, HashableKey, ProverClient, SP1ProofWithPublicValues, SP1Stdin, SP1VerifyingKey,
 };
 use std::path::PathBuf;
+use std::time::Instant;
 use k256::ecdsa::{SigningKey, Signature, signature::Signer};
 use rand::rngs::OsRng;
 
@@ -81,12 +82,15 @@ fn main() {
 
     println!("Proof System: {:?}", args.system);
 
+    let start = Instant::now();
     // Generate the proof based on the selected proof system.
     let proof = match args.system {
         ProofSystem::Plonk => client.prove(&pk, &stdin).plonk().run(),
         ProofSystem::Groth16 => client.prove(&pk, &stdin).groth16().run(),
     }
     .expect("failed to generate proof");
+    let duration = start.elapsed();
+    println!("Proof generation took: {:?}", duration);
 
     create_proof_fixture(&proof, &vk, args.system);
 }
