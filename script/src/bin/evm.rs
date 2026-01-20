@@ -12,22 +12,22 @@
 
 use alloy_sol_types::SolType;
 use clap::{Parser, ValueEnum};
-use shared_lib::PublicValuesStruct;
+use shared_lib::{PublicValues, Secp256k1VerificationData};
 use serde::{Deserialize, Serialize};
 use sp1_sdk::{
     include_elf, HashableKey, ProverClient, SP1ProofWithPublicValues, SP1Stdin, SP1VerifyingKey,
 };
 use std::path::PathBuf;
+use k256::ecdsa::{SigningKey, signature::Signer};
+use rand::rngs::OsRng;
 
 /// The ELF (executable and linkable format) file for the Succinct RISC-V zkVM.
-pub const ED25519_ELF: &[u8] = include_elf!("ed25519-program");
+pub const SECP256K1_ELF: &[u8] = include_elf!("secp256k1-program");
 
 /// The arguments for the EVM command.
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct EVMArgs {
-    #[arg(long, default_value = "20")]
-    n: u32,
     #[arg(long, value_enum, default_value = "groth16")]
     system: ProofSystem,
 }
@@ -42,10 +42,9 @@ enum ProofSystem {
 /// A fixture that can be used to test the verification of SP1 zkVM proofs inside Solidity.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-struct SP1ED25519ProofFixture {
-    a: u32,
-    b: u32,
-    n: u32,
+struct SP1Secp256k1ProofFixture {
+    pub_key: String,
+    message: String,
     vkey: String,
     public_values: String,
     proof: String,
@@ -62,13 +61,24 @@ fn main() {
     let client = ProverClient::from_env();
 
     // Setup the program.
-    let (pk, vk) = client.setup(ED25519_ELF);
+    let (pk, vk) = client.setup(SECP256K1_ELF);
+
+    // 1. Generate a Secp256k1 keypair and sign a message.
+    let signing_key = SigningKey::random(&mut OsRng);
+    let verifying_key = signing_key.verifying_key();
+    let message = b"Hello, SP1 Secp256k1!";
+    let signature = signing_key.sign(message);
+
+    let input = Secp256k1VerificationData {
+        pub_key: verifying_key.to_encoded_point(true).as_bytes().try_into().expect("invalid pubkey length"),
+        signature: signature.to_bytes().as_slice().try_into().expect("invalid signature length"),
+        message: message.to_vec(),
+    };
 
     // Setup the inputs.
     let mut stdin = SP1Stdin::new();
-    stdin.write(&args.n);
+    stdin.write(&input);
 
-    println!("n: {}", args.n);
     println!("Proof System: {:?}", args.system);
 
     // Generate the proof based on the selected proof system.
@@ -89,13 +99,12 @@ fn create_proof_fixture(
 ) {
     // Deserialize the public values.
     let bytes = proof.public_values.as_slice();
-    let PublicValuesStruct { n, a, b } = PublicValuesStruct::abi_decode(bytes).unwrap();
+    let PublicValues { pub_key, message } = PublicValues::abi_decode(bytes, false).unwrap();
 
     // Create the testing fixture so we can test things end-to-end.
-    let fixture = SP1ED25519ProofFixture {
-        a,
-        b,
-        n,
+    let fixture = SP1Secp256k1ProofFixture {
+        pub_key: format!("0x{}", hex::encode(pub_key)),
+        message: format!("0x{}", hex::encode(message)),
         vkey: vk.bytes32().to_string(),
         public_values: format!("0x{}", hex::encode(bytes)),
         proof: format!("0x{}", hex::encode(proof.bytes())),
@@ -103,14 +112,9 @@ fn create_proof_fixture(
 
     // The verification key is used to verify that the proof corresponds to the execution of the
     // program on the given input.
-    //
-    // Note that the verification key stays the same regardless of the input.
     println!("Verification Key: {}", fixture.vkey);
 
     // The public values are the values which are publicly committed to by the zkVM.
-    //
-    // If you need to expose the inputs or outputs of your program, you should commit them in
-    // the public values.
     println!("Public Values: {}", fixture.public_values);
 
     // The proof proves to the verifier that the program was executed with some inputs that led to
