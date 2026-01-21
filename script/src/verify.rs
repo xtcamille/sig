@@ -1,10 +1,9 @@
 use alloy_sol_types::SolType;
 use sha2::{Digest, Sha256};
-use sp1_sdk::SP1ProofWithPublicValues;
 use shared_lib::PublicValues;
-use ark_bn254::{Bn254, G1Affine, G2Affine, Fq, Fq2, Fr, G1Projective, G2Projective};
+use ark_bn254::{Bn254, G1Affine, G2Affine, Fq, Fq2, Fr, G1Projective};
 use ark_ec::{AffineRepr, CurveGroup, pairing::Pairing};
-use ark_ff::{BigInteger, PrimeField};
+use ark_ff::{BigInteger, Zero};
 use num_bigint::BigUint;
 
 // --- Constants from Groth16Verifier.sol ---
