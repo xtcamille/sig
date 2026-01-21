@@ -3,7 +3,7 @@ pragma solidity ^0.8.20;
 
 import {
     ISP1Verifier
-} from "https://github.com/succinctlabs/sp1-contracts/blob/main/contracts/src/v3.0.0/SP1VerifierGroth16.sol";
+} from "https://github.com/succinctlabs/sp1-contracts/blob/main/contracts/src/v5.0.0/SP1VerifierGroth16.sol";
 
 /// @title SignatureVerifier
 /// @notice A contract that verifies Secp256k1 signatures using SP1 zkVM.

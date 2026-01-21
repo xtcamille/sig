@@ -15,7 +15,7 @@ import {
 contract SignatureVerifierTest is Test {
     SignatureVerifier public verifierContract;
     address public sp1Verifier =
-        address(0xf8e81D47203A594245E36C48e151709F0C19fBe8); // Mock or actual address
+        address(0x7EF2e0048f5bAeDe046f6BF797943daF4ED8CB47); // Mock or actual address
 
     struct Fixture {
         string pubKey;

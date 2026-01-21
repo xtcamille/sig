@@ -103,9 +103,9 @@ fn main() {
     println!("---------------------------\n");
 
     // 9. 导出 Solidity 验证器
-    let contract_path = Path::new("../contracts/src");
-    std::fs::create_dir_all(contract_path).expect("failed to create contract path");
-    sp1_sdk::artifacts::export_solidity_verifier(&vk, contract_path.join("SP1Verifier.sol"))
-        .expect("failed to export solidity verifier");
-    println!("Solidity verifier exported to {:?}", contract_path.join("SP1Verifier.sol"));
+    // let contract_path = Path::new("../contracts/src");
+    // std::fs::create_dir_all(contract_path).expect("failed to create contract path");
+    // sp1_sdk::artifacts::export_solidity_verifier(&vk, contract_path.join("SP1Verifier.sol"))
+    //     .expect("failed to export solidity verifier");
+    // println!("Solidity verifier exported to {:?}", contract_path.join("SP1Verifier.sol"));
 }
