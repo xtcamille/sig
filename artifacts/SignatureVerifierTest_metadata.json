@@ -688,19 +688,19 @@
 	},
 	"sources": {
 		"contracts/src/SignatureVerifier.sol": {
-			"keccak256": "0x554e39f7bb14c0edf9283e495f04e74d23d55cb63fd3ec1e0be963788a63e740",
+			"keccak256": "0x8329c4bc744366f8482984811fc5516d261a59e1ea0f77bafce07e9d0a4abd4c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://792c1fd04aed37325a32449970a9ea1d907729436d932f6d937e9db168cb8742",
-				"dweb:/ipfs/QmRBHBz83QEexxCorEiDx9PUgHZKcMiXkJHNFahRFHyoxm"
+				"bzz-raw://9a5d06d2ccf143ec66849c1d10cf2e6495920fdb328d45beeb09f84fe7a8a06e",
+				"dweb:/ipfs/QmbBeQLweKrjv5i595UKDKmLew79AkWVEm79HcWQTqmjjX"
 			]
 		},
 		"contracts/test/SignatureVerifier.t.sol": {
-			"keccak256": "0x0f4fccd3817af3937ca9e9ce6230f165d11fc1aae4638d11c39271796c8f6a43",
+			"keccak256": "0xe51f41b6233125fc0388b4d7c001097ecef62cbabe1ecdcaf9cf4faba36ec270",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5cc12c58d2a8a22ca9ba7fcf2c559a893fdd45648a3e4cd6ee2d5a5f5b22df4d",
-				"dweb:/ipfs/QmTLVJxj4BrTHMiDJYstwwjv6wLxjzzeWBihDctvBa7WG1"
+				"bzz-raw://9b578d1f6c377a7703c4054fd0410076ec16dfec0d5061c0015eb8d74137b212",
+				"dweb:/ipfs/Qme1PEXZ6SPWH6Y7U6xSH2Ev5SumvTj2TRyoZM9dGMVR5t"
 			]
 		},
 		"https://github.com/foundry-rs/forge-std/blob/master/src/Base.sol": {
@@ -863,20 +863,20 @@
 				"dweb:/ipfs/QmTF6Hp1Vvs59fFsZkb3vq3vRLRpmktjftMhSsmjaseHCo"
 			]
 		},
-		"https://github.com/succinctlabs/sp1-contracts/blob/main/contracts/src/v3.0.0/Groth16Verifier.sol": {
-			"keccak256": "0xd0fed6cef3b1c9293e78767d9879789ff82c22ff505e1540ee641133a34cab03",
+		"https://github.com/succinctlabs/sp1-contracts/blob/main/contracts/src/v5.0.0/Groth16Verifier.sol": {
+			"keccak256": "0x4024fae9add09e1d4dbd70dc7e3a6bfd6d9e2bbf803cca35991eb85880a4e6db",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5ea1893b9529322a706c185099cf6899fbe44cf723429cadd74ed5c48bd1cece",
-				"dweb:/ipfs/QmQTBwEZTSsUfCR1zYS7Bx5RWW6rcF5VzXAiLqE2wXxJeS"
+				"bzz-raw://40bfa984cdad803aec7173f4778225fca80bd0a7a3dd9452ae8772a43b8720dc",
+				"dweb:/ipfs/QmW8dM5ZCwTyZKXdPumqS4C6nDo9PkSuibZhnKyjznmEt5"
 			]
 		},
-		"https://github.com/succinctlabs/sp1-contracts/blob/main/contracts/src/v3.0.0/SP1VerifierGroth16.sol": {
-			"keccak256": "0x69332148c84e997cd8ae20b3cc541413624e7d49c79baacbc3d3ec74bd938a0e",
+		"https://github.com/succinctlabs/sp1-contracts/blob/main/contracts/src/v5.0.0/SP1VerifierGroth16.sol": {
+			"keccak256": "0x0a5ff1e3c52f0312a36439ac33fe97aa8d05a2b1b49a327eeaf5f0f9a1801abf",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5b24efb484af0d9d18f17a21af111fe45fa908a2439d7eca60bed423c7c7bd33",
-				"dweb:/ipfs/QmepBEmgyEc4xbt91wqdg4ZWwbxst7CZTmEx5hgMctxmFp"
+				"bzz-raw://a1d9094c9db2f0fd2c8f33d18a495927beb2d5e2c73995bc21b25bdc15103ce9",
+				"dweb:/ipfs/QmeUQG57jnSW3ohVYh83TpcDU5VQJDGokF1TLZjhmmBu43"
 			]
 		}
 	},

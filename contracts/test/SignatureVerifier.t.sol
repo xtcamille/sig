@@ -10,12 +10,12 @@ import {
 import {SignatureVerifier} from "../src/SignatureVerifier.sol";
 import {
     ISP1Verifier
-} from "https://github.com/succinctlabs/sp1-contracts/blob/main/contracts/src/v3.0.0/SP1VerifierGroth16.sol";
+} from "https://github.com/succinctlabs/sp1-contracts/blob/main/contracts/src/v5.0.0/SP1VerifierGroth16.sol";
 
 contract SignatureVerifierTest is Test {
     SignatureVerifier public verifierContract;
     address public sp1Verifier =
-        address(0x7EF2e0048f5bAeDe046f6BF797943daF4ED8CB47); // Mock or actual address
+        address(0xd2a5bC10698FD955D1Fe6cb468a17809A08fd005); // Mock or actual address
 
     struct Fixture {
         string pubKey;
@@ -27,7 +27,7 @@ contract SignatureVerifierTest is Test {
 
     function setUp() public {
         bytes32 vkey = bytes32(
-            0x000abf9a8841705f09d799e68274bb147445a368162d6dfbca8fc7c3dcd99ca1
+            0x00a94131493c64d0efa9cc342c65b2fc40210b84698738c7f95efbe383691a1e
         );
 
         // Deploy contract
