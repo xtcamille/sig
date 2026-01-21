@@ -7,6 +7,7 @@ sol! {
     struct PublicValues {
         bytes pub_key;
         bytes message;
+        bytes signature;
     }
 }
 

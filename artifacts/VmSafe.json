@@ -1,0 +1,10102 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"accesses(address)": "65bc9481",
+			"addr(uint256)": "ffa18649",
+			"assertApproxEqAbs(int256,int256,uint256)": "240f839d",
+			"assertApproxEqAbs(int256,int256,uint256,string)": "8289e621",
+			"assertApproxEqAbs(uint256,uint256,uint256)": "16d207c6",
+			"assertApproxEqAbs(uint256,uint256,uint256,string)": "f710b062",
+			"assertApproxEqAbsDecimal(int256,int256,uint256,uint256)": "3d5bc8bc",
+			"assertApproxEqAbsDecimal(int256,int256,uint256,uint256,string)": "6a5066d4",
+			"assertApproxEqAbsDecimal(uint256,uint256,uint256,uint256)": "045c55ce",
+			"assertApproxEqAbsDecimal(uint256,uint256,uint256,uint256,string)": "60429eb2",
+			"assertApproxEqRel(int256,int256,uint256)": "fea2d14f",
+			"assertApproxEqRel(int256,int256,uint256,string)": "ef277d72",
+			"assertApproxEqRel(uint256,uint256,uint256)": "8cf25ef4",
+			"assertApproxEqRel(uint256,uint256,uint256,string)": "1ecb7d33",
+			"assertApproxEqRelDecimal(int256,int256,uint256,uint256)": "abbf21cc",
+			"assertApproxEqRelDecimal(int256,int256,uint256,uint256,string)": "fccc11c4",
+			"assertApproxEqRelDecimal(uint256,uint256,uint256,uint256)": "21ed2977",
+			"assertApproxEqRelDecimal(uint256,uint256,uint256,uint256,string)": "82d6c8fd",
+			"assertEq(address,address)": "515361f6",
+			"assertEq(address,address,string)": "2f2769d1",
+			"assertEq(address[],address[])": "3868ac34",
+			"assertEq(address[],address[],string)": "3e9173c5",
+			"assertEq(bool,bool)": "f7fe3477",
+			"assertEq(bool,bool,string)": "4db19e7e",
+			"assertEq(bool[],bool[])": "707df785",
+			"assertEq(bool[],bool[],string)": "e48a8f8d",
+			"assertEq(bytes,bytes)": "97624631",
+			"assertEq(bytes,bytes,string)": "e24fed00",
+			"assertEq(bytes32,bytes32)": "7c84c69b",
+			"assertEq(bytes32,bytes32,string)": "c1fa1ed0",
+			"assertEq(bytes32[],bytes32[])": "0cc9ee84",
+			"assertEq(bytes32[],bytes32[],string)": "e03e9177",
+			"assertEq(bytes[],bytes[])": "e5fb9b4a",
+			"assertEq(bytes[],bytes[],string)": "f413f0b6",
+			"assertEq(int256,int256)": "fe74f05b",
+			"assertEq(int256,int256,string)": "714a2f13",
+			"assertEq(int256[],int256[])": "711043ac",
+			"assertEq(int256[],int256[],string)": "191f1b30",
+			"assertEq(string,string)": "f320d963",
+			"assertEq(string,string,string)": "36f656d8",
+			"assertEq(string[],string[])": "cf1c049c",
+			"assertEq(string[],string[],string)": "eff6b27d",
+			"assertEq(uint256,uint256)": "98296c54",
+			"assertEq(uint256,uint256,string)": "88b44c85",
+			"assertEq(uint256[],uint256[])": "975d5a12",
+			"assertEq(uint256[],uint256[],string)": "5d18c73a",
+			"assertEqDecimal(int256,int256,uint256)": "48016c04",
+			"assertEqDecimal(int256,int256,uint256,string)": "7e77b0c5",
+			"assertEqDecimal(uint256,uint256,uint256)": "27af7d9c",
+			"assertEqDecimal(uint256,uint256,uint256,string)": "d0cbbdef",
+			"assertFalse(bool)": "a5982885",
+			"assertFalse(bool,string)": "7ba04809",
+			"assertGe(int256,int256)": "0a30b771",
+			"assertGe(int256,int256,string)": "a84328dd",
+			"assertGe(uint256,uint256)": "a8d4d1d9",
+			"assertGe(uint256,uint256,string)": "e25242c0",
+			"assertGeDecimal(int256,int256,uint256)": "dc28c0f1",
+			"assertGeDecimal(int256,int256,uint256,string)": "5df93c9b",
+			"assertGeDecimal(uint256,uint256,uint256)": "3d1fe08a",
+			"assertGeDecimal(uint256,uint256,uint256,string)": "8bff9133",
+			"assertGt(int256,int256)": "5a362d45",
+			"assertGt(int256,int256,string)": "f8d33b9b",
+			"assertGt(uint256,uint256)": "db07fcd2",
+			"assertGt(uint256,uint256,string)": "d9a3c4d2",
+			"assertGtDecimal(int256,int256,uint256)": "78611f0e",
+			"assertGtDecimal(int256,int256,uint256,string)": "04a5c7ab",
+			"assertGtDecimal(uint256,uint256,uint256)": "eccd2437",
+			"assertGtDecimal(uint256,uint256,uint256,string)": "64949a8d",
+			"assertLe(int256,int256)": "95fd154e",
+			"assertLe(int256,int256,string)": "4dfe692c",
+			"assertLe(uint256,uint256)": "8466f415",
+			"assertLe(uint256,uint256,string)": "d17d4b0d",
+			"assertLeDecimal(int256,int256,uint256)": "11d1364a",
+			"assertLeDecimal(int256,int256,uint256,string)": "aa5cf788",
+			"assertLeDecimal(uint256,uint256,uint256)": "c304aab7",
+			"assertLeDecimal(uint256,uint256,uint256,string)": "7fefbbe0",
+			"assertLt(int256,int256)": "3e914080",
+			"assertLt(int256,int256,string)": "9ff531e3",
+			"assertLt(uint256,uint256)": "b12fc005",
+			"assertLt(uint256,uint256,string)": "65d5c135",
+			"assertLtDecimal(int256,int256,uint256)": "dbe8d88b",
+			"assertLtDecimal(int256,int256,uint256,string)": "40f0b4e0",
+			"assertLtDecimal(uint256,uint256,uint256)": "2077337e",
+			"assertLtDecimal(uint256,uint256,uint256,string)": "a972d037",
+			"assertNotEq(address,address)": "b12e1694",
+			"assertNotEq(address,address,string)": "8775a591",
+			"assertNotEq(address[],address[])": "46d0b252",
+			"assertNotEq(address[],address[],string)": "72c7e0b5",
+			"assertNotEq(bool,bool)": "236e4d66",
+			"assertNotEq(bool,bool,string)": "1091a261",
+			"assertNotEq(bool[],bool[])": "286fafea",
+			"assertNotEq(bool[],bool[],string)": "62c6f9fb",
+			"assertNotEq(bytes,bytes)": "3cf78e28",
+			"assertNotEq(bytes,bytes,string)": "9507540e",
+			"assertNotEq(bytes32,bytes32)": "898e83fc",
+			"assertNotEq(bytes32,bytes32,string)": "b2332f51",
+			"assertNotEq(bytes32[],bytes32[])": "0603ea68",
+			"assertNotEq(bytes32[],bytes32[],string)": "b873634c",
+			"assertNotEq(bytes[],bytes[])": "edecd035",
+			"assertNotEq(bytes[],bytes[],string)": "1dcd1f68",
+			"assertNotEq(int256,int256)": "f4c004e3",
+			"assertNotEq(int256,int256,string)": "4724c5b9",
+			"assertNotEq(int256[],int256[])": "0b72f4ef",
+			"assertNotEq(int256[],int256[],string)": "d3977322",
+			"assertNotEq(string,string)": "6a8237b3",
+			"assertNotEq(string,string,string)": "78bdcea7",
+			"assertNotEq(string[],string[])": "bdfacbe8",
+			"assertNotEq(string[],string[],string)": "b67187f3",
+			"assertNotEq(uint256,uint256)": "b7909320",
+			"assertNotEq(uint256,uint256,string)": "98f9bdbd",
+			"assertNotEq(uint256[],uint256[])": "56f29cba",
+			"assertNotEq(uint256[],uint256[],string)": "9a7fbd8f",
+			"assertNotEqDecimal(int256,int256,uint256)": "14e75680",
+			"assertNotEqDecimal(int256,int256,uint256,string)": "33949f0b",
+			"assertNotEqDecimal(uint256,uint256,uint256)": "669efca7",
+			"assertNotEqDecimal(uint256,uint256,uint256,string)": "f5a55558",
+			"assertTrue(bool)": "0c9fd581",
+			"assertTrue(bool,string)": "a34edc03",
+			"assume(bool)": "4c63e562",
+			"assumeNoRevert((address,bool,bytes))": "d8591eeb",
+			"assumeNoRevert((address,bool,bytes)[])": "8a4592cc",
+			"assumeNoRevert()": "285b366a",
+			"attachBlob(bytes)": "10cb385c",
+			"attachDelegation((uint8,bytes32,bytes32,uint64,address))": "14ae3519",
+			"attachDelegation((uint8,bytes32,bytes32,uint64,address),bool)": "f4460d34",
+			"bound(int256,int256,int256)": "8f48fc07",
+			"bound(uint256,uint256,uint256)": "5a6c1eed",
+			"breakpoint(string)": "f0259e92",
+			"breakpoint(string,bool)": "f7d39a8d",
+			"broadcast()": "afc98040",
+			"broadcast(address)": "e6962cdb",
+			"broadcast(uint256)": "f67a965b",
+			"broadcastRawTransaction(bytes)": "8c0c72e0",
+			"closeFile(string)": "48c3241f",
+			"computeCreate2Address(bytes32,bytes32)": "890c283b",
+			"computeCreate2Address(bytes32,bytes32,address)": "d323826a",
+			"computeCreateAddress(address,uint256)": "74637a7a",
+			"contains(string,string)": "3fb18aec",
+			"copyFile(string,string)": "a54a87d8",
+			"copyStorage(address,address)": "203dac0d",
+			"createDir(string,bool)": "168b64d3",
+			"createWallet(string)": "7404f1d2",
+			"createWallet(uint256)": "7a675bb6",
+			"createWallet(uint256,string)": "ed7c5462",
+			"deployCode(string)": "9a8325a0",
+			"deployCode(string,bytes)": "29ce9dde",
+			"deployCode(string,bytes,bytes32)": "016155bf",
+			"deployCode(string,bytes,uint256)": "ff5d64e4",
+			"deployCode(string,bytes,uint256,bytes32)": "3aa773ea",
+			"deployCode(string,bytes32)": "17ab1d79",
+			"deployCode(string,uint256)": "0af6a701",
+			"deployCode(string,uint256,bytes32)": "002cb687",
+			"deriveKey(string,string,uint32)": "6bcb2c1b",
+			"deriveKey(string,string,uint32,string)": "29233b1f",
+			"deriveKey(string,uint32)": "6229498b",
+			"deriveKey(string,uint32,string)": "32c8176d",
+			"eip712HashStruct(string,bytes)": "aedeaebc",
+			"eip712HashStruct(string,string,bytes)": "6d06c57c",
+			"eip712HashType(string)": "6792e9e2",
+			"eip712HashType(string,string)": "18fb6406",
+			"eip712HashTypedData(string)": "ea25e615",
+			"ensNamehash(string)": "8c374c65",
+			"envAddress(string)": "350d56bf",
+			"envAddress(string,string)": "ad31b9fa",
+			"envBool(string)": "7ed1ec7d",
+			"envBool(string,string)": "aaaddeaf",
+			"envBytes(string)": "4d7baf06",
+			"envBytes(string,string)": "ddc2651b",
+			"envBytes32(string)": "97949042",
+			"envBytes32(string,string)": "5af231c1",
+			"envExists(string)": "ce8365f9",
+			"envInt(string)": "892a0c61",
+			"envInt(string,string)": "42181150",
+			"envOr(string,address)": "561fe540",
+			"envOr(string,bool)": "4777f3cf",
+			"envOr(string,bytes)": "b3e47705",
+			"envOr(string,bytes32)": "b4a85892",
+			"envOr(string,int256)": "bbcb713e",
+			"envOr(string,string)": "d145736c",
+			"envOr(string,string,address[])": "c74e9deb",
+			"envOr(string,string,bool[])": "eb85e83b",
+			"envOr(string,string,bytes32[])": "2281f367",
+			"envOr(string,string,bytes[])": "64bc3e64",
+			"envOr(string,string,int256[])": "4700d74b",
+			"envOr(string,string,string[])": "859216bc",
+			"envOr(string,string,uint256[])": "74318528",
+			"envOr(string,uint256)": "5e97348f",
+			"envString(string)": "f877cb19",
+			"envString(string,string)": "14b02bc9",
+			"envUint(string)": "c1978d1f",
+			"envUint(string,string)": "f3dec099",
+			"eth_getLogs(uint256,uint256,address,bytes32[])": "35e1349b",
+			"exists(string)": "261a323e",
+			"ffi(string[])": "89160467",
+			"foundryVersionAtLeast(string)": "6248be1f",
+			"foundryVersionCmp(string)": "ca7b0a09",
+			"fromRlp(bytes)": "1e1d8b63",
+			"fsMetadata(string)": "af368a08",
+			"getArtifactPathByCode(bytes)": "eb74848c",
+			"getArtifactPathByDeployedCode(bytes)": "6d853ba5",
+			"getBlobBaseFee()": "1f6d6ef7",
+			"getBlockNumber()": "42cbb15c",
+			"getBlockTimestamp()": "796b89b9",
+			"getBroadcast(string,uint64,uint8)": "3dc90cb3",
+			"getBroadcasts(string,uint64)": "f2fa4a26",
+			"getBroadcasts(string,uint64,uint8)": "f7afe919",
+			"getChain(string)": "4cc1c2bb",
+			"getChain(uint256)": "b6791ad4",
+			"getChainId()": "3408e470",
+			"getCode(string)": "8d1cc925",
+			"getDeployedCode(string)": "3ebf73b4",
+			"getDeployment(string)": "a8091d97",
+			"getDeployment(string,uint64)": "0debd5d6",
+			"getDeployments(string,uint64)": "74e133dd",
+			"getEvmVersion()": "aa2bb222",
+			"getFoundryVersion()": "ea991bb5",
+			"getLabel(address)": "28a249b0",
+			"getMappingKeyAndParentOf(address,bytes32)": "876e24e6",
+			"getMappingLength(address,bytes32)": "2f2fd63f",
+			"getMappingSlotAt(address,bytes32,uint256)": "ebc73ab4",
+			"getNonce((address,uint256,uint256,uint256))": "a5748aad",
+			"getNonce(address)": "2d0335ab",
+			"getRawBlockHeader(uint256)": "2c667606",
+			"getRecordedLogs()": "191553a4",
+			"getStateDiff()": "80df01cc",
+			"getStateDiffJson()": "f54fe009",
+			"getStorageAccesses()": "2899b1d0",
+			"getStorageSlots(address,string)": "efa136d9",
+			"getWallets()": "db7a4605",
+			"indexOf(string,string)": "8a0807b7",
+			"isContext(uint8)": "64af255d",
+			"isDir(string)": "7d15d019",
+			"isFile(string)": "e0eb04d4",
+			"keyExists(string,string)": "528a683c",
+			"keyExistsJson(string,string)": "db4235f6",
+			"keyExistsToml(string,string)": "600903ad",
+			"label(address,string)": "c657c718",
+			"lastCallGas()": "2b589b28",
+			"load(address,bytes32)": "667f9d70",
+			"parseAddress(string)": "c6ce059d",
+			"parseBool(string)": "974ef924",
+			"parseBytes(string)": "8f5d232d",
+			"parseBytes32(string)": "087e6e81",
+			"parseInt(string)": "42346c5e",
+			"parseJson(string)": "6a82600a",
+			"parseJson(string,string)": "85940ef1",
+			"parseJsonAddress(string,string)": "1e19e657",
+			"parseJsonAddressArray(string,string)": "2fce7883",
+			"parseJsonBool(string,string)": "9f86dc91",
+			"parseJsonBoolArray(string,string)": "91f3b94f",
+			"parseJsonBytes(string,string)": "fd921be8",
+			"parseJsonBytes32(string,string)": "1777e59d",
+			"parseJsonBytes32Array(string,string)": "91c75bc3",
+			"parseJsonBytesArray(string,string)": "6631aa99",
+			"parseJsonInt(string,string)": "7b048ccd",
+			"parseJsonIntArray(string,string)": "9983c28a",
+			"parseJsonKeys(string,string)": "213e4198",
+			"parseJsonString(string,string)": "49c4fac8",
+			"parseJsonStringArray(string,string)": "498fdcf4",
+			"parseJsonType(string,string)": "a9da313b",
+			"parseJsonType(string,string,string)": "e3f5ae33",
+			"parseJsonTypeArray(string,string,string)": "0175d535",
+			"parseJsonUint(string,string)": "addde2b6",
+			"parseJsonUintArray(string,string)": "522074ab",
+			"parseToml(string)": "592151f0",
+			"parseToml(string,string)": "37736e08",
+			"parseTomlAddress(string,string)": "65e7c844",
+			"parseTomlAddressArray(string,string)": "65c428e7",
+			"parseTomlBool(string,string)": "d30dced6",
+			"parseTomlBoolArray(string,string)": "127cfe9a",
+			"parseTomlBytes(string,string)": "d77bfdb9",
+			"parseTomlBytes32(string,string)": "8e214810",
+			"parseTomlBytes32Array(string,string)": "3e716f81",
+			"parseTomlBytesArray(string,string)": "b197c247",
+			"parseTomlInt(string,string)": "c1350739",
+			"parseTomlIntArray(string,string)": "d3522ae6",
+			"parseTomlKeys(string,string)": "812a44b2",
+			"parseTomlString(string,string)": "8bb8dd43",
+			"parseTomlStringArray(string,string)": "9f629281",
+			"parseTomlType(string,string)": "47fa5e11",
+			"parseTomlType(string,string,string)": "f9fa5cdb",
+			"parseTomlTypeArray(string,string,string)": "49be3743",
+			"parseTomlUint(string,string)": "cc7b0487",
+			"parseTomlUintArray(string,string)": "b5df27c8",
+			"parseUint(string)": "fa91454d",
+			"pauseGasMetering()": "d1a5b36f",
+			"pauseTracing()": "c94d1f90",
+			"projectRoot()": "d930a0e6",
+			"prompt(string)": "47eaf474",
+			"promptAddress(string)": "62ee05f4",
+			"promptSecret(string)": "1e279d41",
+			"promptSecretUint(string)": "69ca02b7",
+			"promptUint(string)": "652fd489",
+			"publicKeyP256(uint256)": "c453949e",
+			"randomAddress()": "d5bee9f5",
+			"randomBool()": "cdc126bd",
+			"randomBytes(uint256)": "6c5d32a9",
+			"randomBytes4()": "9b7cd579",
+			"randomBytes8()": "0497b0a5",
+			"randomInt()": "111f1202",
+			"randomInt(uint256)": "12845966",
+			"randomUint()": "25124730",
+			"randomUint(uint256)": "cf81e69c",
+			"randomUint(uint256,uint256)": "d61b051b",
+			"readDir(string)": "c4bc59e0",
+			"readDir(string,uint64)": "1497876c",
+			"readDir(string,uint64,bool)": "8102d70d",
+			"readFile(string)": "60f9bb11",
+			"readFileBinary(string)": "16ed7bc4",
+			"readLine(string)": "70f55728",
+			"readLink(string)": "9f5684a2",
+			"record()": "266cf109",
+			"recordLogs()": "41af2f52",
+			"rememberKey(uint256)": "22100064",
+			"rememberKeys(string,string,string,uint32)": "f8d58eaf",
+			"rememberKeys(string,string,uint32)": "97cb9189",
+			"removeDir(string,bool)": "45c62011",
+			"removeFile(string)": "f1afe04d",
+			"replace(string,string,string)": "e00ad03e",
+			"resetGasMetering()": "be367dd3",
+			"resolveEnv(string)": "ddd2128d",
+			"resumeGasMetering()": "2bcd50e0",
+			"resumeTracing()": "72a09ccb",
+			"rpc(string,string)": "1206c8a8",
+			"rpc(string,string,string)": "0199a220",
+			"rpcUrl(string)": "975a6ce9",
+			"rpcUrlStructs()": "9d2ad72a",
+			"rpcUrls()": "a85a8418",
+			"serializeAddress(string,string,address)": "972c6062",
+			"serializeAddress(string,string,address[])": "1e356e1a",
+			"serializeBool(string,string,bool)": "ac22e971",
+			"serializeBool(string,string,bool[])": "92925aa1",
+			"serializeBytes(string,string,bytes)": "f21d52c7",
+			"serializeBytes(string,string,bytes[])": "9884b232",
+			"serializeBytes32(string,string,bytes32)": "2d812b44",
+			"serializeBytes32(string,string,bytes32[])": "201e43e2",
+			"serializeInt(string,string,int256)": "3f33db60",
+			"serializeInt(string,string,int256[])": "7676e127",
+			"serializeJson(string,string)": "9b3358b0",
+			"serializeJsonType(string,bytes)": "6d4f96a6",
+			"serializeJsonType(string,string,string,bytes)": "6f93bccb",
+			"serializeString(string,string,string)": "88da6d35",
+			"serializeString(string,string,string[])": "561cd6f3",
+			"serializeUint(string,string,uint256)": "129e9002",
+			"serializeUint(string,string,uint256[])": "fee9a469",
+			"serializeUintToHex(string,string,uint256)": "ae5a2ae8",
+			"setArbitraryStorage(address)": "e1631837",
+			"setArbitraryStorage(address,bool)": "d3ec2a0b",
+			"setEnv(string,string)": "3d5923ee",
+			"setEvmVersion(string)": "43179f5a",
+			"setSeed(uint256)": "c32a50f9",
+			"shuffle(uint256[])": "54f1469c",
+			"sign((address,uint256,uint256,uint256),bytes32)": "b25c5a25",
+			"sign(address,bytes32)": "8c1aa205",
+			"sign(bytes32)": "799cd333",
+			"sign(uint256,bytes32)": "e341eaa4",
+			"signAndAttachDelegation(address,uint256)": "c7fa7288",
+			"signAndAttachDelegation(address,uint256,bool)": "d936e146",
+			"signAndAttachDelegation(address,uint256,uint64)": "cde3e5be",
+			"signCompact((address,uint256,uint256,uint256),bytes32)": "3d0e292f",
+			"signCompact(address,bytes32)": "8e2f97bf",
+			"signCompact(bytes32)": "a282dc4b",
+			"signCompact(uint256,bytes32)": "cc2a781f",
+			"signDelegation(address,uint256)": "5b593c7b",
+			"signDelegation(address,uint256,bool)": "cdd7563d",
+			"signDelegation(address,uint256,uint64)": "ceba2ec3",
+			"signP256(uint256,bytes32)": "83211b40",
+			"signWithNonceUnsafe(uint256,bytes32,uint256)": "2012783a",
+			"sleep(uint256)": "fa9d8713",
+			"sort(uint256[])": "9ec8b026",
+			"split(string,string)": "8bb75533",
+			"startBroadcast()": "7fb5297f",
+			"startBroadcast(address)": "7fec2a8d",
+			"startBroadcast(uint256)": "ce817d47",
+			"startDebugTraceRecording()": "419c8832",
+			"startMappingRecording()": "3e9705c0",
+			"startStateDiffRecording()": "cf22e3c9",
+			"stopAndReturnDebugTraceRecording()": "ced398a2",
+			"stopAndReturnStateDiff()": "aa5cf90e",
+			"stopBroadcast()": "76eadd36",
+			"stopMappingRecording()": "0d4aae9b",
+			"stopRecord()": "996be76d",
+			"toBase64(bytes)": "a5cbfe65",
+			"toBase64(string)": "3f8be2c8",
+			"toBase64URL(bytes)": "c8bd0e4a",
+			"toBase64URL(string)": "ae3165b3",
+			"toLowercase(string)": "50bb0884",
+			"toRlp(bytes[])": "a7ed3885",
+			"toString(address)": "56ca623e",
+			"toString(bool)": "71dce7da",
+			"toString(bytes)": "71aad10d",
+			"toString(bytes32)": "b11a19e8",
+			"toString(int256)": "a322c40e",
+			"toString(uint256)": "6900a3ae",
+			"toUppercase(string)": "074ae3d7",
+			"trim(string)": "b2dad155",
+			"tryFfi(string[])": "f45c1ce7",
+			"unixTime()": "625387dc",
+			"writeFile(string,string)": "897e0a97",
+			"writeFileBinary(string,bytes)": "1f21fc80",
+			"writeJson(string,string)": "e23cd19f",
+			"writeJson(string,string,string)": "35d6ad46",
+			"writeLine(string,string)": "619d897f",
+			"writeToml(string,string)": "c0865ba7",
+			"writeToml(string,string,string)": "51ac6a33"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "target",
+					"type": "address"
+				}
+			],
+			"name": "accesses",
+			"outputs": [
+				{
+					"internalType": "bytes32[]",
+					"name": "readSlots",
+					"type": "bytes32[]"
+				},
+				{
+					"internalType": "bytes32[]",
+					"name": "writeSlots",
+					"type": "bytes32[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				}
+			],
+			"name": "addr",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "keyAddr",
+					"type": "address"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "maxDelta",
+					"type": "uint256"
+				}
+			],
+			"name": "assertApproxEqAbs",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "maxDelta",
+					"type": "uint256"
+				}
+			],
+			"name": "assertApproxEqAbs",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "maxDelta",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertApproxEqAbs",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "maxDelta",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertApproxEqAbs",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "maxDelta",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				}
+			],
+			"name": "assertApproxEqAbsDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "maxDelta",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				}
+			],
+			"name": "assertApproxEqAbsDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "maxDelta",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertApproxEqAbsDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "maxDelta",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertApproxEqAbsDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "maxPercentDelta",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertApproxEqRel",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "maxPercentDelta",
+					"type": "uint256"
+				}
+			],
+			"name": "assertApproxEqRel",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "maxPercentDelta",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertApproxEqRel",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "maxPercentDelta",
+					"type": "uint256"
+				}
+			],
+			"name": "assertApproxEqRel",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "maxPercentDelta",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				}
+			],
+			"name": "assertApproxEqRelDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "maxPercentDelta",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertApproxEqRelDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "maxPercentDelta",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				}
+			],
+			"name": "assertApproxEqRelDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "maxPercentDelta",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertApproxEqRelDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32[]",
+					"name": "left",
+					"type": "bytes32[]"
+				},
+				{
+					"internalType": "bytes32[]",
+					"name": "right",
+					"type": "bytes32[]"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256[]",
+					"name": "left",
+					"type": "int256[]"
+				},
+				{
+					"internalType": "int256[]",
+					"name": "right",
+					"type": "int256[]"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "left",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "right",
+					"type": "address"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "left",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "right",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address[]",
+					"name": "left",
+					"type": "address[]"
+				},
+				{
+					"internalType": "address[]",
+					"name": "right",
+					"type": "address[]"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address[]",
+					"name": "left",
+					"type": "address[]"
+				},
+				{
+					"internalType": "address[]",
+					"name": "right",
+					"type": "address[]"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bool",
+					"name": "left",
+					"type": "bool"
+				},
+				{
+					"internalType": "bool",
+					"name": "right",
+					"type": "bool"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "left",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "right",
+					"type": "address"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "left",
+					"type": "uint256[]"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "right",
+					"type": "uint256[]"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bool[]",
+					"name": "left",
+					"type": "bool[]"
+				},
+				{
+					"internalType": "bool[]",
+					"name": "right",
+					"type": "bool[]"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256[]",
+					"name": "left",
+					"type": "int256[]"
+				},
+				{
+					"internalType": "int256[]",
+					"name": "right",
+					"type": "int256[]"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "left",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "right",
+					"type": "bytes32"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "left",
+					"type": "uint256[]"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "right",
+					"type": "uint256[]"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "left",
+					"type": "bytes"
+				},
+				{
+					"internalType": "bytes",
+					"name": "right",
+					"type": "bytes"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "left",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "right",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string[]",
+					"name": "left",
+					"type": "string[]"
+				},
+				{
+					"internalType": "string[]",
+					"name": "right",
+					"type": "string[]"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32[]",
+					"name": "left",
+					"type": "bytes32[]"
+				},
+				{
+					"internalType": "bytes32[]",
+					"name": "right",
+					"type": "bytes32[]"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "left",
+					"type": "bytes"
+				},
+				{
+					"internalType": "bytes",
+					"name": "right",
+					"type": "bytes"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bool[]",
+					"name": "left",
+					"type": "bool[]"
+				},
+				{
+					"internalType": "bool[]",
+					"name": "right",
+					"type": "bool[]"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes[]",
+					"name": "left",
+					"type": "bytes[]"
+				},
+				{
+					"internalType": "bytes[]",
+					"name": "right",
+					"type": "bytes[]"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string[]",
+					"name": "left",
+					"type": "string[]"
+				},
+				{
+					"internalType": "string[]",
+					"name": "right",
+					"type": "string[]"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "left",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "right",
+					"type": "string"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes[]",
+					"name": "left",
+					"type": "bytes[]"
+				},
+				{
+					"internalType": "bytes[]",
+					"name": "right",
+					"type": "bytes[]"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bool",
+					"name": "left",
+					"type": "bool"
+				},
+				{
+					"internalType": "bool",
+					"name": "right",
+					"type": "bool"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				}
+			],
+			"name": "assertEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				}
+			],
+			"name": "assertEqDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				}
+			],
+			"name": "assertEqDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertEqDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertEqDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bool",
+					"name": "condition",
+					"type": "bool"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertFalse",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bool",
+					"name": "condition",
+					"type": "bool"
+				}
+			],
+			"name": "assertFalse",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				}
+			],
+			"name": "assertGe",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertGe",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				}
+			],
+			"name": "assertGe",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertGe",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				}
+			],
+			"name": "assertGeDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertGeDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertGeDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				}
+			],
+			"name": "assertGeDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				}
+			],
+			"name": "assertGt",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertGt",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				}
+			],
+			"name": "assertGt",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertGt",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertGtDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertGtDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				}
+			],
+			"name": "assertGtDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				}
+			],
+			"name": "assertGtDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertLe",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				}
+			],
+			"name": "assertLe",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				}
+			],
+			"name": "assertLe",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertLe",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				}
+			],
+			"name": "assertLeDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertLeDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertLeDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				}
+			],
+			"name": "assertLeDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				}
+			],
+			"name": "assertLt",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertLt",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertLt",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				}
+			],
+			"name": "assertLt",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				}
+			],
+			"name": "assertLtDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertLtDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertLtDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				}
+			],
+			"name": "assertLtDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32[]",
+					"name": "left",
+					"type": "bytes32[]"
+				},
+				{
+					"internalType": "bytes32[]",
+					"name": "right",
+					"type": "bytes32[]"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256[]",
+					"name": "left",
+					"type": "int256[]"
+				},
+				{
+					"internalType": "int256[]",
+					"name": "right",
+					"type": "int256[]"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bool",
+					"name": "left",
+					"type": "bool"
+				},
+				{
+					"internalType": "bool",
+					"name": "right",
+					"type": "bool"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes[]",
+					"name": "left",
+					"type": "bytes[]"
+				},
+				{
+					"internalType": "bytes[]",
+					"name": "right",
+					"type": "bytes[]"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bool",
+					"name": "left",
+					"type": "bool"
+				},
+				{
+					"internalType": "bool",
+					"name": "right",
+					"type": "bool"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bool[]",
+					"name": "left",
+					"type": "bool[]"
+				},
+				{
+					"internalType": "bool[]",
+					"name": "right",
+					"type": "bool[]"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "left",
+					"type": "bytes"
+				},
+				{
+					"internalType": "bytes",
+					"name": "right",
+					"type": "bytes"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address[]",
+					"name": "left",
+					"type": "address[]"
+				},
+				{
+					"internalType": "address[]",
+					"name": "right",
+					"type": "address[]"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "left",
+					"type": "uint256[]"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "right",
+					"type": "uint256[]"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bool[]",
+					"name": "left",
+					"type": "bool[]"
+				},
+				{
+					"internalType": "bool[]",
+					"name": "right",
+					"type": "bool[]"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "left",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "right",
+					"type": "string"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address[]",
+					"name": "left",
+					"type": "address[]"
+				},
+				{
+					"internalType": "address[]",
+					"name": "right",
+					"type": "address[]"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "left",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "right",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "left",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "right",
+					"type": "address"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "left",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "right",
+					"type": "bytes32"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "left",
+					"type": "bytes"
+				},
+				{
+					"internalType": "bytes",
+					"name": "right",
+					"type": "bytes"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "left",
+					"type": "uint256[]"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "right",
+					"type": "uint256[]"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "left",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "right",
+					"type": "address"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "left",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "right",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string[]",
+					"name": "left",
+					"type": "string[]"
+				},
+				{
+					"internalType": "string[]",
+					"name": "right",
+					"type": "string[]"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32[]",
+					"name": "left",
+					"type": "bytes32[]"
+				},
+				{
+					"internalType": "bytes32[]",
+					"name": "right",
+					"type": "bytes32[]"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string[]",
+					"name": "left",
+					"type": "string[]"
+				},
+				{
+					"internalType": "string[]",
+					"name": "right",
+					"type": "string[]"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256[]",
+					"name": "left",
+					"type": "int256[]"
+				},
+				{
+					"internalType": "int256[]",
+					"name": "right",
+					"type": "int256[]"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes[]",
+					"name": "left",
+					"type": "bytes[]"
+				},
+				{
+					"internalType": "bytes[]",
+					"name": "right",
+					"type": "bytes[]"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				}
+			],
+			"name": "assertNotEq",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				}
+			],
+			"name": "assertNotEqDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "left",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "right",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertNotEqDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				}
+			],
+			"name": "assertNotEqDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "left",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "right",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "decimals",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertNotEqDecimal",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bool",
+					"name": "condition",
+					"type": "bool"
+				}
+			],
+			"name": "assertTrue",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bool",
+					"name": "condition",
+					"type": "bool"
+				},
+				{
+					"internalType": "string",
+					"name": "error",
+					"type": "string"
+				}
+			],
+			"name": "assertTrue",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bool",
+					"name": "condition",
+					"type": "bool"
+				}
+			],
+			"name": "assume",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "assumeNoRevert",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "reverter",
+							"type": "address"
+						},
+						{
+							"internalType": "bool",
+							"name": "partialMatch",
+							"type": "bool"
+						},
+						{
+							"internalType": "bytes",
+							"name": "revertData",
+							"type": "bytes"
+						}
+					],
+					"internalType": "struct VmSafe.PotentialRevert[]",
+					"name": "potentialReverts",
+					"type": "tuple[]"
+				}
+			],
+			"name": "assumeNoRevert",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "reverter",
+							"type": "address"
+						},
+						{
+							"internalType": "bool",
+							"name": "partialMatch",
+							"type": "bool"
+						},
+						{
+							"internalType": "bytes",
+							"name": "revertData",
+							"type": "bytes"
+						}
+					],
+					"internalType": "struct VmSafe.PotentialRevert",
+					"name": "potentialRevert",
+					"type": "tuple"
+				}
+			],
+			"name": "assumeNoRevert",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "blob",
+					"type": "bytes"
+				}
+			],
+			"name": "attachBlob",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint8",
+							"name": "v",
+							"type": "uint8"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "r",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "s",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "uint64",
+							"name": "nonce",
+							"type": "uint64"
+						},
+						{
+							"internalType": "address",
+							"name": "implementation",
+							"type": "address"
+						}
+					],
+					"internalType": "struct VmSafe.SignedDelegation",
+					"name": "signedDelegation",
+					"type": "tuple"
+				}
+			],
+			"name": "attachDelegation",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint8",
+							"name": "v",
+							"type": "uint8"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "r",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "s",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "uint64",
+							"name": "nonce",
+							"type": "uint64"
+						},
+						{
+							"internalType": "address",
+							"name": "implementation",
+							"type": "address"
+						}
+					],
+					"internalType": "struct VmSafe.SignedDelegation",
+					"name": "signedDelegation",
+					"type": "tuple"
+				},
+				{
+					"internalType": "bool",
+					"name": "crossChain",
+					"type": "bool"
+				}
+			],
+			"name": "attachDelegation",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "current",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "min",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "max",
+					"type": "uint256"
+				}
+			],
+			"name": "bound",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "current",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "min",
+					"type": "int256"
+				},
+				{
+					"internalType": "int256",
+					"name": "max",
+					"type": "int256"
+				}
+			],
+			"name": "bound",
+			"outputs": [
+				{
+					"internalType": "int256",
+					"name": "",
+					"type": "int256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "char",
+					"type": "string"
+				}
+			],
+			"name": "breakpoint",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "char",
+					"type": "string"
+				},
+				{
+					"internalType": "bool",
+					"name": "value",
+					"type": "bool"
+				}
+			],
+			"name": "breakpoint",
+			"outputs": [],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "broadcast",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "signer",
+					"type": "address"
+				}
+			],
+			"name": "broadcast",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				}
+			],
+			"name": "broadcast",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "data",
+					"type": "bytes"
+				}
+			],
+			"name": "broadcastRawTransaction",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				}
+			],
+			"name": "closeFile",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "salt",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "initCodeHash",
+					"type": "bytes32"
+				}
+			],
+			"name": "computeCreate2Address",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "salt",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "initCodeHash",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "address",
+					"name": "deployer",
+					"type": "address"
+				}
+			],
+			"name": "computeCreate2Address",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "deployer",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "nonce",
+					"type": "uint256"
+				}
+			],
+			"name": "computeCreateAddress",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "subject",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "search",
+					"type": "string"
+				}
+			],
+			"name": "contains",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "result",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "from",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "to",
+					"type": "string"
+				}
+			],
+			"name": "copyFile",
+			"outputs": [
+				{
+					"internalType": "uint64",
+					"name": "copied",
+					"type": "uint64"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "from",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "to",
+					"type": "address"
+				}
+			],
+			"name": "copyStorage",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				},
+				{
+					"internalType": "bool",
+					"name": "recursive",
+					"type": "bool"
+				}
+			],
+			"name": "createDir",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "walletLabel",
+					"type": "string"
+				}
+			],
+			"name": "createWallet",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "addr",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "publicKeyX",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "publicKeyY",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "privateKey",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct VmSafe.Wallet",
+					"name": "wallet",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				}
+			],
+			"name": "createWallet",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "addr",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "publicKeyX",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "publicKeyY",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "privateKey",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct VmSafe.Wallet",
+					"name": "wallet",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "walletLabel",
+					"type": "string"
+				}
+			],
+			"name": "createWallet",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "addr",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "publicKeyX",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "publicKeyY",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "privateKey",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct VmSafe.Wallet",
+					"name": "wallet",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "artifactPath",
+					"type": "string"
+				},
+				{
+					"internalType": "uint256",
+					"name": "value",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "salt",
+					"type": "bytes32"
+				}
+			],
+			"name": "deployCode",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "deployedAddress",
+					"type": "address"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "artifactPath",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes",
+					"name": "constructorArgs",
+					"type": "bytes"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "salt",
+					"type": "bytes32"
+				}
+			],
+			"name": "deployCode",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "deployedAddress",
+					"type": "address"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "artifactPath",
+					"type": "string"
+				},
+				{
+					"internalType": "uint256",
+					"name": "value",
+					"type": "uint256"
+				}
+			],
+			"name": "deployCode",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "deployedAddress",
+					"type": "address"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "artifactPath",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "salt",
+					"type": "bytes32"
+				}
+			],
+			"name": "deployCode",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "deployedAddress",
+					"type": "address"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "artifactPath",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes",
+					"name": "constructorArgs",
+					"type": "bytes"
+				}
+			],
+			"name": "deployCode",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "deployedAddress",
+					"type": "address"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "artifactPath",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes",
+					"name": "constructorArgs",
+					"type": "bytes"
+				},
+				{
+					"internalType": "uint256",
+					"name": "value",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "salt",
+					"type": "bytes32"
+				}
+			],
+			"name": "deployCode",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "deployedAddress",
+					"type": "address"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "artifactPath",
+					"type": "string"
+				}
+			],
+			"name": "deployCode",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "deployedAddress",
+					"type": "address"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "artifactPath",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes",
+					"name": "constructorArgs",
+					"type": "bytes"
+				},
+				{
+					"internalType": "uint256",
+					"name": "value",
+					"type": "uint256"
+				}
+			],
+			"name": "deployCode",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "deployedAddress",
+					"type": "address"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "mnemonic",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "derivationPath",
+					"type": "string"
+				},
+				{
+					"internalType": "uint32",
+					"name": "index",
+					"type": "uint32"
+				},
+				{
+					"internalType": "string",
+					"name": "language",
+					"type": "string"
+				}
+			],
+			"name": "deriveKey",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "mnemonic",
+					"type": "string"
+				},
+				{
+					"internalType": "uint32",
+					"name": "index",
+					"type": "uint32"
+				},
+				{
+					"internalType": "string",
+					"name": "language",
+					"type": "string"
+				}
+			],
+			"name": "deriveKey",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "mnemonic",
+					"type": "string"
+				},
+				{
+					"internalType": "uint32",
+					"name": "index",
+					"type": "uint32"
+				}
+			],
+			"name": "deriveKey",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "mnemonic",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "derivationPath",
+					"type": "string"
+				},
+				{
+					"internalType": "uint32",
+					"name": "index",
+					"type": "uint32"
+				}
+			],
+			"name": "deriveKey",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "bindingsPath",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "typeName",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes",
+					"name": "abiEncodedData",
+					"type": "bytes"
+				}
+			],
+			"name": "eip712HashStruct",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "typeHash",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "typeNameOrDefinition",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes",
+					"name": "abiEncodedData",
+					"type": "bytes"
+				}
+			],
+			"name": "eip712HashStruct",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "typeHash",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "bindingsPath",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "typeName",
+					"type": "string"
+				}
+			],
+			"name": "eip712HashType",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "typeHash",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "typeNameOrDefinition",
+					"type": "string"
+				}
+			],
+			"name": "eip712HashType",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "typeHash",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "jsonData",
+					"type": "string"
+				}
+			],
+			"name": "eip712HashTypedData",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "digest",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				}
+			],
+			"name": "ensNamehash",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				}
+			],
+			"name": "envAddress",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "value",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "delim",
+					"type": "string"
+				}
+			],
+			"name": "envAddress",
+			"outputs": [
+				{
+					"internalType": "address[]",
+					"name": "value",
+					"type": "address[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				}
+			],
+			"name": "envBool",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "value",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "delim",
+					"type": "string"
+				}
+			],
+			"name": "envBool",
+			"outputs": [
+				{
+					"internalType": "bool[]",
+					"name": "value",
+					"type": "bool[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				}
+			],
+			"name": "envBytes",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "value",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "delim",
+					"type": "string"
+				}
+			],
+			"name": "envBytes",
+			"outputs": [
+				{
+					"internalType": "bytes[]",
+					"name": "value",
+					"type": "bytes[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "delim",
+					"type": "string"
+				}
+			],
+			"name": "envBytes32",
+			"outputs": [
+				{
+					"internalType": "bytes32[]",
+					"name": "value",
+					"type": "bytes32[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				}
+			],
+			"name": "envBytes32",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "value",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				}
+			],
+			"name": "envExists",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "result",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "delim",
+					"type": "string"
+				}
+			],
+			"name": "envInt",
+			"outputs": [
+				{
+					"internalType": "int256[]",
+					"name": "value",
+					"type": "int256[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				}
+			],
+			"name": "envInt",
+			"outputs": [
+				{
+					"internalType": "int256",
+					"name": "value",
+					"type": "int256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "delim",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes32[]",
+					"name": "defaultValue",
+					"type": "bytes32[]"
+				}
+			],
+			"name": "envOr",
+			"outputs": [
+				{
+					"internalType": "bytes32[]",
+					"name": "value",
+					"type": "bytes32[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "delim",
+					"type": "string"
+				},
+				{
+					"internalType": "int256[]",
+					"name": "defaultValue",
+					"type": "int256[]"
+				}
+			],
+			"name": "envOr",
+			"outputs": [
+				{
+					"internalType": "int256[]",
+					"name": "value",
+					"type": "int256[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "bool",
+					"name": "defaultValue",
+					"type": "bool"
+				}
+			],
+			"name": "envOr",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "value",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "address",
+					"name": "defaultValue",
+					"type": "address"
+				}
+			],
+			"name": "envOr",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "value",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "uint256",
+					"name": "defaultValue",
+					"type": "uint256"
+				}
+			],
+			"name": "envOr",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "value",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "delim",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes[]",
+					"name": "defaultValue",
+					"type": "bytes[]"
+				}
+			],
+			"name": "envOr",
+			"outputs": [
+				{
+					"internalType": "bytes[]",
+					"name": "value",
+					"type": "bytes[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "delim",
+					"type": "string"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "defaultValue",
+					"type": "uint256[]"
+				}
+			],
+			"name": "envOr",
+			"outputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "value",
+					"type": "uint256[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "delim",
+					"type": "string"
+				},
+				{
+					"internalType": "string[]",
+					"name": "defaultValue",
+					"type": "string[]"
+				}
+			],
+			"name": "envOr",
+			"outputs": [
+				{
+					"internalType": "string[]",
+					"name": "value",
+					"type": "string[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes",
+					"name": "defaultValue",
+					"type": "bytes"
+				}
+			],
+			"name": "envOr",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "value",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "defaultValue",
+					"type": "bytes32"
+				}
+			],
+			"name": "envOr",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "value",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "int256",
+					"name": "defaultValue",
+					"type": "int256"
+				}
+			],
+			"name": "envOr",
+			"outputs": [
+				{
+					"internalType": "int256",
+					"name": "value",
+					"type": "int256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "delim",
+					"type": "string"
+				},
+				{
+					"internalType": "address[]",
+					"name": "defaultValue",
+					"type": "address[]"
+				}
+			],
+			"name": "envOr",
+			"outputs": [
+				{
+					"internalType": "address[]",
+					"name": "value",
+					"type": "address[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "defaultValue",
+					"type": "string"
+				}
+			],
+			"name": "envOr",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "value",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "delim",
+					"type": "string"
+				},
+				{
+					"internalType": "bool[]",
+					"name": "defaultValue",
+					"type": "bool[]"
+				}
+			],
+			"name": "envOr",
+			"outputs": [
+				{
+					"internalType": "bool[]",
+					"name": "value",
+					"type": "bool[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "delim",
+					"type": "string"
+				}
+			],
+			"name": "envString",
+			"outputs": [
+				{
+					"internalType": "string[]",
+					"name": "value",
+					"type": "string[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				}
+			],
+			"name": "envString",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "value",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				}
+			],
+			"name": "envUint",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "value",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "delim",
+					"type": "string"
+				}
+			],
+			"name": "envUint",
+			"outputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "value",
+					"type": "uint256[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "fromBlock",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "toBlock",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "target",
+					"type": "address"
+				},
+				{
+					"internalType": "bytes32[]",
+					"name": "topics",
+					"type": "bytes32[]"
+				}
+			],
+			"name": "eth_getLogs",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "emitter",
+							"type": "address"
+						},
+						{
+							"internalType": "bytes32[]",
+							"name": "topics",
+							"type": "bytes32[]"
+						},
+						{
+							"internalType": "bytes",
+							"name": "data",
+							"type": "bytes"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "blockHash",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "uint64",
+							"name": "blockNumber",
+							"type": "uint64"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "transactionHash",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "uint64",
+							"name": "transactionIndex",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint256",
+							"name": "logIndex",
+							"type": "uint256"
+						},
+						{
+							"internalType": "bool",
+							"name": "removed",
+							"type": "bool"
+						}
+					],
+					"internalType": "struct VmSafe.EthGetLogs[]",
+					"name": "logs",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				}
+			],
+			"name": "exists",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "result",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string[]",
+					"name": "commandInput",
+					"type": "string[]"
+				}
+			],
+			"name": "ffi",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "result",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "version",
+					"type": "string"
+				}
+			],
+			"name": "foundryVersionAtLeast",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "version",
+					"type": "string"
+				}
+			],
+			"name": "foundryVersionCmp",
+			"outputs": [
+				{
+					"internalType": "int256",
+					"name": "",
+					"type": "int256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "rlp",
+					"type": "bytes"
+				}
+			],
+			"name": "fromRlp",
+			"outputs": [
+				{
+					"internalType": "bytes[]",
+					"name": "data",
+					"type": "bytes[]"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				}
+			],
+			"name": "fsMetadata",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "bool",
+							"name": "isDir",
+							"type": "bool"
+						},
+						{
+							"internalType": "bool",
+							"name": "isSymlink",
+							"type": "bool"
+						},
+						{
+							"internalType": "uint256",
+							"name": "length",
+							"type": "uint256"
+						},
+						{
+							"internalType": "bool",
+							"name": "readOnly",
+							"type": "bool"
+						},
+						{
+							"internalType": "uint256",
+							"name": "modified",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "accessed",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "created",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct VmSafe.FsMetadata",
+					"name": "metadata",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "code",
+					"type": "bytes"
+				}
+			],
+			"name": "getArtifactPathByCode",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "deployedCode",
+					"type": "bytes"
+				}
+			],
+			"name": "getArtifactPathByDeployedCode",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getBlobBaseFee",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "blobBaseFee",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getBlockNumber",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "height",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getBlockTimestamp",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "timestamp",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "contractName",
+					"type": "string"
+				},
+				{
+					"internalType": "uint64",
+					"name": "chainId",
+					"type": "uint64"
+				},
+				{
+					"internalType": "enum VmSafe.BroadcastTxType",
+					"name": "txType",
+					"type": "uint8"
+				}
+			],
+			"name": "getBroadcast",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "bytes32",
+							"name": "txHash",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "enum VmSafe.BroadcastTxType",
+							"name": "txType",
+							"type": "uint8"
+						},
+						{
+							"internalType": "address",
+							"name": "contractAddress",
+							"type": "address"
+						},
+						{
+							"internalType": "uint64",
+							"name": "blockNumber",
+							"type": "uint64"
+						},
+						{
+							"internalType": "bool",
+							"name": "success",
+							"type": "bool"
+						}
+					],
+					"internalType": "struct VmSafe.BroadcastTxSummary",
+					"name": "",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "contractName",
+					"type": "string"
+				},
+				{
+					"internalType": "uint64",
+					"name": "chainId",
+					"type": "uint64"
+				}
+			],
+			"name": "getBroadcasts",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "bytes32",
+							"name": "txHash",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "enum VmSafe.BroadcastTxType",
+							"name": "txType",
+							"type": "uint8"
+						},
+						{
+							"internalType": "address",
+							"name": "contractAddress",
+							"type": "address"
+						},
+						{
+							"internalType": "uint64",
+							"name": "blockNumber",
+							"type": "uint64"
+						},
+						{
+							"internalType": "bool",
+							"name": "success",
+							"type": "bool"
+						}
+					],
+					"internalType": "struct VmSafe.BroadcastTxSummary[]",
+					"name": "",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "contractName",
+					"type": "string"
+				},
+				{
+					"internalType": "uint64",
+					"name": "chainId",
+					"type": "uint64"
+				},
+				{
+					"internalType": "enum VmSafe.BroadcastTxType",
+					"name": "txType",
+					"type": "uint8"
+				}
+			],
+			"name": "getBroadcasts",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "bytes32",
+							"name": "txHash",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "enum VmSafe.BroadcastTxType",
+							"name": "txType",
+							"type": "uint8"
+						},
+						{
+							"internalType": "address",
+							"name": "contractAddress",
+							"type": "address"
+						},
+						{
+							"internalType": "uint64",
+							"name": "blockNumber",
+							"type": "uint64"
+						},
+						{
+							"internalType": "bool",
+							"name": "success",
+							"type": "bool"
+						}
+					],
+					"internalType": "struct VmSafe.BroadcastTxSummary[]",
+					"name": "",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "chainAlias",
+					"type": "string"
+				}
+			],
+			"name": "getChain",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "string",
+							"name": "name",
+							"type": "string"
+						},
+						{
+							"internalType": "uint256",
+							"name": "chainId",
+							"type": "uint256"
+						},
+						{
+							"internalType": "string",
+							"name": "chainAlias",
+							"type": "string"
+						},
+						{
+							"internalType": "string",
+							"name": "rpcUrl",
+							"type": "string"
+						}
+					],
+					"internalType": "struct VmSafe.Chain",
+					"name": "chain",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "chainId",
+					"type": "uint256"
+				}
+			],
+			"name": "getChain",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "string",
+							"name": "name",
+							"type": "string"
+						},
+						{
+							"internalType": "uint256",
+							"name": "chainId",
+							"type": "uint256"
+						},
+						{
+							"internalType": "string",
+							"name": "chainAlias",
+							"type": "string"
+						},
+						{
+							"internalType": "string",
+							"name": "rpcUrl",
+							"type": "string"
+						}
+					],
+					"internalType": "struct VmSafe.Chain",
+					"name": "chain",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getChainId",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "blockChainId",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "artifactPath",
+					"type": "string"
+				}
+			],
+			"name": "getCode",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "creationBytecode",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "artifactPath",
+					"type": "string"
+				}
+			],
+			"name": "getDeployedCode",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "runtimeBytecode",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "contractName",
+					"type": "string"
+				},
+				{
+					"internalType": "uint64",
+					"name": "chainId",
+					"type": "uint64"
+				}
+			],
+			"name": "getDeployment",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "deployedAddress",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "contractName",
+					"type": "string"
+				}
+			],
+			"name": "getDeployment",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "deployedAddress",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "contractName",
+					"type": "string"
+				},
+				{
+					"internalType": "uint64",
+					"name": "chainId",
+					"type": "uint64"
+				}
+			],
+			"name": "getDeployments",
+			"outputs": [
+				{
+					"internalType": "address[]",
+					"name": "deployedAddresses",
+					"type": "address[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getEvmVersion",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "evm",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getFoundryVersion",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "version",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "account",
+					"type": "address"
+				}
+			],
+			"name": "getLabel",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "currentLabel",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "target",
+					"type": "address"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "elementSlot",
+					"type": "bytes32"
+				}
+			],
+			"name": "getMappingKeyAndParentOf",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "found",
+					"type": "bool"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "key",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "parent",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "target",
+					"type": "address"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "mappingSlot",
+					"type": "bytes32"
+				}
+			],
+			"name": "getMappingLength",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "length",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "target",
+					"type": "address"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "mappingSlot",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "uint256",
+					"name": "idx",
+					"type": "uint256"
+				}
+			],
+			"name": "getMappingSlotAt",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "value",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "account",
+					"type": "address"
+				}
+			],
+			"name": "getNonce",
+			"outputs": [
+				{
+					"internalType": "uint64",
+					"name": "nonce",
+					"type": "uint64"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "addr",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "publicKeyX",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "publicKeyY",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "privateKey",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct VmSafe.Wallet",
+					"name": "wallet",
+					"type": "tuple"
+				}
+			],
+			"name": "getNonce",
+			"outputs": [
+				{
+					"internalType": "uint64",
+					"name": "nonce",
+					"type": "uint64"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "blockNumber",
+					"type": "uint256"
+				}
+			],
+			"name": "getRawBlockHeader",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "rlpHeader",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getRecordedLogs",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "bytes32[]",
+							"name": "topics",
+							"type": "bytes32[]"
+						},
+						{
+							"internalType": "bytes",
+							"name": "data",
+							"type": "bytes"
+						},
+						{
+							"internalType": "address",
+							"name": "emitter",
+							"type": "address"
+						}
+					],
+					"internalType": "struct VmSafe.Log[]",
+					"name": "logs",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getStateDiff",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "diff",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getStateDiffJson",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "diff",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getStorageAccesses",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "account",
+							"type": "address"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "slot",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "bool",
+							"name": "isWrite",
+							"type": "bool"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "previousValue",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "newValue",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "bool",
+							"name": "reverted",
+							"type": "bool"
+						}
+					],
+					"internalType": "struct VmSafe.StorageAccess[]",
+					"name": "storageAccesses",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "target",
+					"type": "address"
+				},
+				{
+					"internalType": "string",
+					"name": "variableName",
+					"type": "string"
+				}
+			],
+			"name": "getStorageSlots",
+			"outputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "slots",
+					"type": "uint256[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getWallets",
+			"outputs": [
+				{
+					"internalType": "address[]",
+					"name": "wallets",
+					"type": "address[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "input",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "indexOf",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "enum VmSafe.ForgeContext",
+					"name": "context",
+					"type": "uint8"
+				}
+			],
+			"name": "isContext",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "result",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				}
+			],
+			"name": "isDir",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "result",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				}
+			],
+			"name": "isFile",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "result",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "keyExists",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "keyExistsJson",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "keyExistsToml",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "account",
+					"type": "address"
+				},
+				{
+					"internalType": "string",
+					"name": "newLabel",
+					"type": "string"
+				}
+			],
+			"name": "label",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "lastCallGas",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint64",
+							"name": "gasLimit",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "gasTotalUsed",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "gasMemoryUsed",
+							"type": "uint64"
+						},
+						{
+							"internalType": "int64",
+							"name": "gasRefunded",
+							"type": "int64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "gasRemaining",
+							"type": "uint64"
+						}
+					],
+					"internalType": "struct VmSafe.Gas",
+					"name": "gas",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "target",
+					"type": "address"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "slot",
+					"type": "bytes32"
+				}
+			],
+			"name": "load",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "data",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "stringifiedValue",
+					"type": "string"
+				}
+			],
+			"name": "parseAddress",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "parsedValue",
+					"type": "address"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "stringifiedValue",
+					"type": "string"
+				}
+			],
+			"name": "parseBool",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "parsedValue",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "stringifiedValue",
+					"type": "string"
+				}
+			],
+			"name": "parseBytes",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "parsedValue",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "stringifiedValue",
+					"type": "string"
+				}
+			],
+			"name": "parseBytes32",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "parsedValue",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "stringifiedValue",
+					"type": "string"
+				}
+			],
+			"name": "parseInt",
+			"outputs": [
+				{
+					"internalType": "int256",
+					"name": "parsedValue",
+					"type": "int256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"name": "parseJson",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "abiEncodedData",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseJson",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "abiEncodedData",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseJsonAddress",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseJsonAddressArray",
+			"outputs": [
+				{
+					"internalType": "address[]",
+					"name": "",
+					"type": "address[]"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseJsonBool",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseJsonBoolArray",
+			"outputs": [
+				{
+					"internalType": "bool[]",
+					"name": "",
+					"type": "bool[]"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseJsonBytes",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseJsonBytes32",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseJsonBytes32Array",
+			"outputs": [
+				{
+					"internalType": "bytes32[]",
+					"name": "",
+					"type": "bytes32[]"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseJsonBytesArray",
+			"outputs": [
+				{
+					"internalType": "bytes[]",
+					"name": "",
+					"type": "bytes[]"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseJsonInt",
+			"outputs": [
+				{
+					"internalType": "int256",
+					"name": "",
+					"type": "int256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseJsonIntArray",
+			"outputs": [
+				{
+					"internalType": "int256[]",
+					"name": "",
+					"type": "int256[]"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseJsonKeys",
+			"outputs": [
+				{
+					"internalType": "string[]",
+					"name": "keys",
+					"type": "string[]"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseJsonString",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseJsonStringArray",
+			"outputs": [
+				{
+					"internalType": "string[]",
+					"name": "",
+					"type": "string[]"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "typeDescription",
+					"type": "string"
+				}
+			],
+			"name": "parseJsonType",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "typeDescription",
+					"type": "string"
+				}
+			],
+			"name": "parseJsonType",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "typeDescription",
+					"type": "string"
+				}
+			],
+			"name": "parseJsonTypeArray",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseJsonUint",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseJsonUintArray",
+			"outputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "",
+					"type": "uint256[]"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseToml",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "abiEncodedData",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				}
+			],
+			"name": "parseToml",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "abiEncodedData",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseTomlAddress",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseTomlAddressArray",
+			"outputs": [
+				{
+					"internalType": "address[]",
+					"name": "",
+					"type": "address[]"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseTomlBool",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseTomlBoolArray",
+			"outputs": [
+				{
+					"internalType": "bool[]",
+					"name": "",
+					"type": "bool[]"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseTomlBytes",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseTomlBytes32",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseTomlBytes32Array",
+			"outputs": [
+				{
+					"internalType": "bytes32[]",
+					"name": "",
+					"type": "bytes32[]"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseTomlBytesArray",
+			"outputs": [
+				{
+					"internalType": "bytes[]",
+					"name": "",
+					"type": "bytes[]"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseTomlInt",
+			"outputs": [
+				{
+					"internalType": "int256",
+					"name": "",
+					"type": "int256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseTomlIntArray",
+			"outputs": [
+				{
+					"internalType": "int256[]",
+					"name": "",
+					"type": "int256[]"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseTomlKeys",
+			"outputs": [
+				{
+					"internalType": "string[]",
+					"name": "keys",
+					"type": "string[]"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseTomlString",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseTomlStringArray",
+			"outputs": [
+				{
+					"internalType": "string[]",
+					"name": "",
+					"type": "string[]"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "typeDescription",
+					"type": "string"
+				}
+			],
+			"name": "parseTomlType",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "typeDescription",
+					"type": "string"
+				}
+			],
+			"name": "parseTomlType",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "typeDescription",
+					"type": "string"
+				}
+			],
+			"name": "parseTomlTypeArray",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseTomlUint",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "toml",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "key",
+					"type": "string"
+				}
+			],
+			"name": "parseTomlUintArray",
+			"outputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "",
+					"type": "uint256[]"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "stringifiedValue",
+					"type": "string"
+				}
+			],
+			"name": "parseUint",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "parsedValue",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "pauseGasMetering",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "pauseTracing",
+			"outputs": [],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "projectRoot",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "promptText",
+					"type": "string"
+				}
+			],
+			"name": "prompt",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "input",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "promptText",
+					"type": "string"
+				}
+			],
+			"name": "promptAddress",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "promptText",
+					"type": "string"
+				}
+			],
+			"name": "promptSecret",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "input",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "promptText",
+					"type": "string"
+				}
+			],
+			"name": "promptSecretUint",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "promptText",
+					"type": "string"
+				}
+			],
+			"name": "promptUint",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				}
+			],
+			"name": "publicKeyP256",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "publicKeyX",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "publicKeyY",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "randomAddress",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "randomBool",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "len",
+					"type": "uint256"
+				}
+			],
+			"name": "randomBytes",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "randomBytes4",
+			"outputs": [
+				{
+					"internalType": "bytes4",
+					"name": "",
+					"type": "bytes4"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "randomBytes8",
+			"outputs": [
+				{
+					"internalType": "bytes8",
+					"name": "",
+					"type": "bytes8"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "randomInt",
+			"outputs": [
+				{
+					"internalType": "int256",
+					"name": "",
+					"type": "int256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "bits",
+					"type": "uint256"
+				}
+			],
+			"name": "randomInt",
+			"outputs": [
+				{
+					"internalType": "int256",
+					"name": "",
+					"type": "int256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "randomUint",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "bits",
+					"type": "uint256"
+				}
+			],
+			"name": "randomUint",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "min",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "max",
+					"type": "uint256"
+				}
+			],
+			"name": "randomUint",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				},
+				{
+					"internalType": "uint64",
+					"name": "maxDepth",
+					"type": "uint64"
+				}
+			],
+			"name": "readDir",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "string",
+							"name": "errorMessage",
+							"type": "string"
+						},
+						{
+							"internalType": "string",
+							"name": "path",
+							"type": "string"
+						},
+						{
+							"internalType": "uint64",
+							"name": "depth",
+							"type": "uint64"
+						},
+						{
+							"internalType": "bool",
+							"name": "isDir",
+							"type": "bool"
+						},
+						{
+							"internalType": "bool",
+							"name": "isSymlink",
+							"type": "bool"
+						}
+					],
+					"internalType": "struct VmSafe.DirEntry[]",
+					"name": "entries",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				},
+				{
+					"internalType": "uint64",
+					"name": "maxDepth",
+					"type": "uint64"
+				},
+				{
+					"internalType": "bool",
+					"name": "followLinks",
+					"type": "bool"
+				}
+			],
+			"name": "readDir",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "string",
+							"name": "errorMessage",
+							"type": "string"
+						},
+						{
+							"internalType": "string",
+							"name": "path",
+							"type": "string"
+						},
+						{
+							"internalType": "uint64",
+							"name": "depth",
+							"type": "uint64"
+						},
+						{
+							"internalType": "bool",
+							"name": "isDir",
+							"type": "bool"
+						},
+						{
+							"internalType": "bool",
+							"name": "isSymlink",
+							"type": "bool"
+						}
+					],
+					"internalType": "struct VmSafe.DirEntry[]",
+					"name": "entries",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				}
+			],
+			"name": "readDir",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "string",
+							"name": "errorMessage",
+							"type": "string"
+						},
+						{
+							"internalType": "string",
+							"name": "path",
+							"type": "string"
+						},
+						{
+							"internalType": "uint64",
+							"name": "depth",
+							"type": "uint64"
+						},
+						{
+							"internalType": "bool",
+							"name": "isDir",
+							"type": "bool"
+						},
+						{
+							"internalType": "bool",
+							"name": "isSymlink",
+							"type": "bool"
+						}
+					],
+					"internalType": "struct VmSafe.DirEntry[]",
+					"name": "entries",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				}
+			],
+			"name": "readFile",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "data",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				}
+			],
+			"name": "readFileBinary",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "data",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				}
+			],
+			"name": "readLine",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "line",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "linkPath",
+					"type": "string"
+				}
+			],
+			"name": "readLink",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "targetPath",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "record",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "recordLogs",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				}
+			],
+			"name": "rememberKey",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "keyAddr",
+					"type": "address"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "mnemonic",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "derivationPath",
+					"type": "string"
+				},
+				{
+					"internalType": "uint32",
+					"name": "count",
+					"type": "uint32"
+				}
+			],
+			"name": "rememberKeys",
+			"outputs": [
+				{
+					"internalType": "address[]",
+					"name": "keyAddrs",
+					"type": "address[]"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "mnemonic",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "derivationPath",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "language",
+					"type": "string"
+				},
+				{
+					"internalType": "uint32",
+					"name": "count",
+					"type": "uint32"
+				}
+			],
+			"name": "rememberKeys",
+			"outputs": [
+				{
+					"internalType": "address[]",
+					"name": "keyAddrs",
+					"type": "address[]"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				},
+				{
+					"internalType": "bool",
+					"name": "recursive",
+					"type": "bool"
+				}
+			],
+			"name": "removeDir",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				}
+			],
+			"name": "removeFile",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "input",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "from",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "to",
+					"type": "string"
+				}
+			],
+			"name": "replace",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "output",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "resetGasMetering",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "input",
+					"type": "string"
+				}
+			],
+			"name": "resolveEnv",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "resumeGasMetering",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "resumeTracing",
+			"outputs": [],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "urlOrAlias",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "method",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "params",
+					"type": "string"
+				}
+			],
+			"name": "rpc",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "data",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "method",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "params",
+					"type": "string"
+				}
+			],
+			"name": "rpc",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "data",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "rpcAlias",
+					"type": "string"
+				}
+			],
+			"name": "rpcUrl",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "rpcUrlStructs",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "string",
+							"name": "key",
+							"type": "string"
+						},
+						{
+							"internalType": "string",
+							"name": "url",
+							"type": "string"
+						}
+					],
+					"internalType": "struct VmSafe.Rpc[]",
+					"name": "urls",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "rpcUrls",
+			"outputs": [
+				{
+					"internalType": "string[2][]",
+					"name": "urls",
+					"type": "string[2][]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "objectKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "valueKey",
+					"type": "string"
+				},
+				{
+					"internalType": "address[]",
+					"name": "values",
+					"type": "address[]"
+				}
+			],
+			"name": "serializeAddress",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "objectKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "valueKey",
+					"type": "string"
+				},
+				{
+					"internalType": "address",
+					"name": "value",
+					"type": "address"
+				}
+			],
+			"name": "serializeAddress",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "objectKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "valueKey",
+					"type": "string"
+				},
+				{
+					"internalType": "bool[]",
+					"name": "values",
+					"type": "bool[]"
+				}
+			],
+			"name": "serializeBool",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "objectKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "valueKey",
+					"type": "string"
+				},
+				{
+					"internalType": "bool",
+					"name": "value",
+					"type": "bool"
+				}
+			],
+			"name": "serializeBool",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "objectKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "valueKey",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes[]",
+					"name": "values",
+					"type": "bytes[]"
+				}
+			],
+			"name": "serializeBytes",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "objectKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "valueKey",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes",
+					"name": "value",
+					"type": "bytes"
+				}
+			],
+			"name": "serializeBytes",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "objectKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "valueKey",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes32[]",
+					"name": "values",
+					"type": "bytes32[]"
+				}
+			],
+			"name": "serializeBytes32",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "objectKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "valueKey",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "value",
+					"type": "bytes32"
+				}
+			],
+			"name": "serializeBytes32",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "objectKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "valueKey",
+					"type": "string"
+				},
+				{
+					"internalType": "int256",
+					"name": "value",
+					"type": "int256"
+				}
+			],
+			"name": "serializeInt",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "objectKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "valueKey",
+					"type": "string"
+				},
+				{
+					"internalType": "int256[]",
+					"name": "values",
+					"type": "int256[]"
+				}
+			],
+			"name": "serializeInt",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "objectKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "value",
+					"type": "string"
+				}
+			],
+			"name": "serializeJson",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "typeDescription",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes",
+					"name": "value",
+					"type": "bytes"
+				}
+			],
+			"name": "serializeJsonType",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "objectKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "valueKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "typeDescription",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes",
+					"name": "value",
+					"type": "bytes"
+				}
+			],
+			"name": "serializeJsonType",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "objectKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "valueKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string[]",
+					"name": "values",
+					"type": "string[]"
+				}
+			],
+			"name": "serializeString",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "objectKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "valueKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "value",
+					"type": "string"
+				}
+			],
+			"name": "serializeString",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "objectKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "valueKey",
+					"type": "string"
+				},
+				{
+					"internalType": "uint256",
+					"name": "value",
+					"type": "uint256"
+				}
+			],
+			"name": "serializeUint",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "objectKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "valueKey",
+					"type": "string"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "values",
+					"type": "uint256[]"
+				}
+			],
+			"name": "serializeUint",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "objectKey",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "valueKey",
+					"type": "string"
+				},
+				{
+					"internalType": "uint256",
+					"name": "value",
+					"type": "uint256"
+				}
+			],
+			"name": "serializeUintToHex",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "target",
+					"type": "address"
+				},
+				{
+					"internalType": "bool",
+					"name": "overwrite",
+					"type": "bool"
+				}
+			],
+			"name": "setArbitraryStorage",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "target",
+					"type": "address"
+				}
+			],
+			"name": "setArbitraryStorage",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "name",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "value",
+					"type": "string"
+				}
+			],
+			"name": "setEnv",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "evm",
+					"type": "string"
+				}
+			],
+			"name": "setEvmVersion",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "seed",
+					"type": "uint256"
+				}
+			],
+			"name": "setSeed",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "array",
+					"type": "uint256[]"
+				}
+			],
+			"name": "shuffle",
+			"outputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "",
+					"type": "uint256[]"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "digest",
+					"type": "bytes32"
+				}
+			],
+			"name": "sign",
+			"outputs": [
+				{
+					"internalType": "uint8",
+					"name": "v",
+					"type": "uint8"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "r",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "s",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "signer",
+					"type": "address"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "digest",
+					"type": "bytes32"
+				}
+			],
+			"name": "sign",
+			"outputs": [
+				{
+					"internalType": "uint8",
+					"name": "v",
+					"type": "uint8"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "r",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "s",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "addr",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "publicKeyX",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "publicKeyY",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "privateKey",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct VmSafe.Wallet",
+					"name": "wallet",
+					"type": "tuple"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "digest",
+					"type": "bytes32"
+				}
+			],
+			"name": "sign",
+			"outputs": [
+				{
+					"internalType": "uint8",
+					"name": "v",
+					"type": "uint8"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "r",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "s",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "digest",
+					"type": "bytes32"
+				}
+			],
+			"name": "sign",
+			"outputs": [
+				{
+					"internalType": "uint8",
+					"name": "v",
+					"type": "uint8"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "r",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "s",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "implementation",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				}
+			],
+			"name": "signAndAttachDelegation",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint8",
+							"name": "v",
+							"type": "uint8"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "r",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "s",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "uint64",
+							"name": "nonce",
+							"type": "uint64"
+						},
+						{
+							"internalType": "address",
+							"name": "implementation",
+							"type": "address"
+						}
+					],
+					"internalType": "struct VmSafe.SignedDelegation",
+					"name": "signedDelegation",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "implementation",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint64",
+					"name": "nonce",
+					"type": "uint64"
+				}
+			],
+			"name": "signAndAttachDelegation",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint8",
+							"name": "v",
+							"type": "uint8"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "r",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "s",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "uint64",
+							"name": "nonce",
+							"type": "uint64"
+						},
+						{
+							"internalType": "address",
+							"name": "implementation",
+							"type": "address"
+						}
+					],
+					"internalType": "struct VmSafe.SignedDelegation",
+					"name": "signedDelegation",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "implementation",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bool",
+					"name": "crossChain",
+					"type": "bool"
+				}
+			],
+			"name": "signAndAttachDelegation",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint8",
+							"name": "v",
+							"type": "uint8"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "r",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "s",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "uint64",
+							"name": "nonce",
+							"type": "uint64"
+						},
+						{
+							"internalType": "address",
+							"name": "implementation",
+							"type": "address"
+						}
+					],
+					"internalType": "struct VmSafe.SignedDelegation",
+					"name": "signedDelegation",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "addr",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "publicKeyX",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "publicKeyY",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "privateKey",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct VmSafe.Wallet",
+					"name": "wallet",
+					"type": "tuple"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "digest",
+					"type": "bytes32"
+				}
+			],
+			"name": "signCompact",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "r",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "vs",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "signer",
+					"type": "address"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "digest",
+					"type": "bytes32"
+				}
+			],
+			"name": "signCompact",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "r",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "vs",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "digest",
+					"type": "bytes32"
+				}
+			],
+			"name": "signCompact",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "r",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "vs",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "digest",
+					"type": "bytes32"
+				}
+			],
+			"name": "signCompact",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "r",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "vs",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "implementation",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				}
+			],
+			"name": "signDelegation",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint8",
+							"name": "v",
+							"type": "uint8"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "r",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "s",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "uint64",
+							"name": "nonce",
+							"type": "uint64"
+						},
+						{
+							"internalType": "address",
+							"name": "implementation",
+							"type": "address"
+						}
+					],
+					"internalType": "struct VmSafe.SignedDelegation",
+					"name": "signedDelegation",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "implementation",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bool",
+					"name": "crossChain",
+					"type": "bool"
+				}
+			],
+			"name": "signDelegation",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint8",
+							"name": "v",
+							"type": "uint8"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "r",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "s",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "uint64",
+							"name": "nonce",
+							"type": "uint64"
+						},
+						{
+							"internalType": "address",
+							"name": "implementation",
+							"type": "address"
+						}
+					],
+					"internalType": "struct VmSafe.SignedDelegation",
+					"name": "signedDelegation",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "implementation",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint64",
+					"name": "nonce",
+					"type": "uint64"
+				}
+			],
+			"name": "signDelegation",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint8",
+							"name": "v",
+							"type": "uint8"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "r",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "s",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "uint64",
+							"name": "nonce",
+							"type": "uint64"
+						},
+						{
+							"internalType": "address",
+							"name": "implementation",
+							"type": "address"
+						}
+					],
+					"internalType": "struct VmSafe.SignedDelegation",
+					"name": "signedDelegation",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "digest",
+					"type": "bytes32"
+				}
+			],
+			"name": "signP256",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "r",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "s",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "digest",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "uint256",
+					"name": "nonce",
+					"type": "uint256"
+				}
+			],
+			"name": "signWithNonceUnsafe",
+			"outputs": [
+				{
+					"internalType": "uint8",
+					"name": "v",
+					"type": "uint8"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "r",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "s",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "duration",
+					"type": "uint256"
+				}
+			],
+			"name": "sleep",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "array",
+					"type": "uint256[]"
+				}
+			],
+			"name": "sort",
+			"outputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "",
+					"type": "uint256[]"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "input",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "delimiter",
+					"type": "string"
+				}
+			],
+			"name": "split",
+			"outputs": [
+				{
+					"internalType": "string[]",
+					"name": "outputs",
+					"type": "string[]"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "startBroadcast",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "signer",
+					"type": "address"
+				}
+			],
+			"name": "startBroadcast",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "privateKey",
+					"type": "uint256"
+				}
+			],
+			"name": "startBroadcast",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "startDebugTraceRecording",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "startMappingRecording",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "startStateDiffRecording",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "stopAndReturnDebugTraceRecording",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint256[]",
+							"name": "stack",
+							"type": "uint256[]"
+						},
+						{
+							"internalType": "bytes",
+							"name": "memoryInput",
+							"type": "bytes"
+						},
+						{
+							"internalType": "uint8",
+							"name": "opcode",
+							"type": "uint8"
+						},
+						{
+							"internalType": "uint64",
+							"name": "depth",
+							"type": "uint64"
+						},
+						{
+							"internalType": "bool",
+							"name": "isOutOfGas",
+							"type": "bool"
+						},
+						{
+							"internalType": "address",
+							"name": "contractAddr",
+							"type": "address"
+						}
+					],
+					"internalType": "struct VmSafe.DebugStep[]",
+					"name": "step",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "stopAndReturnStateDiff",
+			"outputs": [
+				{
+					"components": [
+						{
+							"components": [
+								{
+									"internalType": "uint256",
+									"name": "forkId",
+									"type": "uint256"
+								},
+								{
+									"internalType": "uint256",
+									"name": "chainId",
+									"type": "uint256"
+								}
+							],
+							"internalType": "struct VmSafe.ChainInfo",
+							"name": "chainInfo",
+							"type": "tuple"
+						},
+						{
+							"internalType": "enum VmSafe.AccountAccessKind",
+							"name": "kind",
+							"type": "uint8"
+						},
+						{
+							"internalType": "address",
+							"name": "account",
+							"type": "address"
+						},
+						{
+							"internalType": "address",
+							"name": "accessor",
+							"type": "address"
+						},
+						{
+							"internalType": "bool",
+							"name": "initialized",
+							"type": "bool"
+						},
+						{
+							"internalType": "uint256",
+							"name": "oldBalance",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "newBalance",
+							"type": "uint256"
+						},
+						{
+							"internalType": "bytes",
+							"name": "deployedCode",
+							"type": "bytes"
+						},
+						{
+							"internalType": "uint256",
+							"name": "value",
+							"type": "uint256"
+						},
+						{
+							"internalType": "bytes",
+							"name": "data",
+							"type": "bytes"
+						},
+						{
+							"internalType": "bool",
+							"name": "reverted",
+							"type": "bool"
+						},
+						{
+							"components": [
+								{
+									"internalType": "address",
+									"name": "account",
+									"type": "address"
+								},
+								{
+									"internalType": "bytes32",
+									"name": "slot",
+									"type": "bytes32"
+								},
+								{
+									"internalType": "bool",
+									"name": "isWrite",
+									"type": "bool"
+								},
+								{
+									"internalType": "bytes32",
+									"name": "previousValue",
+									"type": "bytes32"
+								},
+								{
+									"internalType": "bytes32",
+									"name": "newValue",
+									"type": "bytes32"
+								},
+								{
+									"internalType": "bool",
+									"name": "reverted",
+									"type": "bool"
+								}
+							],
+							"internalType": "struct VmSafe.StorageAccess[]",
+							"name": "storageAccesses",
+							"type": "tuple[]"
+						},
+						{
+							"internalType": "uint64",
+							"name": "depth",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "oldNonce",
+							"type": "uint64"
+						},
+						{
+							"internalType": "uint64",
+							"name": "newNonce",
+							"type": "uint64"
+						}
+					],
+					"internalType": "struct VmSafe.AccountAccess[]",
+					"name": "accountAccesses",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "stopBroadcast",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "stopMappingRecording",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "stopRecord",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "data",
+					"type": "string"
+				}
+			],
+			"name": "toBase64",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "data",
+					"type": "bytes"
+				}
+			],
+			"name": "toBase64",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "data",
+					"type": "string"
+				}
+			],
+			"name": "toBase64URL",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "data",
+					"type": "bytes"
+				}
+			],
+			"name": "toBase64URL",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "input",
+					"type": "string"
+				}
+			],
+			"name": "toLowercase",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "output",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes[]",
+					"name": "data",
+					"type": "bytes[]"
+				}
+			],
+			"name": "toRlp",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "value",
+					"type": "address"
+				}
+			],
+			"name": "toString",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "stringifiedValue",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "value",
+					"type": "uint256"
+				}
+			],
+			"name": "toString",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "stringifiedValue",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "value",
+					"type": "bytes"
+				}
+			],
+			"name": "toString",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "stringifiedValue",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bool",
+					"name": "value",
+					"type": "bool"
+				}
+			],
+			"name": "toString",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "stringifiedValue",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "int256",
+					"name": "value",
+					"type": "int256"
+				}
+			],
+			"name": "toString",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "stringifiedValue",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "value",
+					"type": "bytes32"
+				}
+			],
+			"name": "toString",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "stringifiedValue",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "input",
+					"type": "string"
+				}
+			],
+			"name": "toUppercase",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "output",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "input",
+					"type": "string"
+				}
+			],
+			"name": "trim",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "output",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string[]",
+					"name": "commandInput",
+					"type": "string[]"
+				}
+			],
+			"name": "tryFfi",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "int32",
+							"name": "exitCode",
+							"type": "int32"
+						},
+						{
+							"internalType": "bytes",
+							"name": "stdout",
+							"type": "bytes"
+						},
+						{
+							"internalType": "bytes",
+							"name": "stderr",
+							"type": "bytes"
+						}
+					],
+					"internalType": "struct VmSafe.FfiResult",
+					"name": "result",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "unixTime",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "milliseconds",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "data",
+					"type": "string"
+				}
+			],
+			"name": "writeFile",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				},
+				{
+					"internalType": "bytes",
+					"name": "data",
+					"type": "bytes"
+				}
+			],
+			"name": "writeFileBinary",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "valueKey",
+					"type": "string"
+				}
+			],
+			"name": "writeJson",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				}
+			],
+			"name": "writeJson",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "data",
+					"type": "string"
+				}
+			],
+			"name": "writeLine",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "valueKey",
+					"type": "string"
+				}
+			],
+			"name": "writeToml",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "json",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "path",
+					"type": "string"
+				}
+			],
+			"name": "writeToml",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}

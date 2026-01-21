@@ -33,6 +33,7 @@ pub fn main() {
     let public_values = PublicValues {
         pub_key: input.pub_key.to_vec().into(),
         message: input.message.into(),
+        signature: input.signature.to_vec().into(),
     };
     sp1_zkvm::io::commit_slice(&PublicValues::abi_encode(&public_values));
     

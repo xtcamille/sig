@@ -46,6 +46,7 @@ enum ProofSystem {
 struct SP1Secp256k1ProofFixture {
     pub_key: String,
     message: String,
+    signature: String,
     vkey: String,
     public_values: String,
     proof: String,
@@ -112,12 +113,13 @@ fn create_proof_fixture(
 ) {
     // Deserialize the public values.
     let bytes = proof.public_values.as_slice();
-    let PublicValues { pub_key, message } = PublicValues::abi_decode(bytes).unwrap();
+    let PublicValues { pub_key, message,signature } = PublicValues::abi_decode(bytes).unwrap();
 
     // Create the testing fixture so we can test things end-to-end.
     let fixture = SP1Secp256k1ProofFixture {
         pub_key: format!("0x{}", hex::encode(pub_key)),
         message: format!("0x{}", hex::encode(message)),
+        signature: format!("0x{}", hex::encode(signature)),
         vkey: vk.bytes32().to_string(),
         public_values: format!("0x{}", hex::encode(bytes)),
         proof: format!("0x{}", hex::encode(proof.bytes())),
