@@ -1,8 +1,9 @@
 #![no_main]
 sp1_zkvm::entrypoint!(main);
 
+use alloy_sol_types::SolType;
 use k256::ecdsa::{VerifyingKey, Signature, signature::Verifier};
-use shared_lib::Secp256k1VerificationData;
+use shared_lib::{Secp256k1VerificationData, PublicValues};
 
 pub fn main() {
     // 1. 读取输入
@@ -28,10 +29,13 @@ pub fn main() {
     // 5. 提交公共输出 (Public Values)
     // 这一步至关重要。我们需要告诉链上验证者：
     // “这个证明是关于 地址 A (input.pub_key) 和 交易 X (input.message) 的”
-    // 如果不提交这些值，拥有者可以为任意公钥生成证明，链上将无法区分。
-    sp1_zkvm::io::commit(&input.pub_key.as_slice());
-    sp1_zkvm::io::commit(&input.message);
+    // 我们使用 ABI 编码提交，以便 Solidity 能够轻松解码。
+    let public_values = PublicValues {
+        pub_key: input.pub_key.to_vec().into(),
+        message: input.message.into(),
+    };
+    sp1_zkvm::io::commit_slice(&PublicValues::abi_encode(&public_values));
     
     // 可选：打印日志（仅在调试模式下可见）
-    println!("Successfully verified signature for message len: {}", input.message.len());
+    println!("Successfully verified signature for message len: {}", public_values.message.len());
 }
