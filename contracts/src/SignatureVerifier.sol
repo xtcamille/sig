@@ -26,6 +26,8 @@ contract SignatureVerifier {
         vkey = _vkey;
     }
 
+    error PublicValuesMismatch(bytes expected, bytes actual);
+
     /// @notice Verifies a Secp256k1 signature proof.
     /// @param pubKey The expected public key.
     /// @param message The expected message.
@@ -46,11 +48,10 @@ contract SignatureVerifier {
         bytes memory expectedPublicValues = abi.encode(
             PublicValues(pubKey, message, signature)
         );
-        revert(string(expectedPublicValues));
-        require(
-            keccak256(publicValues) == keccak256(expectedPublicValues),
-            "Public values mismatch"
-        );
+
+        if (keccak256(publicValues) != keccak256(expectedPublicValues)) {
+            revert PublicValuesMismatch(expectedPublicValues, publicValues);
+        }
 
         // 2. Verify the proof.
         ISP1Verifier(verifier).verifyProof(vkey, publicValues, proofBytes);

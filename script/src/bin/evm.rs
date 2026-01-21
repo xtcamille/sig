@@ -113,8 +113,7 @@ fn create_proof_fixture(
 ) {
     // Deserialize the public values.
     let bytes = proof.public_values.as_slice();
-    println!("public_values string: {}", hex::encode(bytes));
-    
+
     let PublicValues { pub_key, message,signature } = PublicValues::abi_decode(bytes).unwrap();
     
     // Create the testing fixture so we can test things end-to-end.

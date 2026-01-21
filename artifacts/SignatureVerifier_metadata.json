@@ -175,11 +175,11 @@
 	},
 	"sources": {
 		"contracts/src/SignatureVerifier.sol": {
-			"keccak256": "0x8329c4bc744366f8482984811fc5516d261a59e1ea0f77bafce07e9d0a4abd4c",
+			"keccak256": "0x6d37892939afdadb45db97a01442461ab678502b6140cb95cdbb2758569fd1a7",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9a5d06d2ccf143ec66849c1d10cf2e6495920fdb328d45beeb09f84fe7a8a06e",
-				"dweb:/ipfs/QmbBeQLweKrjv5i595UKDKmLew79AkWVEm79HcWQTqmjjX"
+				"bzz-raw://913001cfcc50f675c6e934c15231bbba2ed3f88608cb70e1dc34eafa4f6884d3",
+				"dweb:/ipfs/QmQ9bjuRmQT8QCVepBLRTcj8S48QzPjzrUFBjKbzAU3ikH"
 			]
 		},
 		"https://github.com/succinctlabs/sp1-contracts/blob/main/contracts/src/ISP1Verifier.sol": {
