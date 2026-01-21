@@ -10,17 +10,11 @@
 //! RUST_LOG=info cargo run --release --bin evm -- --system plonk
 //! ```
 
-use alloy_sol_types::SolType;
 use clap::{Parser, ValueEnum};
-use shared_lib::{PublicValues, Secp256k1VerificationData};
 use serde::{Deserialize, Serialize};
-use sp1_sdk::{
-    include_elf, HashableKey, ProverClient, SP1ProofWithPublicValues, SP1Stdin, SP1VerifyingKey,
-};
+use sp1_sdk::include_elf;
 use std::path::PathBuf;
 use std::time::Instant;
-use k256::ecdsa::{SigningKey, Signature, signature::{Signer, Verifier}};
-use rand::rngs::OsRng;
 
 /// The ELF (executable and linkable format) file for the Succinct RISC-V zkVM.
 pub const SECP256K1_ELF: &[u8] = include_elf!("secp256k1-program");
