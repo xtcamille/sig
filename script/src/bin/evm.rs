@@ -74,11 +74,7 @@ fn main() {
     // Verify the signature locally.
     verifying_key.verify(message, &signature).expect("failed to verify signature locally");
     println!("Successfully verified signature locally.");
-    println!("pub_key: {}", verifying_key.to_encoded_point(true).as_bytes().try_into().expect("invalid pubkey length"));
-    println!("message: {}", message);
-    println!("signature: {}", signature);
-
-
+ 
     let input = Secp256k1VerificationData {
         pub_key: verifying_key.to_encoded_point(true).as_bytes().try_into().expect("invalid pubkey length"),
         signature: signature.to_bytes().as_slice().try_into().expect("invalid signature length"),
@@ -144,7 +140,7 @@ fn create_proof_fixture(
 
     // Save the fixture to a file.
     let fixture_path = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../contracts/src/fixtures");
-    println!("fixture_path: {}", fixture_path.display());
+
     std::fs::create_dir_all(&fixture_path).expect("failed to create fixture path");
     std::fs::write(
         fixture_path.join(format!("{:?}-fixture.json", system).to_lowercase()),
