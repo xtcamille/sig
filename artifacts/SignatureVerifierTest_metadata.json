@@ -688,19 +688,19 @@
 	},
 	"sources": {
 		"contracts/src/SignatureVerifier.sol": {
-			"keccak256": "0x6d37892939afdadb45db97a01442461ab678502b6140cb95cdbb2758569fd1a7",
+			"keccak256": "0x0d2810b4527f709bf899e98e134613e117d78cddc85bd2558aaf04e481bf7dcb",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://913001cfcc50f675c6e934c15231bbba2ed3f88608cb70e1dc34eafa4f6884d3",
-				"dweb:/ipfs/QmQ9bjuRmQT8QCVepBLRTcj8S48QzPjzrUFBjKbzAU3ikH"
+				"bzz-raw://665917256d21eece89c6a6b70c3f175a7ea61fe33dc56cf6207793241257ac19",
+				"dweb:/ipfs/Qme6p5U38kBGcrdkFML5WGGLCr7zqGt1qiL8Rck3NXFDQw"
 			]
 		},
 		"contracts/test/SignatureVerifier.t.sol": {
-			"keccak256": "0x8982c288f4aa69726b0717127a8c6e3bd7d1a38e00fd64e9cd38430a1b9adedc",
+			"keccak256": "0xa3ede7cb49c81d29f0fcde6b1743eca5abf395cdf2b742b89c24f7026296062d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://09d0439c0a8984895533272ffb058a31cf90c9248168a36089f20cd99b799080",
-				"dweb:/ipfs/QmY2crK3iexvWyJm7NpPjPgRTVmFbSxSvMn4SavyhsfpXA"
+				"bzz-raw://4bd65a05da009d41c9f1c5dbf981184ea36cfeddd4bd3c81a3ce93cf67ddc32b",
+				"dweb:/ipfs/QmZTkwwCRSe8ur5mCsUezi6BWbmrk4Si67FJR7bEYyVUKJ"
 			]
 		},
 		"https://github.com/foundry-rs/forge-std/blob/master/src/Base.sol": {

@@ -25,6 +25,22 @@
 				"inputs": [
 					{
 						"internalType": "bytes",
+						"name": "expected",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "actual",
+						"type": "bytes"
+					}
+				],
+				"name": "PublicValuesMismatch",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
 						"name": "publicValues",
 						"type": "bytes"
 					}
@@ -175,11 +191,11 @@
 	},
 	"sources": {
 		"contracts/src/SignatureVerifier.sol": {
-			"keccak256": "0x6d37892939afdadb45db97a01442461ab678502b6140cb95cdbb2758569fd1a7",
+			"keccak256": "0x0d2810b4527f709bf899e98e134613e117d78cddc85bd2558aaf04e481bf7dcb",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://913001cfcc50f675c6e934c15231bbba2ed3f88608cb70e1dc34eafa4f6884d3",
-				"dweb:/ipfs/QmQ9bjuRmQT8QCVepBLRTcj8S48QzPjzrUFBjKbzAU3ikH"
+				"bzz-raw://665917256d21eece89c6a6b70c3f175a7ea61fe33dc56cf6207793241257ac19",
+				"dweb:/ipfs/Qme6p5U38kBGcrdkFML5WGGLCr7zqGt1qiL8Rck3NXFDQw"
 			]
 		},
 		"https://github.com/succinctlabs/sp1-contracts/blob/main/contracts/src/ISP1Verifier.sol": {
