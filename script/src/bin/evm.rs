@@ -56,94 +56,44 @@ fn main() {
     // Setup the logger.
     sp1_sdk::utils::setup_logger();
 
-    // Parse the command line arguments.
-    let args = EVMArgs::parse();
+    let fixture_path = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../contracts/src/fixtures/groth16-fixture.json");
+    if !fixture_path.exists() {
+        println!("Fixture file not found at {:?}", fixture_path);
+        println!("Please run this script with --system groth16 first to generate the fixture.");
+        return;
+    }
 
-    // Setup the prover client.
-    let client = ProverClient::from_env();
+    let fixture_data = std::fs::read_to_string(&fixture_path).expect("failed to read fixture file");
+    let fixture: SP1Secp256k1ProofFixture = serde_json::from_str(&fixture_data).expect("failed to deserialize fixture");
 
-    // Setup the program.
-    let (pk, vk) = client.setup(SECP256K1_ELF);
-
-    // 1. Generate a Secp256k1 keypair and sign a message.
-    let signing_key = SigningKey::random(&mut OsRng);
-    let verifying_key = signing_key.verifying_key();
-    let message = b"Hello, SP1 Secp256k1!";
-    let signature: Signature = signing_key.sign(message);
-
-    // Verify the signature locally.
-    verifying_key.verify(message, &signature).expect("failed to verify signature locally");
-    println!("Successfully verified signature locally.");
- 
-    let input = Secp256k1VerificationData {
-        pub_key: verifying_key.to_encoded_point(true).as_bytes().try_into().expect("invalid pubkey length"),
-        signature: signature.to_bytes().as_slice().try_into().expect("invalid signature length"),
-        message: message.to_vec(),
+    let decode_hex = |s: &str| {
+        let s = s.strip_prefix("0x").unwrap_or(s);
+        hex::decode(s).expect("invalid hex string")
     };
 
-    // Setup the inputs.
-    let mut stdin = SP1Stdin::new();
-    stdin.write(&input);
+    let pub_key = decode_hex(&fixture.pub_key);
+    let message = decode_hex(&fixture.message);
+    let signature = decode_hex(&fixture.signature);
+    let vkey_bytes = decode_hex(&fixture.vkey);
+    let public_values = decode_hex(&fixture.public_values);
+    let proof_bytes = decode_hex(&fixture.proof);
 
-    println!("Proof System: {:?}", args.system);
+    let mut vkey = [0u8; 32];
+    vkey.copy_from_slice(&vkey_bytes);
 
     let start = Instant::now();
-    // Generate the proof based on the selected proof system.
-    let proof = match args.system {
-        ProofSystem::Plonk => client.prove(&pk, &stdin).plonk().run(),
-        ProofSystem::Groth16 => client.prove(&pk, &stdin).groth16().run(),
-    }
-    .expect("failed to generate proof");
-
-    // Verify the proof locally.
-    client.verify(&proof, &vk).expect("failed to verify proof locally");
-    println!("Successfully verified SP1 proof locally.");
+    // Verify the entire logic flow (mimicking Solidity contracts).
+    secp256k1_script::verify::verify_signature_flow(
+        &pub_key,
+        &message,
+        &signature,
+        vkey,
+        &public_values,
+        &proof_bytes,
+    )
+    .expect("failed to verify full signature flow locally");
 
     let duration = start.elapsed();
-    println!("Proof generation took: {:?}", duration);
-
-    create_proof_fixture(&proof, &vk, args.system);
-}
-
-/// Create a fixture for the given proof.
-fn create_proof_fixture(
-    proof: &SP1ProofWithPublicValues,
-    vk: &SP1VerifyingKey,
-    system: ProofSystem,
-) {
-    // Deserialize the public values.
-    let bytes = proof.public_values.as_slice();
-
-    let PublicValues { pub_key, message,signature } = PublicValues::abi_decode(bytes).unwrap();
-    
-    // Create the testing fixture so we can test things end-to-end.
-    let fixture = SP1Secp256k1ProofFixture {
-        pub_key: format!("0x{}", hex::encode(pub_key)),
-        message: format!("0x{}", hex::encode(message)),
-        signature: format!("0x{}", hex::encode(signature)),
-        vkey: vk.bytes32().to_string(),
-        public_values: format!("0x{}", hex::encode(bytes)),
-        proof: format!("0x{}", hex::encode(proof.bytes())),
-    };
-
-    // The verification key is used to verify that the proof corresponds to the execution of the
-    // program on the given input.
-    println!("Verification Key: {}", fixture.vkey);
-
-    // The public values are the values which are publicly committed to by the zkVM.
-    println!("Public Values: {}", fixture.public_values);
-
-    // The proof proves to the verifier that the program was executed with some inputs that led to
-    // the give public values.
-    println!("Proof Bytes: {}", fixture.proof);
-
-    // Save the fixture to a file.
-    let fixture_path = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../contracts/src/fixtures");
-
-    std::fs::create_dir_all(&fixture_path).expect("failed to create fixture path");
-    std::fs::write(
-        fixture_path.join(format!("{:?}-fixture.json", system).to_lowercase()),
-        serde_json::to_string_pretty(&fixture).unwrap(),
-    )
-    .expect("failed to write fixture");
+    println!("Successfully verified full signature flow locally (Mimics Groth16Verifier.sol).");
+    println!("Proof verify took: {:?}", duration);
 }
