@@ -74,6 +74,10 @@ fn main() {
     // Verify the signature locally.
     verifying_key.verify(message, &signature).expect("failed to verify signature locally");
     println!("Successfully verified signature locally.");
+    println!("pub_key: {}", verifying_key.to_encoded_point(true).as_bytes().try_into().expect("invalid pubkey length"));
+    println!("message: {}", message);
+    println!("signature: {}", signature);
+
 
     let input = Secp256k1VerificationData {
         pub_key: verifying_key.to_encoded_point(true).as_bytes().try_into().expect("invalid pubkey length"),
@@ -113,8 +117,10 @@ fn create_proof_fixture(
 ) {
     // Deserialize the public values.
     let bytes = proof.public_values.as_slice();
+    println!("public_values string: {}", hex::encode(bytes));
+    
     let PublicValues { pub_key, message,signature } = PublicValues::abi_decode(bytes).unwrap();
-
+    
     // Create the testing fixture so we can test things end-to-end.
     let fixture = SP1Secp256k1ProofFixture {
         pub_key: format!("0x{}", hex::encode(pub_key)),

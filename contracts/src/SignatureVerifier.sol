@@ -46,6 +46,7 @@ contract SignatureVerifier {
         bytes memory expectedPublicValues = abi.encode(
             PublicValues(pubKey, message, signature)
         );
+        revert(string(expectedPublicValues));
         require(
             keccak256(publicValues) == keccak256(expectedPublicValues),
             "Public values mismatch"

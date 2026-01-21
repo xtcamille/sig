@@ -42,6 +42,11 @@
 								"internalType": "bytes",
 								"name": "message",
 								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "signature",
+								"type": "bytes"
 							}
 						],
 						"internalType": "struct SignatureVerifier.PublicValues",
@@ -75,6 +80,11 @@
 					{
 						"internalType": "bytes",
 						"name": "message",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
 						"type": "bytes"
 					},
 					{
@@ -115,12 +125,13 @@
 						"publicValues": "The ABI-encoded public values."
 					}
 				},
-				"verifySignature(bytes,bytes,bytes,bytes)": {
+				"verifySignature(bytes,bytes,bytes,bytes,bytes)": {
 					"params": {
 						"message": "The expected message.",
 						"proofBytes": "The proof bytes.",
 						"pubKey": "The expected public key.",
-						"publicValues": "The encoded public values."
+						"publicValues": "The encoded public values.",
+						"signature": "The expected signature."
 					}
 				}
 			},
@@ -136,7 +147,7 @@
 				"verifier()": {
 					"notice": "The address of the SP1 verifier contract."
 				},
-				"verifySignature(bytes,bytes,bytes,bytes)": {
+				"verifySignature(bytes,bytes,bytes,bytes,bytes)": {
 					"notice": "Verifies a Secp256k1 signature proof."
 				},
 				"vkey()": {
@@ -164,11 +175,11 @@
 	},
 	"sources": {
 		"contracts/src/SignatureVerifier.sol": {
-			"keccak256": "0xee16c76e88b90bc5985ab279d74511c8ddd72379b5d71c3f7da7433d6686dd6b",
+			"keccak256": "0xea31d1048ab4657b5a344035002385060742ad6fb40a6885b6e6fac2550174dd",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://47680cfa46cb4211c6daf933b1c294d78483381a37153885f4c7116d84a365aa",
-				"dweb:/ipfs/QmUJSjntoJtdDQaJ8p6ySwGcDgoY91Gmkgte2aN1Lt6Bsy"
+				"bzz-raw://099cc9101e11f3b7ac33f735068c42e85f78687c01e37ea484fd21e579e15f17",
+				"dweb:/ipfs/QmeZKUfT3UEuoqg5QeFC6caSgHU5tyG9L5s8BDYrBoQKH2"
 			]
 		},
 		"https://github.com/succinctlabs/sp1-contracts/blob/main/contracts/src/ISP1Verifier.sol": {

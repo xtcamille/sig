@@ -383,6 +383,42 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "publicValues",
+						"type": "bytes"
+					}
+				],
+				"name": "decodePublicValues",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes",
+								"name": "pub_key",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "message",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "signature",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct SignatureVerifier.PublicValues",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "excludeArtifacts",
 				"outputs": [
@@ -616,12 +652,22 @@
 		],
 		"devdoc": {
 			"kind": "dev",
-			"methods": {},
+			"methods": {
+				"decodePublicValues(bytes)": {
+					"params": {
+						"publicValues": "The ABI-encoded public values."
+					}
+				}
+			},
 			"version": 1
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"decodePublicValues(bytes)": {
+					"notice": "Decodes the public values."
+				}
+			},
 			"version": 1
 		}
 	},
@@ -642,19 +688,19 @@
 	},
 	"sources": {
 		"contracts/src/SignatureVerifier.sol": {
-			"keccak256": "0xee16c76e88b90bc5985ab279d74511c8ddd72379b5d71c3f7da7433d6686dd6b",
+			"keccak256": "0x6216beb4631a1e4ea57ff2e6d7b6036a26c91967836fe5053a4e968ecace048b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://47680cfa46cb4211c6daf933b1c294d78483381a37153885f4c7116d84a365aa",
-				"dweb:/ipfs/QmUJSjntoJtdDQaJ8p6ySwGcDgoY91Gmkgte2aN1Lt6Bsy"
+				"bzz-raw://680b145dc5fe05f1ecae8382fa88571da06c985c1110098658c07150180f0811",
+				"dweb:/ipfs/QmT2GxBVkm88ziwsoXet9dio6tQyFhxVZmadNSv3oabreg"
 			]
 		},
 		"contracts/test/SignatureVerifier.t.sol": {
-			"keccak256": "0x9c6a9a96ebd4a9dae6592ea693eca6edf3c89e02ee0ba35c6af04335d9c550cd",
+			"keccak256": "0x32759c25090d19d5f4bb5c8b59786c0b4b6d690e976df98ff60ccb2a2cd66b9e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0fd359fac17cd2397b8165adea8ce8cac76d28691c2266bd167226e70f1cf9f7",
-				"dweb:/ipfs/QmVmbkreoQUDsjE9NWLTgHR4rmywVCNmhf7DtEBqH7bMHb"
+				"bzz-raw://a1176d463adfacce555d0e91c657e484617efe88f7426f8ea36e0e1340179677",
+				"dweb:/ipfs/QmU4bfzpWrZiPCRpca4YJ2tVPtNp3UoqvtNzPn14G74oBM"
 			]
 		},
 		"https://github.com/foundry-rs/forge-std/blob/master/src/Base.sol": {
