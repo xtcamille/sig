@@ -12,22 +12,23 @@
 
 use alloy_sol_types::SolType;
 use clap::{Parser, ValueEnum};
-use shared_lib::PublicValuesStruct;
+use shared_lib::{PublicValues, Secp256k1VerificationData};
 use serde::{Deserialize, Serialize};
 use sp1_sdk::{
     include_elf, HashableKey, ProverClient, SP1ProofWithPublicValues, SP1Stdin, SP1VerifyingKey,
 };
 use std::path::PathBuf;
+use std::time::Instant;
+use k256::ecdsa::{SigningKey, Signature, signature::{Signer, Verifier}};
+use rand::rngs::OsRng;
 
 /// The ELF (executable and linkable format) file for the Succinct RISC-V zkVM.
-pub const ED25519_ELF: &[u8] = include_elf!("ed25519-program");
+pub const SECP256K1_ELF: &[u8] = include_elf!("secp256k1-program");
 
 /// The arguments for the EVM command.
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct EVMArgs {
-    #[arg(long, default_value = "20")]
-    n: u32,
     #[arg(long, value_enum, default_value = "groth16")]
     system: ProofSystem,
 }
@@ -42,10 +43,10 @@ enum ProofSystem {
 /// A fixture that can be used to test the verification of SP1 zkVM proofs inside Solidity.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-struct SP1ED25519ProofFixture {
-    a: u32,
-    b: u32,
-    n: u32,
+struct SP1Secp256k1ProofFixture {
+    pub_key: String,
+    message: String,
+    signature: String,
     vkey: String,
     public_values: String,
     proof: String,
@@ -55,9 +56,6 @@ fn main() {
     // Setup the logger.
     sp1_sdk::utils::setup_logger();
 
-    // Load environment variables from .env file.
-    dotenv::dotenv().ok();
-
     // Parse the command line arguments.
     let args = EVMArgs::parse();
 
@@ -65,21 +63,48 @@ fn main() {
     let client = ProverClient::from_env();
 
     // Setup the program.
-    let (pk, vk) = client.setup(ED25519_ELF);
+    let (pk, vk) = client.setup(SECP256K1_ELF);
+
+    // 1. Generate a Secp256k1 keypair and sign a message.
+    let signing_key = SigningKey::random(&mut OsRng);
+    let verifying_key = signing_key.verifying_key();
+    let message = b"Hello, SP1 Secp256k1!";
+    let signature: Signature = signing_key.sign(message);
+
+    // Verify the signature locally.
+    verifying_key.verify(message, &signature).expect("failed to verify signature locally");
+    println!("Successfully verified signature locally.");
+    println!("pub_key: {}", verifying_key.to_encoded_point(true).as_bytes().try_into().expect("invalid pubkey length"));
+    println!("message: {}", message);
+    println!("signature: {}", signature);
+
+
+    let input = Secp256k1VerificationData {
+        pub_key: verifying_key.to_encoded_point(true).as_bytes().try_into().expect("invalid pubkey length"),
+        signature: signature.to_bytes().as_slice().try_into().expect("invalid signature length"),
+        message: message.to_vec(),
+    };
 
     // Setup the inputs.
     let mut stdin = SP1Stdin::new();
-    stdin.write(&args.n);
+    stdin.write(&input);
 
-    println!("n: {}", args.n);
     println!("Proof System: {:?}", args.system);
 
+    let start = Instant::now();
     // Generate the proof based on the selected proof system.
     let proof = match args.system {
         ProofSystem::Plonk => client.prove(&pk, &stdin).plonk().run(),
         ProofSystem::Groth16 => client.prove(&pk, &stdin).groth16().run(),
     }
     .expect("failed to generate proof");
+
+    // Verify the proof locally.
+    client.verify(&proof, &vk).expect("failed to verify proof locally");
+    println!("Successfully verified SP1 proof locally.");
+
+    let duration = start.elapsed();
+    println!("Proof generation took: {:?}", duration);
 
     create_proof_fixture(&proof, &vk, args.system);
 }
@@ -92,13 +117,15 @@ fn create_proof_fixture(
 ) {
     // Deserialize the public values.
     let bytes = proof.public_values.as_slice();
-    let PublicValuesStruct { n, a, b } = PublicValuesStruct::abi_decode(bytes).unwrap();
-
+    println!("public_values string: {}", hex::encode(bytes));
+    
+    let PublicValues { pub_key, message,signature } = PublicValues::abi_decode(bytes).unwrap();
+    
     // Create the testing fixture so we can test things end-to-end.
-    let fixture = SP1ED25519ProofFixture {
-        a,
-        b,
-        n,
+    let fixture = SP1Secp256k1ProofFixture {
+        pub_key: format!("0x{}", hex::encode(pub_key)),
+        message: format!("0x{}", hex::encode(message)),
+        signature: format!("0x{}", hex::encode(signature)),
         vkey: vk.bytes32().to_string(),
         public_values: format!("0x{}", hex::encode(bytes)),
         proof: format!("0x{}", hex::encode(proof.bytes())),
@@ -106,14 +133,9 @@ fn create_proof_fixture(
 
     // The verification key is used to verify that the proof corresponds to the execution of the
     // program on the given input.
-    //
-    // Note that the verification key stays the same regardless of the input.
     println!("Verification Key: {}", fixture.vkey);
 
     // The public values are the values which are publicly committed to by the zkVM.
-    //
-    // If you need to expose the inputs or outputs of your program, you should commit them in
-    // the public values.
     println!("Public Values: {}", fixture.public_values);
 
     // The proof proves to the verifier that the program was executed with some inputs that led to
@@ -122,6 +144,7 @@ fn create_proof_fixture(
 
     // Save the fixture to a file.
     let fixture_path = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../contracts/src/fixtures");
+    println!("fixture_path: {}", fixture_path.display());
     std::fs::create_dir_all(&fixture_path).expect("failed to create fixture path");
     std::fs::write(
         fixture_path.join(format!("{:?}-fixture.json", system).to_lowercase()),
