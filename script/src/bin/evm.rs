@@ -55,6 +55,9 @@ fn main() {
     // Setup the logger.
     sp1_sdk::utils::setup_logger();
 
+    // Load environment variables from .env file.
+    dotenv::dotenv().ok();
+
     // Parse the command line arguments.
     let args = EVMArgs::parse();
 

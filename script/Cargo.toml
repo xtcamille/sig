@@ -19,7 +19,7 @@ path = "src/bin/vkey.rs"
 [dependencies]
 rand = "0.8"
 k256 = { version = "0.13.3", features = ["ecdsa", "serde"] }
-sp1-sdk = "5.0.8"
+sp1-sdk = { version = "5.0.8", features = ["cuda"] }
 serde_json = { version = "1.0", default-features = false, features = ["alloc"] }
 serde = { version = "1.0.200", default-features = false, features = ["derive"] }
 clap = { version = "4.0", features = ["derive", "env"] }
