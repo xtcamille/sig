@@ -9,6 +9,7 @@ use std::path::Path;
 fn main() {
     // 1. 设置环境 (日志等)
     sp1_sdk::utils::setup_logger();
+    dotenv::dotenv().ok();
 
     // 2. 模拟用户行为：生成密钥并签名
     // 在实际应用中，这里可能是从钱包 (Wallet) 接收签名，或者是读取本地私钥文件
