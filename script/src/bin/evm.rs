@@ -75,19 +75,30 @@ fn main() {
     let mut vkey = [0u8; 32];
     vkey.copy_from_slice(&vkey_bytes);
 
-    let start = Instant::now();
-    // Verify the entire logic flow (mimicking Solidity contracts).
-    secp256k1_script::verify::verify_signature_flow(
-        &pub_key,
-        &message,
-        &signature,
-        vkey,
-        &public_values,
-        &proof_bytes,
-    )
-    .expect("failed to verify full signature flow locally");
+    let iterations = 10;
+    let mut durations = Vec::new();
 
-    let duration = start.elapsed();
-    println!("Successfully verified full signature flow locally (Mimics Groth16Verifier.sol).");
-    println!("Proof verify took: {:?}", duration);
+    for i in 1..=iterations {
+        let start = Instant::now();
+        // Verify the entire logic flow (mimicking Solidity contracts).
+        secp256k1_script::verify::verify_signature_flow(
+            &pub_key,
+            &message,
+            &signature,
+            vkey,
+            &public_values,
+            &proof_bytes,
+        )
+        .expect("failed to verify full signature flow locally");
+        
+        let duration = start.elapsed();
+        durations.push(duration);
+        println!("Iteration {}: Proof verify took: {:?}", i, duration);
+    }
+
+    let total_duration: std::time::Duration = durations.iter().sum();
+    let average_duration = total_duration / (iterations as u32);
+
+    println!("Successfully verified full signature flow locally 10 times (Mimics Groth16Verifier.sol).");
+    println!("Average Proof verify took: {:?}", average_duration);
 }
