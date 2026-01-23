@@ -2,6 +2,7 @@ use sp1_sdk::{include_elf, ProverClient, SP1Stdin};
 use ed25519_dalek::{Signer, SigningKey, VerifyingKey, Verifier};
 use rand::rngs::OsRng; // 随机数生成器
 use shared_lib::Ed25519VerificationData;
+use alloy_sol_types::SolType;
 use std::time::Instant;
 
 fn main() {
@@ -78,10 +79,11 @@ fn main() {
     println!("Proof verified successfully in {:?}", verifier_duration);
 
     // 7. 读取公共输出以确认
-    let committed_pub_key = proof.public_values.read::<[u8; 32]>();
-    let committed_message = proof.public_values.read::<Vec<u8>>();
+    let bytes = proof.public_values.as_slice();
+    let shared_lib::PublicValuesStruct { pub_key, message: committed_message, .. } = 
+        shared_lib::PublicValuesStruct::abi_decode(bytes).expect("failed to decode public values");
 
-    assert_eq!(committed_pub_key, verifying_key.to_bytes());
+    assert_eq!(pub_key, verifying_key.to_bytes().into());
     assert_eq!(committed_message, message);
     let total_cycles = report.total_instruction_count();
 

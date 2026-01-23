@@ -12,7 +12,9 @@
 
 use alloy_sol_types::SolType;
 use clap::{Parser, ValueEnum};
-use shared_lib::PublicValuesStruct;
+use shared_lib::{PublicValuesStruct, Ed25519VerificationData};
+use ed25519_dalek::{Signer, SigningKey, VerifyingKey};
+use rand::rngs::OsRng;
 use serde::{Deserialize, Serialize};
 use sp1_sdk::{
     include_elf, HashableKey, ProverClient, SP1ProofWithPublicValues, SP1Stdin, SP1VerifyingKey,
@@ -26,8 +28,6 @@ pub const ED25519_ELF: &[u8] = include_elf!("ed25519-program");
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct EVMArgs {
-    #[arg(long, default_value = "20")]
-    n: u32,
     #[arg(long, value_enum, default_value = "groth16")]
     system: ProofSystem,
 }
@@ -43,9 +43,9 @@ enum ProofSystem {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 struct SP1ED25519ProofFixture {
-    a: u32,
-    b: u32,
-    n: u32,
+    pub_key: String,
+    signature: String,
+    message: String,
     vkey: String,
     public_values: String,
     proof: String,
@@ -65,10 +65,21 @@ fn main() {
     let (pk, vk) = client.setup(ED25519_ELF);
 
     // Setup the inputs.
-    let mut stdin = SP1Stdin::new();
-    stdin.write(&args.n);
+    let mut csprng = OsRng;
+    let signing_key: SigningKey = SigningKey::generate(&mut csprng);
+    let verifying_key: VerifyingKey = signing_key.verifying_key();
+    let message = b"Uni-RWA Cross-Chain Asset Transfer: 100 USDC to Ethereum".to_vec();
+    let signature = signing_key.sign(&message);
 
-    println!("n: {}", args.n);
+    let input_data = Ed25519VerificationData {
+        pub_key: verifying_key.to_bytes(),
+        signature: signature.to_bytes(),
+        message,
+    };
+
+    let mut stdin = SP1Stdin::new();
+    stdin.write(&input_data);
+
     println!("Proof System: {:?}", args.system);
 
     // Generate the proof based on the selected proof system.
@@ -89,13 +100,13 @@ fn create_proof_fixture(
 ) {
     // Deserialize the public values.
     let bytes = proof.public_values.as_slice();
-    let PublicValuesStruct { n, a, b } = PublicValuesStruct::abi_decode(bytes).unwrap();
+    let PublicValuesStruct { pub_key, signature, message } = PublicValuesStruct::abi_decode(bytes).unwrap();
 
     // Create the testing fixture so we can test things end-to-end.
     let fixture = SP1ED25519ProofFixture {
-        a,
-        b,
-        n,
+        pub_key: format!("0x{}", hex::encode(pub_key)),
+        signature: format!("0x{}", hex::encode(signature)),
+        message: format!("0x{}", hex::encode(message)),
         vkey: vk.bytes32().to_string(),
         public_values: format!("0x{}", hex::encode(bytes)),
         proof: format!("0x{}", hex::encode(proof.bytes())),
