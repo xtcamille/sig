@@ -3,7 +3,7 @@ sp1_zkvm::entrypoint!(main);
 
 use ed25519_dalek::{Verifier, VerifyingKey, Signature};
 use shared_lib::Ed25519VerificationData;
-use alloy_sol_types::SolType;
+use alloy_sol_types::SolValue;
 
 pub fn main() {
     // 1. 读取输入

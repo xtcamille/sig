@@ -5,6 +5,7 @@ edition = "2021"
 
 [dependencies]
 sp1-zkvm = "5.0.8"
+alloy-sol-types = { workspace = true }
 serde = { version = "1.0", default-features = false, features = ["derive"] }
 # 使用 standard feature 也可以，但 verify 是必须的
 ed25519-dalek = { version = "2.2.0", features = ["std", "serde"] }
