@@ -1,0 +1,227 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_verifier",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_vkey",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "expected",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "actual",
+						"type": "bytes"
+					}
+				],
+				"name": "PublicValuesMismatch",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "publicValues",
+						"type": "bytes"
+					}
+				],
+				"name": "decodePublicValues",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes",
+								"name": "pub_key",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "message",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "signature",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct SignatureVerifier.PublicValues",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "verifier",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "pubKey",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "message",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "publicValues",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "proofBytes",
+						"type": "bytes"
+					}
+				],
+				"name": "verifySignature",
+				"outputs": [],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "vkey",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"decodePublicValues(bytes)": {
+					"params": {
+						"publicValues": "The ABI-encoded public values."
+					}
+				},
+				"verifySignature(bytes,bytes,bytes,bytes,bytes)": {
+					"params": {
+						"message": "The expected message.",
+						"proofBytes": "The proof bytes.",
+						"pubKey": "The expected public key.",
+						"publicValues": "The encoded public values.",
+						"signature": "The expected signature."
+					}
+				}
+			},
+			"title": "SignatureVerifier",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"decodePublicValues(bytes)": {
+					"notice": "Decodes the public values."
+				},
+				"verifier()": {
+					"notice": "The address of the SP1 verifier contract."
+				},
+				"verifySignature(bytes,bytes,bytes,bytes,bytes)": {
+					"notice": "Verifies a Secp256k1 signature proof."
+				},
+				"vkey()": {
+					"notice": "The verification key for the Secp256k1 program."
+				}
+			},
+			"notice": "A contract that verifies Secp256k1 signatures using SP1 zkVM.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/SignatureVerifier.sol": "SignatureVerifier"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"https://github.com/succinctlabs/sp1-contracts/blob/main/contracts/src/ISP1Verifier.sol": {
+			"keccak256": "0x9e3ba64860bea920772dcf16be7946de2a2900d80bd51e9c0771184138f4f4d3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0ec7230ca1fdd74edc6ab597d80bb345282aed3f0db4788ed96b4cc373ff46a3",
+				"dweb:/ipfs/QmXPuSS5gzxMhFKWr1gsxBVu6WHh53ZZEvWkGgzrkM6Y7Q"
+			]
+		},
+		"https://github.com/succinctlabs/sp1-contracts/blob/main/contracts/src/v5.0.0/Groth16Verifier.sol": {
+			"keccak256": "0xaf172ac86306bd8fd64c23b7f4d0cad06b1d5124fd1909f263592754025d2275",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b7de9f7b1447001e0abff9914a10a25ba211173096fe40878f1f0de3cc1cd9b3",
+				"dweb:/ipfs/QmYSxrGdLdauQgfxBbKjfokUn1a1gk9qx6JbxPtNJZ2E3v"
+			]
+		},
+		"https://github.com/succinctlabs/sp1-contracts/blob/main/contracts/src/v5.0.0/SP1VerifierGroth16.sol": {
+			"keccak256": "0x06c629150bbba547199b5fce85dfc81d8ca5a5798f0a54f496dcb3cf0a0b0e21",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b3a55404ac1e05ae2318ef5bf003565d52908227c09ce89a8364ea0c74e02cbf",
+				"dweb:/ipfs/QmZH2BCfomhS2GCw2HMTPnNej2vC9cSCDMCowwJwxkTEa1"
+			]
+		},
+		"src/SignatureVerifier.sol": {
+			"keccak256": "0x0d2810b4527f709bf899e98e134613e117d78cddc85bd2558aaf04e481bf7dcb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://665917256d21eece89c6a6b70c3f175a7ea61fe33dc56cf6207793241257ac19",
+				"dweb:/ipfs/Qme6p5U38kBGcrdkFML5WGGLCr7zqGt1qiL8Rck3NXFDQw"
+			]
+		}
+	},
+	"version": 1
+}

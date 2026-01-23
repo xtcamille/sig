@@ -40,5 +40,5 @@ pub fn main() {
         signature: input.signature.into(),
         message: input.message.into(),
     };
-    sp1_zkvm::io::commit_slice(&public_values.abi_encode());
+    sp1_zkvm::io::commit_slice(&PublicValuesStruct::abi_encode(&public_values));
 }
