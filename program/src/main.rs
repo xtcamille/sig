@@ -3,6 +3,7 @@ sp1_zkvm::entrypoint!(main);
 
 use ed25519_dalek::{Verifier, VerifyingKey, Signature};
 use shared_lib::{Ed25519VerificationData, PublicValuesStruct};
+use alloy_sol_types::SolValue;
 
 pub fn main() {
     // 1. 读取输入
@@ -39,5 +40,5 @@ pub fn main() {
         signature: input.signature.into(),
         message: input.message.into(),
     };
-    sp1_zkvm::io::commit_slice(&PublicValuesStruct::abi_encode(&public_values));
+    sp1_zkvm::io::commit_slice(&public_values.abi_encode());
 }
