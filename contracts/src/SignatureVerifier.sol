@@ -16,9 +16,9 @@ contract SignatureVerifier {
 
     /// @notice The public values for the Secp256k1 proof.
     struct PublicValues {
-        bytes32 pub_key;
-        bytes signature;
+        bytes pub_key;
         bytes message;
+        bytes signature;
     }
 
     constructor(address _verifier, bytes32 _vkey) {
@@ -35,7 +35,7 @@ contract SignatureVerifier {
     /// @param publicValues The encoded public values.
     /// @param proofBytes The proof bytes.
     function verifySignature(
-        bytes32 pubKey,
+        bytes calldata pubKey,
         bytes calldata message,
         bytes calldata signature,
         bytes calldata publicValues,

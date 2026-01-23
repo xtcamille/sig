@@ -13,8 +13,8 @@ pub struct Ed25519VerificationData {
 
 sol! {
     struct PublicValuesStruct {
-        bytes32 pub_key;
-        bytes signature;
+        bytes pub_key;
         bytes message;
+        bytes signature;
     }
 }

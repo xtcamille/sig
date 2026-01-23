@@ -36,9 +36,9 @@ pub fn main() {
     println!("Successfully verified signature for message len: {}", input.message.len());
 
     let public_values = PublicValuesStruct {
-        pub_key: input.pub_key.into(),
-        signature: input.signature.into(),
+        pub_key: input.pub_key.to_vec().into(),
         message: input.message.into(),
+        signature: input.signature.to_vec().into(),
     };
     sp1_zkvm::io::commit_slice(&public_values.abi_encode());
 }
