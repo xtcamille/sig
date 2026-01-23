@@ -2,8 +2,7 @@
 sp1_zkvm::entrypoint!(main);
 
 use ed25519_dalek::{Verifier, VerifyingKey, Signature};
-use shared_lib::Ed25519VerificationData;
-use alloy_sol_types::SolValue;
+use shared_lib::{Ed25519VerificationData, PublicValuesStruct};
 
 pub fn main() {
     // 1. 读取输入
@@ -35,7 +34,7 @@ pub fn main() {
     // 可选：打印日志（仅在调试模式下可见）
     println!("Successfully verified signature for message len: {}", input.message.len());
 
-    let public_values = shared_lib::PublicValuesStruct {
+    let public_values = PublicValuesStruct {
         pub_key: input.pub_key.into(),
         signature: input.signature.into(),
         message: input.message.into(),
