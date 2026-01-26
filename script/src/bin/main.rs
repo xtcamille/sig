@@ -92,7 +92,23 @@ fn main() {
 
     println!("Assertion Verified: Proof binds Address to Transaction X");
     
-    // 8. 性能总结
+    // 8. 本地验证完整逻辑 (模拟 Solidity 合约行为)
+    let vkey_bytes = vk.bytes32();
+    let mut vkey = [0u8; 32];
+    vkey.copy_from_slice(&vkey_bytes.as_slice());
+
+    println!("Starting local verification (mimicking Solidity)...");
+    sm2_script::verify::verify_signature_flow(
+        verifying_key.to_encoded_point(false).as_bytes(),
+        &message,
+        signature.to_bytes().as_slice(),
+        vkey,
+        proof.public_values.as_slice(),
+        proof.bytes().as_slice(),
+    ).expect("Local verification (mimicking Solidity) failed");
+    println!("Local verification (mimicking Solidity) successful!");
+
+    // 9. 性能总结
     println!("\n--- Performance Metrics ---");
     println!("Signature Size: {} bytes", signature_size);
     println!("Signing Time: {:?}", signing_duration);

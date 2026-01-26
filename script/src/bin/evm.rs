@@ -57,79 +57,59 @@ fn main() {
     // Parse the command line arguments.
     let args = EVMArgs::parse();
 
-    // 1. 生成密钥并签名 (模拟用户行为)
-    let secret_key = SecretKey::generate();
-    let signing_key = SigningKey::new("1234567812345678", &secret_key).expect("Failed to create signing key");
-    let verifying_key = signing_key.verifying_key().clone();
+    let system_str = format!("{:?}", args.system).to_lowercase();
+    let fixture_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .join(format!("../contracts/src/fixtures/{}-fixture.json", system_str));
+
+    println!("Reading fixture at {:?}...", fixture_path);
+    let fixture_data = std::fs::read_to_string(&fixture_path).expect("failed to read fixture file");
+    let fixture: SP1Sm2ProofFixture = serde_json::from_str(&fixture_data).expect("failed to deserialize fixture");
     
-    let message = b"Uni-RWA Cross-Chain Asset Transfer: 100 USDC to Ethereum".to_vec();
-    let signature: Signature = signing_key.sign(&message);
-
-    // 2. 准备 zkVM 输入
-    let input_data = Sm2VerificationData {
-        pub_key: verifying_key.to_encoded_point(false).as_bytes().try_into().expect("Invalid public key length"),
-        signature: signature.to_bytes().as_slice().try_into().expect("Invalid signature length"),
-        message: message.clone(),
-    };
-
-    let mut stdin = SP1Stdin::new();
-    stdin.write(&input_data);
-
-    // Setup the prover client.
-    let client = ProverClient::from_env();
-
-    // Setup the program.
-    let (pk, vk) = client.setup(SM2_ELF);
-
-    println!("Proof System: {:?}", args.system);
-
-    // Generate the proof based on the selected proof system.
-    let proof = match args.system {
-        ProofSystem::Plonk => client.prove(&pk, &stdin).plonk().run(),
-        ProofSystem::Groth16 => client.prove(&pk, &stdin).groth16().run(),
-    }
-    .expect("failed to generate proof");
-
-    create_proof_fixture(&proof, &vk, args.system);
+    run_verification_benchmark(&fixture);
 }
 
-/// Create a fixture for the given proof.
-fn create_proof_fixture(
-    proof: &SP1ProofWithPublicValues,
-    vk: &SP1VerifyingKey,
-    system: ProofSystem,
-) {
-    // Deserialize the public values.
-    let bytes = proof.public_values.as_slice();
-    let public_values = PublicValuesStruct::abi_decode(bytes).unwrap();
-
-    // Create the testing fixture so we can test things end-to-end.
-    let fixture = SP1Sm2ProofFixture {
-        pub_key: format!("0x{}", hex::encode(public_values.pubKey)),
-        message: format!("0x{}", hex::encode(public_values.message)),
-        signature: format!("0x{}", hex::encode(public_values.signature)),
-        vkey: vk.bytes32().to_string(),
-        public_values: format!("0x{}", hex::encode(bytes)),
-        proof: format!("0x{}", hex::encode(proof.bytes())),
+/// Run a verification benchmark loop.
+fn run_verification_benchmark(fixture: &SP1Sm2ProofFixture) {
+    let decode_hex = |s: &str| {
+        let s = s.strip_prefix("0x").unwrap_or(s);
+        hex::decode(s).expect("invalid hex string")
     };
 
-    // The verification key is used to verify that the proof corresponds to the execution of the
-    // program on the given input.
-    println!("Verification Key: {}", fixture.vkey);
+    let pub_key = decode_hex(&fixture.pub_key);
+    let message = decode_hex(&fixture.message);
+    let signature = decode_hex(&fixture.signature);
+    let vkey_bytes = decode_hex(&fixture.vkey);
+    let public_values = decode_hex(&fixture.public_values);
+    let proof_bytes = decode_hex(&fixture.proof);
 
-    // The public values are the values which are publicly committed to by the zkVM.
-    println!("Public Values: {}", fixture.public_values);
+    let mut vkey = [0u8; 32];
+    vkey.copy_from_slice(&vkey_bytes);
 
-    // The proof proves to the verifier that the program was executed with some inputs that led to
-    // the give public values.
-    println!("Proof Bytes: {}", fixture.proof);
+    let iterations = 10;
+    let mut durations = Vec::new();
 
-    // Save the fixture to a file.
-    let fixture_path = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../contracts/src/fixtures");
-    std::fs::create_dir_all(&fixture_path).expect("failed to create fixture path");
-    std::fs::write(
-        fixture_path.join(format!("{:?}-fixture.json", system).to_lowercase()),
-        serde_json::to_string_pretty(&fixture).unwrap(),
-    )
-    .expect("failed to write fixture");
+    use std::time::Instant;
+    println!("Starting local verification benchmark (10 iterations)...");
+    for i in 1..=iterations {
+        let start = Instant::now();
+        sm2_script::verify::verify_signature_flow(
+            &pub_key,
+            &message,
+            &signature,
+            vkey,
+            &public_values,
+            &proof_bytes,
+        )
+        .expect("failed to verify full signature flow locally");
+        
+        let duration = start.elapsed();
+        durations.push(duration);
+        println!("Iteration {}: Proof verify took: {:?}", i, duration);
+    }
+
+    let total_duration: std::time::Duration = durations.iter().sum();
+    let average_duration = total_duration / (iterations as u32);
+
+    println!("Successfully verified full signature flow locally {} times (Mimics Groth16Verifier.sol).", iterations);
+    println!("Average Proof verify took: {:?}", average_duration);
 }
