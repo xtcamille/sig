@@ -44,20 +44,30 @@ fn main() {
     let mut vkey = [0u8; 32];
     vkey.copy_from_slice(&vkey_bytes);
 
-    let start_verify = Instant::now();
-    ed25519_script::verify::verify_signature_flow(
-        &pub_key_bytes,
-        &message_bytes,
-        &signature_bytes,
-        vkey,
-        &public_values_bytes,
-        &proof_bytes,
-    ).expect("Full signature flow verification failed (mimicking Solidity contracts)");
+    let iterations = 10;
+    let mut durations = Vec::new();
 
-    let duration_verify = start_verify.elapsed();
-    println!("✓ Full signature flow verified successfully! (Time: {:?})", duration_verify);
+    for i in 1..=iterations {
+        let start_verify = Instant::now();
+        ed25519_script::verify::verify_signature_flow(
+            &pub_key_bytes,
+            &message_bytes,
+            &signature_bytes,
+            vkey,
+            &public_values_bytes,
+            &proof_bytes,
+        ).expect("Full signature flow verification failed (mimicking Solidity contracts)");
+        let duration = start_verify.elapsed();
+        durations.push(duration);
+        println!("Iteration {}: Full signature flow verified successfully! (Time: {:?})", i, duration);
+    }
+
+    let total_duration: std::time::Duration = durations.iter().sum();
+    let average_duration = total_duration / (iterations as u32);
 
     println!("\nAll Rust-side checks passed! This matches the logic executed on-chain (SignatureVerifier.sol & SP1VerifierGroth16.sol).");
+    println!("✓ Successfully verified full signature flow locally {} times.", iterations);
+    println!("Average Proof verify took: {:?}", average_duration);
 
     println!("Verification complete.");
 }
