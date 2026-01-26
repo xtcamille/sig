@@ -1,6 +1,14 @@
 use serde::{Deserialize, Serialize};
 use serde_big_array::BigArray;
+use alloy_sol_types::sol;
 
+sol! {
+    struct PublicValuesStruct {
+        bytes pubKey;
+        bytes message;
+        bytes signature;
+    }
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct Sm2VerificationData {

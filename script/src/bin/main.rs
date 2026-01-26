@@ -77,11 +77,18 @@ fn main() {
     println!("Proof verified successfully in {:?}", verifier_duration);
 
     // 7. 读取公共输出以确认
-    let committed_pub_key = proof.public_values.read::<Vec<u8>>();
-    let committed_message = proof.public_values.read::<Vec<u8>>();
+    use alloy_sol_types::SolType;
+    use shared_lib::PublicValuesStruct;
+    
+    let public_values = PublicValuesStruct::abi_decode(proof.public_values.as_slice(), true)
+        .expect("Failed to decode public values");
+    let committed_pub_key = public_values.pubKey;
+    let committed_message = public_values.message;
+    let committed_signature = public_values.signature;
 
-    assert_eq!(committed_pub_key.as_slice(), verifying_key.to_encoded_point(false).as_bytes());
+    assert_eq!(committed_pub_key, verifying_key.to_encoded_point(false).as_bytes());
     assert_eq!(committed_message, message);
+    assert_eq!(committed_signature, signature.to_bytes().as_slice());
 
     println!("Assertion Verified: Proof binds Address to Transaction X");
     

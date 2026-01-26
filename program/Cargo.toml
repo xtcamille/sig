@@ -8,3 +8,4 @@ sp1-zkvm = "5.0.8"
 serde = { version = "1.0", default-features = false, features = ["derive"] }
 sm2 = { version = "0.14.0-rc.4", default-features = false, features = ["dsa", "arithmetic", "serde"] }
 shared-lib = { path = "../lib" }
+alloy-sol-types = { workspace = true }
