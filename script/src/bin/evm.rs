@@ -90,6 +90,26 @@ fn main() {
     .expect("failed to generate proof");
 
     create_proof_fixture(&proof, &vk, args.system);
+
+    // Optional: Local verification to confirm the proof is valid before saving
+    if args.system == ProofSystem::Groth16 {
+        println!("Performing local Groth16 verification...");
+        let proof_bytes = proof.bytes();
+        let public_values = proof.public_values.as_slice();
+        let vkey_bytes = vk.bytes32();
+        let mut vkey = [0u8; 32];
+        vkey.copy_from_slice(&hex::decode(vkey_bytes.trim_start_matches("0x")).expect("invalid vkey hex"));
+
+        ed25519_script::verify::verify_signature_flow(
+            &input_data.pub_key,
+            &input_data.message,
+            &input_data.signature,
+            vkey,
+            public_values,
+            &proof_bytes,
+        ).expect("Local verification failed");
+        println!("✓ Local verification passed!");
+    }
 }
 
 /// Create a fixture for the given proof.
