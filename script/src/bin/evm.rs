@@ -18,7 +18,7 @@ use sp1_sdk::{
     include_elf, HashableKey, ProverClient, SP1ProofWithPublicValues, SP1Stdin, SP1VerifyingKey,
 };
 use std::path::PathBuf;
-use sm2::{SecretKey, dsa::{SigningKey, Signature}, elliptic_curve::{sec1::ToEncodedPoint, Generate}};
+use sm2::{SecretKey, dsa::{SigningKey, Signature, signature::Signer}, elliptic_curve::{sec1::ToEncodedPoint, Generate}};
 
 /// The ELF (executable and linkable format) file for the Succinct RISC-V zkVM.
 pub const SM2_ELF: &[u8] = include_elf!("sm2-program");
@@ -101,7 +101,7 @@ fn create_proof_fixture(
 ) {
     // Deserialize the public values.
     let bytes = proof.public_values.as_slice();
-    let public_values = PublicValuesStruct::abi_decode(bytes, true).unwrap();
+    let public_values = PublicValuesStruct::abi_decode(bytes).unwrap();
 
     // Create the testing fixture so we can test things end-to-end.
     let fixture = SP1Sm2ProofFixture {

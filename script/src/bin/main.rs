@@ -80,7 +80,7 @@ fn main() {
     use alloy_sol_types::SolType;
     use shared_lib::PublicValuesStruct;
     
-    let public_values = PublicValuesStruct::abi_decode(proof.public_values.as_slice(), true)
+    let public_values = PublicValuesStruct::abi_decode(proof.public_values.as_slice())
         .expect("Failed to decode public values");
     let committed_pub_key = public_values.pubKey;
     let committed_message = public_values.message;
